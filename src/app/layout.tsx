@@ -5,7 +5,7 @@ import "./globals.css";
 import SocialIcons from '../components/SocialIocons'
 import Link from "next/link";
 import { useState, useEffect } from 'react'
-
+import PageTransition from "../components/PageTransition"
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -73,7 +73,8 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
-        
+        <PageTransition />
+
         <main>
           {children}
         </main>
