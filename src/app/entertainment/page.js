@@ -115,7 +115,7 @@ export default function EntertainmentPage() {
               <div className="bg-white p-8 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold mb-4">Custom Package</h3>
                 <p className="text-gray-600 mb-8">
-                  Need something specific? We'll create a custom entertainment package tailored to your event requirements.
+                  Need something specific? We&quot;ll create a custom entertainment package tailored to your event requirements.
                 </p>
                 <a href="/contact" className="block text-center bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700">
                   Contact Us

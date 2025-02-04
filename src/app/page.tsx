@@ -1,16 +1,16 @@
 "use client"
 
-import Image from "next/image";
-import useCountUp from '../hooks/useCountUp';
+// import Image from "next/image";
+// import useCountUp from '../hooks/useCountUp';
 
 
 export default function Home() {
-  const privateShows = useCountUp(140);
-  const corporateEvents = useCountUp(80);
-  const specialProjects = useCountUp(20);
-  const talents = useCountUp(250);
-  const staff = useCountUp(60);
-  const countries = useCountUp(35);
+  // const privateShows = useCountUp(140);
+  // const corporateEvents = useCountUp(80);
+  // const specialProjects = useCountUp(20);
+  // const talents = useCountUp(250);
+  // const staff = useCountUp(60);
+  // const countries = useCountUp(35);
   
   return (
     <div>

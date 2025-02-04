@@ -54,7 +54,7 @@ export default function CorporatePage() {
                 We understand the importance of making a true professional impact that creates memorable memories with your employees and guests.
               </p>
               <p className="text-gray-600">
-                Thanks to creative branding entertainment solutions, flawless logistics and an overall technical expertise, we deliver unique and 'tailor-made' corporate events.
+                Thanks to creative branding entertainment solutions, flawless logistics and an overall technical expertise, we deliver unique and &quot;tailor-made&quot; corporate events.
               </p>
               <ul className="space-y-2 text-gray-600">
                 <li>PUBLIC EVENT</li>
