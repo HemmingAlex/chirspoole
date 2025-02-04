@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SocialIcons from '../components/SocialIocons'
+import Link from "next/link";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -30,24 +31,24 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
-                <a href="/" className="text-xl font-bold text-white">
+                <Link href="/" className="text-xl font-bold text-white">
                   <img src="/assets/shades.svg" alt="Shades Music School" className="h-8" />
-                </a>
+                </Link>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-center space-x-4">
-                  <a href="/" className="text-white hover:text-gray-300 px-3 py-2 rounded-md">
+                  <Link href="/" className="text-white hover:text-gray-300 px-3 py-2 rounded-md">
                     Home
-                  </a>
-                  <a href="/weddings" className="text-white hover:text-gray-300 px-3 py-2 rounded-md">
+                  </Link>
+                  <Link href="/weddings" className="text-white hover:text-gray-300 px-3 py-2 rounded-md">
                     Weddings
-                  </a>
-                  <a href="/corporate" className="text-white hover:text-gray-300 px-3 py-2 rounded-md">
+                  </Link>
+                  <Link href="/corporate" className="text-white hover:text-gray-300 px-3 py-2 rounded-md">
                     Corporate
-                  </a>
-                  <a href="/entertainment" className="text-white hover:text-gray-300 px-3 py-2 rounded-md">
+                  </Link>
+                  <Link href="/entertainment" className="text-white hover:text-gray-300 px-3 py-2 rounded-md">
                     Entertainment
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -69,17 +70,17 @@ export default function RootLayout({
               <div>
                 <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
-                  <li><a href="/weddings" className="hover:text-gray-300">Weddings</a></li>
-                  <li><a href="/corporate" className="hover:text-gray-300">Corporate Events</a></li>
-                  <li><a href="/entertainment" className="hover:text-gray-300">Entertainment</a></li>
+                  <li><Link href="/weddings" className="hover:text-gray-300">Weddings</Link></li>
+                  <li><Link href="/corporate" className="hover:text-gray-300">Corporate Events</Link></li>
+                  <li><Link href="/entertainment" className="hover:text-gray-300">Entertainment</Link></li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="hover:text-gray-300">Facebook</a>
-                  <a href="#" className="hover:text-gray-300">Instagram</a>
-                  <a href="#" className="hover:text-gray-300">Twitter</a>
+                  <Link href="#" className="hover:text-gray-300">Facebook</Link>
+                  <Link href="#" className="hover:text-gray-300">Instagram</Link>
+                  <Link href="#" className="hover:text-gray-300">Twitter</Link>
                 </div>
               </div>
             </div>
