@@ -1,101 +1,181 @@
+"use client"
+
 import Image from "next/image";
+import useCountUp from '../hooks/useCountUp';
+
 
 export default function Home() {
+  const privateShows = useCountUp(140);
+  const corporateEvents = useCountUp(80);
+  const specialProjects = useCountUp(20);
+  const talents = useCountUp(250);
+  const staff = useCountUp(60);
+  const countries = useCountUp(35);
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      {/* Video Hero Section */}
+      <section className="relative h-[100vh] w-full overflow-hidden">
+        <div className="absolute inset-0 bg-black/30 z-10" />
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          style={{ minHeight: '100vh', minWidth: '100vw' }}
+        >
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="relative z-20 h-full flex items-center justify-center text-white">
+          <div className="text-center max-w-3xl mx-auto px-4">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              Creating Unforgettable Musical Experiences
+            </h1>
+            <p className="text-xl mb-8">
+              From intimate weddings to grand corporate events, we bring your vision to life
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-block bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition"
+            >
+              Get in Touch
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Rest of the content */}
+      <div className="relative bg-white">
+        {/* Services Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Wedding Service */}
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="h-64 bg-gray-200" />
+                <div className="p-6">
+                  <h3 className="text-2xl font-semibold mb-4">Weddings</h3>
+                  <p className="text-gray-600 mb-4">
+                    Make your special day truly magical with our curated wedding entertainment services.
+                  </p>
+                  <a 
+                    href="/weddings"
+                    className="text-blue-600 hover:text-blue-800 font-semibold"
+                  >
+                    Learn More →
+                  </a>
+                </div>
+              </div>
+
+              {/* Corporate Service */}
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="h-64 bg-gray-200" />
+                <div className="p-6">
+                  <h3 className="text-2xl font-semibold mb-4">Corporate Events</h3>
+                  <p className="text-gray-600 mb-4">
+                    Elevate your corporate events with professional entertainment solutions.
+                  </p>
+                  <a 
+                    href="/corporate"
+                    className="text-blue-600 hover:text-blue-800 font-semibold"
+                  >
+                    Learn More →
+                  </a>
+                </div>
+              </div>
+
+              {/* Entertainment Service */}
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="h-64 bg-gray-200" />
+                <div className="p-6">
+                  <h3 className="text-2xl font-semibold mb-4">Entertainment</h3>
+                  <p className="text-gray-600 mb-4">
+                    Discover our diverse range of entertainment options for any occasion.
+                  </p>
+                  <a 
+                    href="/entertainment"
+                    className="text-blue-600 hover:text-blue-800 font-semibold"
+                  >
+                    Learn More →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-bold text-center mb-12">Why Choose Us</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl mb-4">🎵</div>
+                <h3 className="text-xl font-semibold mb-2">Professional Musicians</h3>
+                <p className="text-gray-600">Experienced and talented performers</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-4">🎨</div>
+                <h3 className="text-xl font-semibold mb-2">Customized Service</h3>
+                <p className="text-gray-600">Tailored to your specific needs</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-4">⭐</div>
+                <h3 className="text-xl font-semibold mb-2">Quality Equipment</h3>
+                <p className="text-gray-600">Top-tier sound and lighting</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-4">💫</div>
+                <h3 className="text-xl font-semibold mb-2">Reliable Service</h3>
+                <p className="text-gray-600">Always on time and prepared</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Instagram Feed Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center mb-12">Follow Us On Instagram</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="aspect-square relative group cursor-pointer overflow-hidden">
+                <a 
+                  href="https://www.instagram.com/p/COnu9jGjG2j/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full"
+                >
+                  <img 
+                    src="https://www.inspiration-music.com/wp-content/uploads/sb-instagram-feed-images/468804381_18447920413067918_4479337415547441776_nfull.jpg"
+                    alt="Instagram post"
+                    className="object-cover w-full h-full transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 448 512">
+                      <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a 
+              href="https://www.instagram.com/shadesmusicschool/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-md font-semibold hover:from-purple-700 hover:to-pink-700 transition"
+            >
+              View More on Instagram
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
