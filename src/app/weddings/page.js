@@ -77,7 +77,7 @@ export default function WeddingsPage() {
                 <div key={i} className="bg-white p-6 rounded-lg shadow-lg">
                   <div className="text-yellow-400 mb-4">★★★★★</div>
                   <p className="text-gray-600 mb-4">
-                    "The team was absolutely amazing! They made our wedding day truly special with their incredible performance."
+                    &quot;The team was absolutely amazing! They made our wedding day truly special with their incredible performance.&quot;
                   </p>
                   <p className="font-semibold">- Happy Couple {i}</p>
                 </div>
@@ -101,13 +101,13 @@ export default function WeddingsPage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">What music styles do you offer?</h3>
                   <p className="text-gray-600">
-                    Our musicians are versatile and can perform various styles including classical, jazz, contemporary pop, rock, and traditional wedding music. We'll work with you to create the perfect playlist for your special day.
+                    Our musicians are versatile and can perform various styles including classical, jazz, contemporary pop, rock, and traditional wedding music. We&quot;ll work with you to create the perfect playlist for your special day.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Do you provide all necessary equipment?</h3>
                   <p className="text-gray-600">
-                    Yes, we bring all required professional-grade sound equipment, lighting, and instruments. We'll coordinate with your venue to ensure proper setup and acoustic requirements are met.
+                    Yes, we bring all required professional-grade sound equipment, lighting, and instruments. We&quot;ll coordinate with your venue to ensure proper setup and acoustic requirements are met.
                   </p>
                 </div>
               </div>
@@ -115,11 +115,11 @@ export default function WeddingsPage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Can we request specific songs?</h3>
                   <p className="text-gray-600">
-                    Absolutely! We encourage you to provide a list of must-play songs and any songs you'd prefer not to hear. We'll work with you to ensure the music matches your vision perfectly.
+                    Absolutely! We encourage you to provide a list of must-play songs and any songs you&quot;d prefer not to hear. We&quot;ll work with you to ensure the music matches your vision perfectly.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">What happens if there's an emergency?</h3>
+                  <h3 className="text-xl font-semibold mb-2">What happens if there&quot;s an emergency?</h3>
                   <p className="text-gray-600">
                     We maintain a network of professional backup musicians and have comprehensive contingency plans in place. Your wedding entertainment is guaranteed to proceed smoothly no matter what.
                   </p>
