@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import Maps from "../../components/StyledGoogleMap"
-import Socials from "../../components/SocialBar "
 
 export default function ContactPage() {
   useEffect(() => {
