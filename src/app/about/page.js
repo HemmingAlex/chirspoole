@@ -208,7 +208,7 @@ export default function AboutPage() {
               href="/entertainment" 
               className="inline-block border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition"
             >
-              View Services
+              View Services ?
             </a>
           </div>
         </div>
