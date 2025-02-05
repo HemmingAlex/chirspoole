@@ -5,6 +5,8 @@ import "./globals.css";
 import SocialIcons from "../components/SocialIocons";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Socials from "../components/SocialBar "
+
 // import PageTransition from "../components/PageTransition";
 // import FadeTransition from "../components/FadeTransition";
 // const geistSans = Geist({
@@ -229,15 +231,8 @@ export default function RootLayout({
               <div>
                 <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <Link href="#" className="hover:text-gray-300">
-                    Facebook
-                  </Link>
-                  <Link href="#" className="hover:text-gray-300">
-                    Instagram
-                  </Link>
-                  <Link href="#" className="hover:text-gray-300">
-                    Twitter
-                  </Link>
+                <Socials/>
+
                 </div>
               </div>
             </div>

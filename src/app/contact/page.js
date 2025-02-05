@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import Maps from "../../components/StyledGoogleMap"
+import Socials from "../../components/SocialBar "
 
 export default function ContactPage() {
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function ContactPage() {
       {/* Hero Section - matches your current site style */}
       <section className="relative h-[70vh]">
         <div className="absolute inset-0 bg-black/40" />
+        
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -101,7 +103,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
       {/* Contact Form Section */}
       <section id="contact-form" className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
