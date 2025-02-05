@@ -5,8 +5,8 @@ import "./globals.css";
 import SocialIcons from "../components/SocialIocons";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import PageTransition from "../components/PageTransition";
-import FadeTransition from "../components/FadeTransition";
+// import PageTransition from "../components/PageTransition";
+// import FadeTransition from "../components/FadeTransition";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
