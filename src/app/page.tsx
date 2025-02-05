@@ -7,7 +7,7 @@ import FadeTransition from "../components/FadeTransition";
 import Link from "next/link";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   // const privateShows = useCountUp(140);
   // const corporateEvents = useCountUp(80);
@@ -16,9 +16,9 @@ export default function Home() {
   // const staff = useCountUp(60);
   // const countries = useCountUp(35);
   const videoId = "CZVKTBY3tNk";
-  const handleIframeLoad = () => {
-    setIsLoading(false);
-  };
+  // const handleIframeLoad = () => {
+  //   setIsLoading(false);
+  // };
 
   return (
     <div>
