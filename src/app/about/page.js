@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { Music, Mic, Users, Star } from 'lucide-react';
+import Socials from "../../components/SocialBar "
 
 export default function AboutPage() {
   useEffect(() => {
@@ -210,6 +211,7 @@ export default function AboutPage() {
             >
               View Services ?
             </a>
+            <Socials/>
           </div>
         </div>
       </section>
