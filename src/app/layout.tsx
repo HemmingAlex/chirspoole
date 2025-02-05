@@ -64,7 +64,7 @@ export default function RootLayout({
         <SocialIcons />
         <nav
           className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-            isScrolled ? "bg-black text-orange-600 shadow-md" : "bg-transparent"
+            isScrolled ? "bg-black text-white shadow-md" : "bg-transparent"
           }`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
