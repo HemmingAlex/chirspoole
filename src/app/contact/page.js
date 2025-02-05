@@ -133,7 +133,8 @@ export default function ContactPage() {
                       <input
                         type="text"
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                        placeholder="..."
+                        className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       />
                     </div>
                     <div>
@@ -142,8 +143,9 @@ export default function ContactPage() {
                       </label>
                       <input
                         type="email"
+                        placeholder="..."
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       />
                     </div>
                   </div>
@@ -153,7 +155,7 @@ export default function ContactPage() {
                       Event Type
                     </label>
                     <select
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       required
                     >
                       <option value="">Select an event type</option>
@@ -171,7 +173,7 @@ export default function ContactPage() {
                     <textarea
                       rows={6}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       placeholder="Tell us about your event..."
                     />
                   </div>
@@ -192,7 +194,7 @@ export default function ContactPage() {
         <section className=" text-center m-4 lg:m-8">
         <h2 className="text-3xl font-bold text-center mt-8 mb-12 text-orange-500">
         Find us here!</h2>
-          <duv className="className='p-8 my-8 rounded flex mx-auto lg:w-2/3'">
+          <duv className="className='p-8 my-8 rounded flex mx-auto lg:w-2/3">
             <Maps />
           </duv>
         </section>

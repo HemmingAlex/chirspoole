@@ -74,9 +74,7 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
-                  <h2 className="text-4xl font-bold mb-8 text-orange-500">
-                    The Story So Far
-                  </h2>
+                  <h2 className="text-4xl font-bold mb-8 text-orange-500">The Story So Far</h2>
                   <div className="prose prose-lg">
                     <p>
                       Shades Live Music was born in London, England 25 years
@@ -102,28 +100,28 @@ export default function Home() {
                     <img
                       src="/assets/Jack.jpg"
                       alt="Live performance"
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
                     <img
                       src="/assets/Chris.jpg"
                       alt="Band performance"
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
                     <img
                       src="/assets/Kamil.jpg"
                       alt="Event atmosphere"
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
                     <img
                       src="/assets/Paul.jpg"
                       alt="Musicians playing"
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
