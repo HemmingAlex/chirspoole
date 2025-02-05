@@ -25,28 +25,26 @@ export default function Home() {
       {/* Video Hero Section */}
       <FadeTransition>
         <section className="relative h-[100vh] w-full overflow-hidden">
-
           <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
           {/* <div className="absolute inset-0 overflow-hidden"> */}
-            <iframe
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&playlist=${videoId}&start=6&playsinline=1&enablejsapi=1&modestbranding=1`}
-              className="absolute h-screen w-[400%] lg:w-[120%] lg:h-[120%] object-cover lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
-              style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-              }}
-              allow="autoplay; encrypted-media"
-              frameBorder="0"
-              title="Background video"
-              onLoad={handleIframeLoad}
-            />
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&playlist=${videoId}&start=6&playsinline=1&enablejsapi=1&modestbranding=1`}
+            className="absolute h-screen w-[400%] lg:w-[120%] lg:h-[120%] object-cover lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
+            style={{
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+            allow="autoplay; encrypted-media"
+            frameBorder="0"
+            title="Background video"
+            onLoad={handleIframeLoad}
+          />
           {/* </div> */}
           <div className="relative z-20 h-full flex items-center justify-center text-white">
             <div className="text-center max-w-3xl mx-auto px-4">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Creating Unforgettable Musical Experiences
-              </h1>
+Shades Music              </h1>
               <p className="text-xl mb-8">
                 From intimate weddings to grand corporate events, we bring your
                 vision to life
@@ -59,7 +57,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          eeees
         </section>
         {/* {isLoading && (
         <div 
@@ -72,12 +69,12 @@ export default function Home() {
           {/* Services Section */}
           <section className="py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-bold text-center mb-12">
+              {/* <h2 className="text-4xl font-bold text-center mb-12">
                 Our Services
-              </h2>
+              </h2> */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Wedding Service */}
-                <div className="rounded-lg overflow-hidden shadow-lg">
+                {/* <div className="rounded-lg overflow-hidden shadow-lg">
                   <div className="h-64 bg-gray-200" />
                   <div className="p-6">
                     <h3 className="text-2xl font-semibold mb-4">Weddings</h3>
@@ -92,10 +89,10 @@ export default function Home() {
                       Learn More →
                     </a>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Corporate Service */}
-                <div className="rounded-lg overflow-hidden shadow-lg">
+                {/* <div className="rounded-lg overflow-hidden shadow-lg">
                   <div className="h-64 bg-gray-200" />
                   <div className="p-6">
                     <h3 className="text-2xl font-semibold mb-4">
@@ -115,7 +112,7 @@ export default function Home() {
                 </div>
 
                 {/* Entertainment Service */}
-                <div className="rounded-lg overflow-hidden shadow-lg">
+                {/* <div className="rounded-lg overflow-hidden shadow-lg">
                   <div className="h-64 bg-gray-200" />
                   <div className="p-6">
                     <h3 className="text-2xl font-semibold mb-4">
@@ -132,13 +129,13 @@ export default function Home() {
                       Learn More →
                     </a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
 
           {/* Why Choose Us Section */}
-          <section className="py-20 bg-gray-50">
+          {/* <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-4xl font-bold text-center mb-12">
                 Why Choose Us
@@ -178,9 +175,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
-        </div>
-
+          </section> */}
+        </div> 
         {/* Instagram Feed Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -188,7 +184,7 @@ export default function Home() {
               Follow Us On Instagram
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[...Array(8)].map((_, i) => (
+              {[...Array(4)].map((_, i) => (
                 <div
                   key={i}
                   className="aspect-square relative group cursor-pointer overflow-hidden"
