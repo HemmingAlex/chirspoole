@@ -7,7 +7,7 @@ import FadeTransition from "../components/FadeTransition";
 import Link from "next/link";
 
 export default function Home() {
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   // const privateShows = useCountUp(140);
   // const corporateEvents = useCountUp(80);
@@ -16,9 +16,9 @@ export default function Home() {
   // const staff = useCountUp(60);
   // const countries = useCountUp(35);
   const videoId = "CZVKTBY3tNk";
-  // const handleIframeLoad = () => {
-  //   setIsLoading(false);
-  // };
+  const handleIframeLoad = () => {
+    setIsLoading(false);
+  };
 
   return (
     <div>
@@ -58,12 +58,12 @@ Shades Music              </h1>
             </div>
           </div>
         </section>
-        {/* {isLoading && (
+    {isLoading && (
         <div 
           className="absolute inset-0 bg-black z-30 transition-opacity duration-1000"
           style={{ opacity: isLoading ? 1 : 0 }}
         />
-      )} */}
+      )} 
         {/* Rest of the content */}
         <div className="relative bg-white">
           {/* Services Section */}
