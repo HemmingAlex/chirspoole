@@ -104,6 +104,12 @@ export default function RootLayout({
                   >
                     Entertainment
                   </Link>
+                  <Link
+                    href="/contact"
+                    className="text-white hover:text-gray-300 px-3 py-2 rounded-md"
+                  >
+                    Contact
+                  </Link>
                 </div>
               </div>
 
@@ -127,14 +133,14 @@ export default function RootLayout({
             }`}
           >
             <div className="flex justify-end px-4 pt-6">
-    <button
-      onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      className="text-white p-2 rounded-md hover:bg-gray-700/50 transition-colors"
-      aria-label="Close menu"
-    >
-      <X className="h-6 w-6" />
-    </button>
-  </div>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-white p-2 rounded-md hover:bg-gray-700/50 transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
 
             <div className="pt-24 px-4">
               <div className="flex flex-col space-y-4">
@@ -165,6 +171,13 @@ export default function RootLayout({
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Entertainment
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-white text-2xl font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
                 </Link>
               </div>
             </div>
