@@ -35,7 +35,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-xl mb-8">
-              Let's create your perfect musical experience together
+              Let&apos;s create your perfect musical experience together
             </p>
           </div>
         </div>
