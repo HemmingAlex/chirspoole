@@ -5,7 +5,7 @@ import "./globals.css";
 import SocialIcons from "../components/SocialIocons";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import Socials from "../components/SocialBar "
+import Socials from "../components/SocialBar ";
 
 // import PageTransition from "../components/PageTransition";
 // import FadeTransition from "../components/FadeTransition";
@@ -64,18 +64,20 @@ export default function RootLayout({
         <SocialIcons />
         <nav
           className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-            isScrolled ? "bg-orange-600 text-black shadow-md" : "bg-transparent"
+            isScrolled ? "bg-black text-orange-600 shadow-md" : "bg-transparent"
           }`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
-                <Link href="/" className="text-xl font-bold text-white">
-                  <img
+                <Link href="/" className="text-xl font-bold ">
+                  <h1>logo</h1>
+                  {/* <img
                     src="/assets/shades.svg"
                     alt="Shades Music School"
                     className="h-8"
-                  />
+                    style={{"color":"white"}}
+                  /> */}
                 </Link>
               </div>
 
@@ -84,38 +86,38 @@ export default function RootLayout({
                 <div className="ml-10 flex items-center space-x-4">
                   <Link
                     href="/"
-                    className="text-white hover:text-gray-300 px-3 py-2 rounded-md"
+                    className=" hover:text-gray-300 px-3 py-2 rounded-md"
                   >
                     Home
                   </Link>
                   <Link
                     href="/about"
-                    className="text-white hover:text-gray-300 px-3 py-2 rounded-md"
+                    className=" hover:text-gray-300 px-3 py-2 rounded-md"
                   >
                     About Us
                   </Link>
                   <Link
                     href="/weddings"
-                    className="text-white hover:text-gray-300 px-3 py-2 rounded-md"
+                    className=" hover:text-gray-300 px-3 py-2 rounded-md"
                   >
                     Weddings
                   </Link>
                   <Link
                     href="/corporate"
-                    className="text-white hover:text-gray-300 px-3 py-2 rounded-md"
+                    className=" hover:text-gray-300 px-3 py-2 rounded-md"
                   >
                     Corporate
                   </Link>
                   <Link
                     href="/entertainment"
-                    className="text-white hover:text-gray-300 px-3 py-2 rounded-md"
+                    className=" hover:text-gray-300 px-3 py-2 rounded-md"
                   >
                     Entertainment
                   </Link>
-                  
+
                   <Link
                     href="/contact"
-                    className="text-white hover:text-gray-300 px-3 py-2 rounded-md"
+                    className=" hover:text-gray-300 px-3 py-2 rounded-md"
                   >
                     Contact
                   </Link>
@@ -231,8 +233,7 @@ export default function RootLayout({
               <div>
                 <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                <Socials/>
-
+                  <Socials />
                 </div>
               </div>
             </div>

@@ -109,7 +109,7 @@ export default function CorporatePage() {
         </section>
 
         {/* Contact CTA */}
-        <section className="py-20 bg-blue-600 text-white">
+        <section className="py-20 bg-orange-600 text-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Ready to Elevate Your Corporate Event?

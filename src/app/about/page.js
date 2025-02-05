@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { Music, Mic, Users, Star } from "lucide-react";
 import Socials from "../../components/SocialBar ";
+import FadeTransition from "../../components/FadeTransition";
 
 export default function AboutPage() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero Section */}
+      <FadeTransition>
       <section className="relative h-[100vh]">
         <div className="absolute inset-0 bg-black/40" />
         <div
@@ -254,6 +256,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      </FadeTransition>
     </div>
   );
 }
