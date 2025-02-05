@@ -3,7 +3,7 @@ export default function WeddingsPage() {
     return (
       <div>
         {/* Hero Section */}
-        <section className="relative h-[70vh]">
+        <section className="relative h-[100vh]">
           <div className="absolute inset-0 bg-black/40" />
           <div 
             className="absolute inset-0 bg-cover bg-center"

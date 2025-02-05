@@ -21,7 +21,7 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero Section - matches your current site style */}
-      <section className="relative h-[70vh]">
+      <section className="relative h-[100vh]">
         <div className="absolute inset-0 bg-black/40" />
 
         <div
