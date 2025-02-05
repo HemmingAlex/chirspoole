@@ -96,10 +96,22 @@ export default function ContactPage() {
               </div>
 
               <div className="grid grid-cols-2 gap-4 reveal overflow-hidden w-0 duration-1000 aspect-square">
-              <img src="/assets/Jack.jpg" className="aspect-square bg-gray-200 rounded-lg" />
-              <img src="/assets/Kamil.jpg" className="aspect-square bg-gray-200 rounded-lg" />
-              <img src="/assets/Chris.jpg" className="aspect-square bg-gray-200 rounded-lg" />
-              <img src="/assets/Paul.jpg" className="aspect-square bg-gray-200 rounded-lg" />
+                <img
+                  src="/assets/Jack.jpg"
+                  className="aspect-square bg-gray-200 rounded-lg"
+                />
+                <img
+                  src="/assets/Kamil.jpg"
+                  className="aspect-square bg-gray-200 rounded-lg"
+                />
+                <img
+                  src="/assets/Chris.jpg"
+                  className="aspect-square bg-gray-200 rounded-lg"
+                />
+                <img
+                  src="/assets/Paul.jpg"
+                  className="aspect-square bg-gray-200 rounded-lg"
+                />
               </div>
             </div>
           </div>
@@ -109,7 +121,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="p-8">
-                <h2 className="text-3xl font-bold text-center mb-12">
+                <h2 className="text-3xl font-bold text-center mb-12 text-orange-500">
                   Send us a Message
                 </h2>
                 <form className="space-y-6">
@@ -177,9 +189,10 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-        <section className=" text-center m-8">
-          <h className="text-4xl bold m-8"> Find us here!</h>
-          <duv className="className='p-8 shadowed bg-white w-2/3 flex mx-auto my-8'">
+        <section className=" text-center m-4 lg:m-8">
+        <h2 className="text-3xl font-bold text-center mt-8 mb-12 text-orange-500">
+        Find us here!</h2>
+          <duv className="className='p-8 my-8 rounded flex mx-auto lg:w-2/3'">
             <Maps />
           </duv>
         </section>
