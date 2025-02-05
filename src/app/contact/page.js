@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import Maps from "../../components/StyledGoogleMap"
 
 export default function ContactPage() {
   useEffect(() => {
@@ -53,8 +54,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-                    <p className="text-gray-600">info@shadesmusicschool.com</p>
-                    <p className="text-gray-600">bookings@shadesmusicschool.com</p>
+                    <p className="text-gray-600">info@shadesband.com</p>
+                    {/* <p className="text-gray-600">bookings@shadesmusicschool.com</p> */}
                   </div>
                 </div>
 
@@ -64,7 +65,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-                    <p className="text-gray-600">(123) 456-7890</p>
+                    <p className="text-gray-600">07899865778</p>
                     <p className="text-gray-600">Mon-Fri: 9am - 6pm</p>
                   </div>
                 </div>
@@ -168,9 +169,19 @@ export default function ContactPage() {
                   </button>
                 </div>
               </form>
+              
             </div>
           </div>
         </div>
+      </section>
+      <section className=" text-center m-8">
+
+      <h className="text-4xl bold m-8"> Find us here!</h>
+<duv className="className='p-8 shadowed bg-white w-2/3 flex mx-auto my-8'">
+
+
+              <Maps/>
+</duv>
       </section>
     </div>
   );
