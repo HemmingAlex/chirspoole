@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const TransitionWrapper = ({ children }) => {
+const TransitionWrapper = ({ children }:any) => {
   // Start with the overlay visible
   const [isVisible, setIsVisible] = useState(true);
 
