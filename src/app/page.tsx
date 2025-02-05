@@ -1,10 +1,12 @@
 "use client";
-import React, {useState} from "react";
-
+import React, { useState } from "react";
+import SocialBar from "../components/SocialBar ";
 // import Image from "next/image";
 // import useCountUp from '../hooks/useCountUp';
 import FadeTransition from "../components/FadeTransition";
 import Link from "next/link";
+import InstagramSection from "../components/InstagramSection ";
+import ClientsSection from "../components/ClientsSection";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,187 +46,137 @@ export default function Home() {
           <div className="relative z-20 h-full flex items-center justify-center text-white">
             <div className="text-center max-w-3xl mx-auto px-4">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-Shades Music              </h1>
+                25 Years of Musical Excellence
+              </h1>
               <p className="text-xl mb-8">
-                From intimate weddings to grand corporate events, we bring your
-                vision to life
+                Creating unforgettable live music experiences since 1999
               </p>
+              <SocialBar className="justify-center mb-8" />
               <Link
                 href="/contact"
                 className="inline-block bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition"
               >
-                Get in Touch
+                Book Your Event
               </Link>
             </div>
           </div>
         </section>
-    {isLoading && (
-        <div 
-          className="absolute inset-0 bg-black z-30 transition-opacity duration-1000"
-          style={{ opacity: isLoading ? 1 : 0 }}
-        />
-      )} 
+        {isLoading && (
+          <div
+            className="absolute inset-0 bg-black z-30 transition-opacity duration-1000"
+            style={{ opacity: isLoading ? 1 : 0 }}
+          />
+        )}
         {/* Rest of the content */}
-        <div className="relative bg-white">
-          {/* Services Section */}
+        <div className="relative bg-white text-gray-700">
+          {/* Our Story Section */}
           <section className="py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              {/* <h2 className="text-4xl font-bold text-center mb-12">
-                Our Services
-              </h2> */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Wedding Service */}
-                {/* <div className="rounded-lg overflow-hidden shadow-lg">
-                  <div className="h-64 bg-gray-200" />
-                  <div className="p-6">
-                    <h3 className="text-2xl font-semibold mb-4">Weddings</h3>
-                    <p className="text-gray-600 mb-4">
-                      Make your special day truly magical with our curated
-                      wedding entertainment services.
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                  <h2 className="text-4xl font-bold mb-8 text-orange-500">The Story So Far</h2>
+                  <div className="prose prose-lg">
+                    <p>
+                      Shades Live Music was born in London, England 25 years
+                      ago, founded by Christopher Poole, our Lead Vocalist and
+                      Director. What began as an ambitious five-piece band
+                      quickly evolved into something extraordinary - a
+                      collective of exceptional musicians and performers
+                      creating bespoke, tailor-made shows for the most
+                      prestigious clients worldwide.
                     </p>
-                    <a
-                      href="/weddings"
-                      className="text-blue-600 hover:text-blue-800 font-semibold"
-                    >
-                      Learn More →
-                    </a>
-                  </div>
-                </div> */}
-
-                {/* Corporate Service */}
-                {/* <div className="rounded-lg overflow-hidden shadow-lg">
-                  <div className="h-64 bg-gray-200" />
-                  <div className="p-6">
-                    <h3 className="text-2xl font-semibold mb-4">
-                      Corporate Events
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      Elevate your corporate events with professional
-                      entertainment solutions.
+                    <p>
+                      What truly sets us apart is our unwavering commitment to
+                      authentic live music. Unlike others who rely on backing
+                      tracks, every note you hear at a Shades performance is
+                      played live by our talented musicians. No pretending, no
+                      miming - just pure, authentic musical excellence.
                     </p>
-                    <a
-                      href="/corporate"
-                      className="text-blue-600 hover:text-blue-800 font-semibold"
-                    >
-                      Learn More →
-                    </a>
                   </div>
                 </div>
 
-                {/* Entertainment Service */}
-                {/* <div className="rounded-lg overflow-hidden shadow-lg">
-                  <div className="h-64 bg-gray-200" />
-                  <div className="p-6">
-                    <h3 className="text-2xl font-semibold mb-4">
-                      Entertainment
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      Discover our diverse range of entertainment options for
-                      any occasion.
-                    </p>
-                    <a
-                      href="/entertainment"
-                      className="text-blue-600 hover:text-blue-800 font-semibold"
-                    >
-                      Learn More →
-                    </a>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
+                    <img
+                      src="/assets/Jack.jpg"
+                      alt="Live performance"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </div> */}
+                  <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
+                    <img
+                      src="/assets/Chris.jpg"
+                      alt="Band performance"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
+                    <img
+                      src="/assets/Kamil.jpg"
+                      alt="Event atmosphere"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
+                    <img
+                      src="/assets/Paul.jpg"
+                      alt="Musicians playing"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* Why Choose Us Section */}
-          {/* <section className="py-20 bg-gray-50">
+          <ClientsSection />
+          <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-bold text-center mb-12">
-                Why Choose Us
-              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🎵</div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Professional Musicians
-                  </h3>
-                  <p className="text-gray-600">
-                    Experienced and talented performers
+                <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                  <div className="text-4xl font-bold text-orange-600 mb-2">
+                    1000+
+                  </div>
+                  <div className="text-xl">Shows Worldwide</div>
+                  <p className="mt-4 text-gray-600">
+                    Each performance crafted uniquely for our clients
                   </p>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🎨</div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Customized Service
-                  </h3>
-                  <p className="text-gray-600">
-                    Tailored to your specific needs
+
+                <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                  <div className="text-4xl font-bold text-orange-600 mb-2">
+                    100%
+                  </div>
+                  <div className="text-xl">Live Music</div>
+                  <p className="mt-4 text-gray-600">
+                    No backing tracks - pure musical talent
                   </p>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl mb-4">⭐</div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Quality Equipment
-                  </h3>
-                  <p className="text-gray-600">Top-tier sound and lighting</p>
+
+                <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                  <div className="text-4xl font-bold text-orange-600 mb-2">
+                    25
+                  </div>
+                  <div className="text-xl">Years of Excellence</div>
+                  <p className="mt-4 text-gray-600">
+                    A legacy of musical expertise
+                  </p>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl mb-4">💫</div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Reliable Service
-                  </h3>
-                  <p className="text-gray-600">Always on time and prepared</p>
+
+                <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                  <div className="text-4xl font-bold text-orange-600 mb-2">
+                    Full
+                  </div>
+                  <div className="text-xl">Event Coverage</div>
+                  <p className="mt-4 text-gray-600">
+                    From ceremonies to evening parties
+                  </p>
                 </div>
               </div>
             </div>
-          </section> */}
-        </div> 
-        {/* Instagram Feed Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-center mb-12">
-              Follow Us On Instagram
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[...Array(4)].map((_, i) => (
-                <div
-                  key={i}
-                  className="aspect-square relative group cursor-pointer overflow-hidden"
-                >
-                  <a
-                    href="https://www.instagram.com/p/COnu9jGjG2j/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full h-full"
-                  >
-                    <img
-                      src="https://www.inspiration-music.com/wp-content/uploads/sb-instagram-feed-images/468804381_18447920413067918_4479337415547441776_nfull.jpg"
-                      alt="Instagram post"
-                      className="object-cover w-full h-full transition-transform group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <svg
-                        className="w-12 h-12 text-white"
-                        fill="currentColor"
-                        viewBox="0 0 448 512"
-                      >
-                        <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <a
-                href="https://www.instagram.com/shadesmusicschool/?hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-md font-semibold hover:from-purple-700 hover:to-pink-700 transition"
-              >
-                View More on Instagram
-              </a>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
+        <InstagramSection />
       </FadeTransition>
     </div>
   );

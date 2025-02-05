@@ -64,7 +64,7 @@ export default function RootLayout({
         <SocialIcons />
         <nav
           className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-            isScrolled ? "bg-gray-400 text-black shadow-md" : "bg-transparent"
+            isScrolled ? "bg-orange-600 text-black shadow-md" : "bg-transparent"
           }`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -205,8 +205,8 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-                <p>Email: info@yourbrand.com</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@shadesband.com</p>
+                <p>Phone: 07899865778</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -238,7 +238,7 @@ export default function RootLayout({
             </div>
             <div className="mt-8 border-t border-gray-800 pt-8 text-center">
               <p>
-                &copy; {new Date().getFullYear()} Your Brand. All rights
+                &copy; {new Date().getFullYear()} Shades Music. All rights
                 reserved.
               </p>
             </div>
