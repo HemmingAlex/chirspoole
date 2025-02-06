@@ -34,7 +34,7 @@ export default function ContactPage() {
   const showNotification = (message, type) => {
     setNotification({ message, type });
     // Auto-hide notification after 5 seconds
-    setTimeout(() => setNotification(null), 5000);
+    // setTimeout(() => setNotification(null), 5000);
   };
 
   const handleSubmit = async (e) => {
