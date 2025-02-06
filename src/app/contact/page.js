@@ -109,25 +109,28 @@ export default function ContactPage() {
         )}
         {/* Hero Section - matches your current site style */}
         <section className="relative h-[100vh]">
-          <div className="absolute inset-0 bg-black/40" />
-
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url('/api/placeholder/1920/1080')`,
-            }}
-          />
-          <div className="relative h-full flex items-center justify-center text-white">
-            <div className="text-center max-w-3xl mx-auto px-4">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Contact Us
-              </h1>
-              <p className="text-xl mb-8">
-                Let&apos;s create your perfect musical experience together
-              </p>
-            </div>
-          </div>
-        </section>
+  {/* Background image - positioned to show more of the bottom */}
+  <div
+    className="absolute inset-0 bg-cover z-0"
+    style={{
+      backgroundImage: `url('https://images.unsplash.com/photo-1566421966482-ad8076104d8e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+      backgroundPosition: 'center 65%'  // This moves the image up to show more of the bottom
+    }}
+  />
+  {/* Black overlay with 40% opacity */}
+  <div className="absolute inset-0 bg-black/40 z-10" />
+  {/* Content layer */}
+  <div className="relative h-full flex items-center justify-center text-white z-20">
+    <div className="text-center max-w-3xl mx-auto px-4">
+      <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        Contact Us
+      </h1>
+      <p className="text-xl mb-8">
+        Let&apos;s create your perfect musical experience together
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* Main Content Section */}
         <section className="py-20 flex m-auto">
