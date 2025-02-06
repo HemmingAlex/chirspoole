@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SocialBar from "../components/SocialBar ";
 // import Image from "next/image";
 // import useCountUp from '../hooks/useCountUp';
@@ -9,18 +9,16 @@ import InstagramSection from "../components/InstagramSection ";
 import ClientsSection from "../components/ClientsSection";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
-  // const privateShows = useCountUp(140);
-  // const corporateEvents = useCountUp(80);
-  // const specialProjects = useCountUp(20);
-  // const talents = useCountUp(250);
-  // const staff = useCountUp(60);
-  // const countries = useCountUp(35);
   const videoId = "CZVKTBY3tNk";
-  const handleIframeLoad = () => {
-    setIsLoading(false);
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVideoReady(true);
+    }, 1000); // Add a small delay to ensure iframe has started loading
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
@@ -31,7 +29,9 @@ export default function Home() {
           {/* <div className="absolute inset-0 overflow-hidden"> */}
           <iframe
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&playlist=${videoId}&start=6&playsinline=1&enablejsapi=1&modestbranding=1`}
-            className="absolute h-screen w-[400%] lg:w-[120%] lg:h-[120%] object-cover lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
+            className={`absolute h-screen w-[400%] lg:w-[120%] lg:h-[120%] transition-opacity duration-500 ease-out ${
+              isVideoReady ? 'opacity-100' : 'opacity-0'
+            }`}
             style={{
               top: "50%",
               left: "50%",
@@ -40,7 +40,6 @@ export default function Home() {
             allow="autoplay; encrypted-media"
             frameBorder="0"
             title="Background video"
-            onLoad={handleIframeLoad}
           />
           {/* </div> */}
           <div className="relative z-20 h-full flex items-center justify-center text-white">
@@ -61,12 +60,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {isLoading && (
-          <div
-            className="absolute inset-0 bg-black z-30 transition-opacity duration-1000"
-            style={{ opacity: isLoading ? 1 : 0 }}
-          />
-        )}
         {/* Rest of the content */}
         <div className="relative bg-white text-gray-700">
           {/* Our Story Section */}
