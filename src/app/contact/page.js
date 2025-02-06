@@ -66,6 +66,7 @@ export default function ContactPage() {
         "Your message has been sent. We'll get back to you soon!",
         "success"
       );
+      
     } catch (error) {
       console.error("Form submission error:", error);
       showNotification(
