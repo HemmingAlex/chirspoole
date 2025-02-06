@@ -112,60 +112,55 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section */}
+     
+      {/* Services Overview Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-16 text-orange-500">
-            The Shades Difference
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Mic className="h-8 w-8 text-orange-500" />,
-                title: "100% Live Performance",
-                description:
-                  "Every note is played live - no backing tracks, no miming, just pure musical talent.",
-              },
-              {
-                icon: <Music className="h-8 w-8 text-orange-500" />,
-                title: "Custom Experiences",
-                description:
-                  "Each performance is tailored to create the perfect atmosphere for your special event.",
-              },
-              {
-                icon: <Star className="h-8 w-8 text-orange-500" />,
-                title: "World-Class Musicians",
-                description:
-                  "We bring together the finest performers to deliver exceptional musical experiences.",
-              },
-              {
-                icon: <Users className="h-8 w-8 text-orange-500" />,
-                title: "Full-Service Events",
-                description:
-                  "From ceremonies to evening parties, we provide comprehensive entertainment solutions.",
-              },
-            ].map((value, index) => (
-              <div
-                key={index}
-                className="reveal overflow-hidden w-0 duration-1000"
-              >
-                <div className="bg-white p-6 rounded-lg shadow-lg h-full">
-                  <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                    {value.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-center text-orange-500">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 text-center">
-                    {value.description}
-                  </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold mb-6 text-orange-500">
+                Experience The Shades
+              </h2>
+              <p className="text-gray-600 text-lg">
+                The Shades are a dynamic function and party band performing an extensive repertoire spanning from the 50s through to today's contemporary hits. Our versatility allows us to create the perfect atmosphere for any event, adapting our performance to match your unique vision.
+              </p>
+              <p className="text-gray-600 text-lg">
+                With a track record of performances at prestigious venues worldwide, including the Emirates Palace in Abu Dhabi, Grand Hyatt in Dubai, and numerous distinguished locations across the UK, we bring international experience and professionalism to every event.
+              </p>
+              <p className="text-gray-600 text-lg">
+                Whether you're planning a festival, wedding, corporate function, or private celebration, our comprehensive entertainment package ensures an unforgettable experience for your guests.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-lg reveal overflow-hidden w-0 duration-1000">
+              <h3 className="text-2xl font-bold mb-6 text-orange-500">
+                Performance Options
+              </h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-xl font-semibold mb-2 text-orange-500">Set Durations</h4>
+                  <p className="text-gray-600">Choose from flexible performance options:</p>
+                  <p className="text-gray-600">• One 60-minute set</p>
+                  <p className="text-gray-600">• Two 45-minute sets</p>
+                  <p className="text-gray-600">• Two 60-minute sets</p>
+                </div>
+                
+                <div>
+                  <h4 className="text-xl font-semibold mb-2 text-orange-500">Technical Excellence</h4>
+                  <p className="text-gray-600">Every performance includes our complete professional setup featuring HK audio sound system, custom lighting rig, and special effects.</p>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-semibold mb-2 text-orange-500">Additional Services</h4>
+                  <p className="text-gray-600">• Piano or saxophone player for drinks reception or church service</p>
+                  <p className="text-gray-600">• Professional DJ service</p>
+                  <p className="text-gray-600 text-sm italic mt-2">Additional services available at extra cost</p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
-
       {/* Clients Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -226,7 +221,59 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
+ {/* Values Section */}
+ <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-16 text-orange-500">
+            The Shades Difference
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Mic className="h-8 w-8 text-orange-500" />,
+                title: "100% Live Performance",
+                description:
+                  "Every note is played live - no backing tracks, no miming, just pure musical talent.",
+              },
+              {
+                icon: <Music className="h-8 w-8 text-orange-500" />,
+                title: "Custom Experiences",
+                description:
+                  "Each performance is tailored to create the perfect atmosphere for your special event.",
+              },
+              {
+                icon: <Star className="h-8 w-8 text-orange-500" />,
+                title: "World-Class Musicians",
+                description:
+                  "We bring together the finest performers to deliver exceptional musical experiences.",
+              },
+              {
+                icon: <Users className="h-8 w-8 text-orange-500" />,
+                title: "Full-Service Events",
+                description:
+                  "From ceremonies to evening parties, we provide comprehensive entertainment solutions.",
+              },
+            ].map((value, index) => (
+              <div
+                key={index}
+                className="reveal overflow-hidden w-0 duration-1000"
+              >
+                <div className="bg-white p-6 rounded-lg shadow-lg h-full">
+                  <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-center text-orange-500">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* CTA Section */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
