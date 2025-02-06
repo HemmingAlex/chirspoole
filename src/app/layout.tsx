@@ -96,7 +96,7 @@ export default function RootLayout({
                   >
                     About Us
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/weddings"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
                   >
@@ -113,7 +113,7 @@ export default function RootLayout({
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
                   >
                     Entertainment
-                  </Link>
+                  </Link> */}
 
                   <Link
                     href="/contact"
@@ -169,7 +169,7 @@ export default function RootLayout({
                 >
                   About Us
                 </Link>
-                <Link
+                {/* <Link
                   href="/weddings"
                   className="text-white text-2xl font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -189,7 +189,7 @@ export default function RootLayout({
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Entertainment
-                </Link>
+                </Link> */}
                 <Link
                   href="/contact"
                   className="text-white text-2xl font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"

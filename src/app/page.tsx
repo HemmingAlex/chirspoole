@@ -54,7 +54,7 @@ export default function Home() {
               <SocialBar className="justify-center mb-8" />
               <Link
                 href="/contact"
-                className="inline-block bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition"
+                className="inline-block bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-orange-100 transition"
               >
                 Book Your Event
               </Link>
@@ -74,7 +74,9 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
-                  <h2 className="text-4xl font-bold mb-8 text-orange-500">The Story So Far</h2>
+                  <h2 className="text-4xl font-bold mb-8 text-orange-500">
+                    The Story So Far
+                  </h2>
                   <div className="prose prose-lg">
                     <p>
                       Shades Live Music was born in London, England 25 years
@@ -98,28 +100,28 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
                     <img
-                      src="/assets/Jack.jpg"
+                      src="https://plus.unsplash.com/premium_photo-1722100465701-e2dc133af13d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Live performance"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
                     <img
-                      src="/assets/Chris.jpg"
+                      src="https://images.unsplash.com/photo-1534534502714-2828e7c540d0?q=80&w=1994&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Band performance"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
                     <img
-                      src="/assets/Kamil.jpg"
+                      src="https://images.unsplash.com/photo-1601182207230-1b165dea2212?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Event atmosphere"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
                     <img
-                      src="/assets/Paul.jpg"
+                      src="https://images.unsplash.com/photo-1610159935613-61896c2d1237?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Musicians playing"
                       className="w-full h-full object-cover"
                     />

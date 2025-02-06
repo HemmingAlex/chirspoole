@@ -24,7 +24,7 @@ const InstagramSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white text-gray-700">
+    <section className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo and Instagram Text */}
         <div className="text-center mb-12">

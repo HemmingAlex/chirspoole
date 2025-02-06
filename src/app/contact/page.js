@@ -4,6 +4,7 @@ import FadeTransition from "../../components/FadeTransition";
 import { useEffect } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Maps from "../../components/StyledGoogleMap";
+import InstagramSection from "../../components/InstagramSection " 
 
 export default function ContactPage() {
   useEffect(() => {
@@ -94,8 +95,9 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+              <InstagramSection />
 
-              <div className="grid grid-cols-2 gap-4 reveal overflow-hidden w-0 duration-1000 aspect-square">
+              {/* <div className="grid grid-cols-2 gap-4 reveal overflow-hidden w-0 duration-1000 aspect-square">
                 <img
                   src="/assets/Jack.jpg"
                   className="aspect-square bg-gray-200 rounded-lg"
@@ -112,8 +114,8 @@ export default function ContactPage() {
                   src="/assets/Paul.jpg"
                   className="aspect-square bg-gray-200 rounded-lg"
                 />
-              </div>
-            </div>
+              </div>*/}
+            </div> 
           </div>
         </section>
         {/* Contact Form Section */}
