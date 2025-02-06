@@ -39,3 +39,14 @@ body {
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: For wider browser support, you can also add this for Safari */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -171,7 +171,7 @@ export default function Home() {
             </div>
           </section>
         </div>
-        <InstagramSection />
+        <InstagramSection href="/contact" />
       </FadeTransition>
     </div>
   );

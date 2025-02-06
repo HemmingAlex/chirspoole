@@ -130,13 +130,13 @@ export default function ContactPage() {
         </section>
 
         {/* Main Content Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 flex m-auto">
+          <div className="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+                <h2 className="text-3xl font-bold mb-16 flex justify-center md:justify-start">Get in Touch</h2>
                 <div className="space-y-8">
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-start justify-center md:justify-start ">
                     <div className="bg-gray-900 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-orange-400" />
                     </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-start justify-center md:justify-start space-x-4">
                     <div className="bg-gray-900 p-3 rounded-full">
                       <Phone className="h-6 w-6 text-orange-400" />
                     </div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-start justify-center md:justify-start space-x-4">
                     <div className="bg-gray-900 p-3 rounded-full">
                       <MapPin className="h-6 w-6 text-orange-400" />
                     </div>
@@ -173,13 +173,13 @@ export default function ContactPage() {
                 <div className="mt-8">
                   <a
                     href="#contact-form"
-                    className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-700 transition"
+                    className="flex md:inline-block justify-center md:justify-start bg-orange-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-700 transition"
                   >
                     Send Us a Message
                   </a>
                 </div>
               </div>
-              <InstagramSection />
+              <InstagramSection href="#contact-form" />
 
               {/* <div className="grid grid-cols-2 gap-4 reveal overflow-hidden w-0 duration-1000 aspect-square">
                 <img
