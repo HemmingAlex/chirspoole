@@ -69,7 +69,7 @@ export default function ContactPage() {
     } catch (error) {
       showNotification(
         "Failed to send message. Please try again later.",
-        "error"
+        error
       );
     } finally {
       setIsSubmitting(false);
