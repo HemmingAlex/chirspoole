@@ -67,9 +67,10 @@ export default function ContactPage() {
         "success"
       );
     } catch (error) {
+      console.error('Form submission error:', error);  
       showNotification(
         "Failed to send message. Please try again later.",
-        error
+        "error"
       );
     } finally {
       setIsSubmitting(false);
