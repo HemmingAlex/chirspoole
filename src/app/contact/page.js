@@ -2,7 +2,7 @@
 import FadeTransition from "../../components/FadeTransition";
 
 import { useEffect, useState } from "react";
-import { Mail, Phone, MapPin, X } from "lucide-react";
+import { Mail, Phone, MapPin, X, Smartphone } from "lucide-react";
 import Maps from "../../components/StyledGoogleMap";
 import InstagramSection from "../../components/InstagramSection ";
 
@@ -66,7 +66,6 @@ export default function ContactPage() {
         "Your message has been sent. We'll get back to you soon!",
         "success"
       );
-      
     } catch (error) {
       console.error("Form submission error:", error);
       showNotification(
@@ -109,8 +108,7 @@ export default function ContactPage() {
           />
         )}
         {/* Hero Section - matches your current site style */}
-        <section className="relative h-[100vh]">
-          {/* Background image - positioned to show more of the bottom */}
+        {/* <section className="relative h-[100vh]">
           <div
             className="absolute inset-0 bg-cover z-0"
             style={{
@@ -118,9 +116,7 @@ export default function ContactPage() {
               backgroundPosition: "center 65%", // This moves the image up to show more of the bottom
             }}
           />
-          {/* Black overlay with 40% opacity */}
           <div className="absolute inset-0 bg-black/40 z-10" />
-          {/* Content layer */}
           <div className="relative h-full flex items-center justify-center text-white z-20">
             <div className="text-center max-w-3xl mx-auto px-4">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -131,10 +127,10 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Main Content Section */}
-        <section className="py-20 flex m-auto">
+        {/* <section className="py-20 flex m-auto">
           <div className="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
@@ -149,11 +145,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Email Us</h3>
                       <p className="text-gray-600">info@shadesband.com</p>
-                      {/* <p className="text-gray-600">bookings@shadesmusicschool.com</p> */}
                     </div>
                   </div>
 
-                  <div className="flex items-start justify-center md:justify-start space-x-4">
+                  <div className="flex items-start justify-center md:justify-start ">
                     <div className="bg-gray-900 p-3 rounded-full">
                       <Phone className="h-6 w-6 text-orange-400" />
                     </div>
@@ -164,7 +159,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start justify-center md:justify-start space-x-4">
+                  <div className="flex items-start justify-center md:justify-start ">
                     <div className="bg-gray-900 p-3 rounded-full">
                       <MapPin className="h-6 w-6 text-orange-400" />
                     </div>
@@ -186,124 +181,169 @@ export default function ContactPage() {
                 </div>
               </div>
               <InstagramSection href="#contact-form" />
-
-              {/* <div className="grid grid-cols-2 gap-4 reveal overflow-hidden w-0 duration-1000 aspect-square">
-                <img
-                  src="/assets/Jack.jpg"
-                  className="aspect-square bg-gray-200 rounded-lg"
-                />
-                <img
-                  src="/assets/Kamil.jpg"
-                  className="aspect-square bg-gray-200 rounded-lg"
-                />
-                <img
-                  src="/assets/Chris.jpg"
-                  className="aspect-square bg-gray-200 rounded-lg"
-                />
-                <img
-                  src="/assets/Paul.jpg"
-                  className="aspect-square bg-gray-200 rounded-lg"
-                />
-              </div>*/}
             </div>
           </div>
-        </section>
+        </section> */}
         {/* Contact Form Section */}
-        <section id="contact-form" className="py-20 bg-gray-50">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-              <div className="p-8">
-                <h2 className="text-3xl font-bold text-center mb-12 text-orange-500">
-                  Send us a Message
-                </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section id="contact-form" className=" bg-gray-50">
+          <div className="flex flex-wrap">
+            <div
+              className="md:w-3/5 w-full h-96 md:H- "
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1456421385613-d0666bb96b78?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+                backgroundPosition: "center 40%", // This moves the image up to show more of the bottom
+              }}
+            />
+
+            <div className="md:w-2/5 w-full pt-8 md:pt-0">
+              <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+                <div className="p-8">
+                  <h2 className="text-3xl font-bold mb-12 text-black">
+                    Contact
+                  </h2>
+                  <div className="grid grid-cols-2 gap-x-12 gap-y-8 my-8">
+                    {/* Email Section */}
+                    <div className="flex items-start space-x-3">
+                      <Mail className="w-4 h-4 mt-1 text-orange-500" />
+                      <div>
+                        <p className="font-medium text-sm mb-1 text-black">
+                          EMAIL
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          info@shadesband.com
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Office Phone Section */}
+                    <div className="flex items-start space-x-3">
+                      <Phone className="w-4 h-4 mt-1 text-orange-500" />
+                      <div>
+                        <p className="font-medium text-sm mb-1 text-black">
+                          OFFICE
+                        </p>
+                        <p className="text-gray-500 text-sm">07899865778</p>
+                      </div>
+                    </div>
+                    {/* Mobile Section */}
+                    <div className="flex items-start space-x-3">
+                      <Smartphone className="w-4 h-4 mt-1 text-orange-500" />
+                      <div>
+                        <p className="font-medium text-sm mb-1 text-black">
+                          MOBILE
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          Mon-Fri: 9am - 6pm
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Address Section */}
+                    <div className="flex items-start space-x-3">
+                      <MapPin className="w-4 h-4 mt-1 text-orange-500" />
+                      <div>
+                        <p className="font-medium text-sm mb-1 text-black">
+                          ADRESSE
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          214-218 Alcester Rd
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          Birmingham B13 8EY
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Your Name
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Your name"
+                          className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Your Email
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="your.email@example.com"
+                          className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                        />
+                      </div>
+                    </div>
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Your Name
+                        Event Type
                       </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
+                      <select
+                        name="eventType"
+                        value={formData.eventType}
                         onChange={handleChange}
-                        placeholder="Your name"
                         className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                      />
+                        required
+                      >
+                        <option value="">Select an event type</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="corporate">Corporate Event</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="other">Other</option>
+                      </select>
                     </div>
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Your Email
+                        Message
                       </label>
-                      <input
-                        type="email"
-                        name="email"
+                      <textarea
+                        name="message"
+                        rows={6}
                         required
-                        value={formData.email}
+                        value={formData.message}
                         onChange={handleChange}
-                        placeholder="your.email@example.com"
                         className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                        placeholder="Tell us about your event..."
                       />
                     </div>
-                  </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Event Type
-                    </label>
-                    <select
-                      name="eventType"
-                      value={formData.eventType}
-                      onChange={handleChange}
-                      className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                      required
-                    >
-                      <option value="">Select an event type</option>
-                      <option value="wedding">Wedding</option>
-                      <option value="corporate">Corporate Event</option>
-                      <option value="entertainment">Entertainment</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      rows={6}
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                      placeholder="Tell us about your event..."
-                    />
-                  </div>
-
-                  <div className="text-center">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
-                  </div>
-                </form>
+                    <div className="text-center">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? "Sending..." : "Send Message"}
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <section className=" text-center m-4 lg:m-8">
+        {/* <section className=" text-center m-4 lg:m-8">
           <h2 className="text-3xl font-bold text-center mt-8 mb-12 text-orange-500">
             Find us here!
           </h2>
           <duv className="className='p-8 my-8 rounded flex mx-auto lg:w-2/3">
             <Maps />
           </duv>
-        </section>
+        </section> */}
       </FadeTransition>
     </div>
   );

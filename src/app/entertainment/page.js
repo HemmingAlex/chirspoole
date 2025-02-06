@@ -5,8 +5,8 @@ import Link from "next/link"
 export default function EntertainmentPage() {
     return (
       <div>
-        <FadeTransition>        {/* Hero Section */}
-      
+        <FadeTransition>   
+               {/* Hero Section */}
         <section className="relative h-[100vh] w-full overflow-hidden">
           <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none " />
           {/* <div className="absolute inset-0 overflow-hidden"> */}
