@@ -4,7 +4,7 @@ import FadeTransition from "../../components/FadeTransition";
 import { useEffect, useState } from "react";
 import { Mail, Phone, MapPin, X, Smartphone } from "lucide-react";
 import Maps from "../../components/StyledGoogleMap";
-import InstagramSection from "../../components/InstagramSection ";
+// import InstagramSection from "../../components/InstagramSection ";
 
 const Notification = ({ message, type, onClose }) => {
   // The notification will be either green for success or red for error
@@ -108,7 +108,7 @@ export default function ContactPage() {
           />
         )}
         {/* Hero Section - matches your current site style */}
-      <section className="relative h-[100vh] md:hidden">
+        <section className="relative h-[100vh] md:hidden">
           <div
             className="absolute inset-0 bg-cover z-0"
             style={{
@@ -127,7 +127,7 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
-        </section> 
+        </section>
 
         {/* Main Content Section */}
         {/* <section className="py-20 flex m-auto">
@@ -337,14 +337,14 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-        {/* <section className=" text-center m-4 lg:m-8">
+        <section className=" text-center m-4 lg:m-8">
           <h2 className="text-3xl font-bold text-center mt-8 mb-12 text-orange-500">
             Find us here!
           </h2>
           <duv className="className='p-8 my-8 rounded flex mx-auto lg:w-2/3">
             <Maps />
           </duv>
-        </section> */}
+        </section>
       </FadeTransition>
     </div>
   );
