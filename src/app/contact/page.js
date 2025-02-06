@@ -1,12 +1,88 @@
 "use client";
 import FadeTransition from "../../components/FadeTransition";
 
-import { useEffect } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { useEffect, useState  } from "react";
+import { Mail, Phone, MapPin, X } from "lucide-react";
 import Maps from "../../components/StyledGoogleMap";
-import InstagramSection from "../../components/InstagramSection " 
+import InstagramSection from "../../components/InstagramSection ";
 
+const Notification = ({ message, type, onClose }) => {
+  // The notification will be either green for success or red for error
+  const bgColor = type === "success" ? "bg-green-500" : "bg-red-500";
+
+  return (
+    <div
+      className={`fixed top-4 right-4 ${bgColor} text-white p-4 rounded-lg shadow-lg flex items-center space-x-2 animate-slide-in`}
+    >
+      <span>{message}</span>
+      <button onClick={onClose} className="p-1 hover:bg-white/20 rounded">
+        <X size={16} />
+      </button>
+    </div>
+  );
+};
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [notification, setNotification] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    eventType: "",
+    message: "",
+  });
+
+  const showNotification = (message, type) => {
+    setNotification({ message, type });
+    // Auto-hide notification after 5 seconds
+    setTimeout(() => setNotification(null), 5000);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        eventType: "",
+        message: "",
+      });
+
+      showNotification(
+        "Your message has been sent. We'll get back to you soon!",
+        "success"
+      );
+    } catch (error) {
+      showNotification(
+        "Failed to send message. Please try again later.",
+        "error"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -23,6 +99,13 @@ export default function ContactPage() {
   return (
     <div>
       <FadeTransition>
+        {notification && (
+          <Notification
+            message={notification.message}
+            type={notification.type}
+            onClose={() => setNotification(null)}
+          />
+        )}
         {/* Hero Section - matches your current site style */}
         <section className="relative h-[100vh]">
           <div className="absolute inset-0 bg-black/40" />
@@ -115,7 +198,7 @@ export default function ContactPage() {
                   className="aspect-square bg-gray-200 rounded-lg"
                 />
               </div>*/}
-            </div> 
+            </div>
           </div>
         </section>
         {/* Contact Form Section */}
@@ -126,7 +209,7 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold text-center mb-12 text-orange-500">
                   Send us a Message
                 </h2>
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -134,8 +217,11 @@ export default function ContactPage() {
                       </label>
                       <input
                         type="text"
+                        name="name"
                         required
-                        placeholder="..."
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Your name"
                         className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       />
                     </div>
@@ -145,8 +231,11 @@ export default function ContactPage() {
                       </label>
                       <input
                         type="email"
-                        placeholder="..."
+                        name="email"
                         required
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="your.email@example.com"
                         className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       />
                     </div>
@@ -157,6 +246,9 @@ export default function ContactPage() {
                       Event Type
                     </label>
                     <select
+                      name="eventType"
+                      value={formData.eventType}
+                      onChange={handleChange}
                       className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       required
                     >
@@ -173,8 +265,11 @@ export default function ContactPage() {
                       Message
                     </label>
                     <textarea
+                      name="message"
                       rows={6}
                       required
+                      value={formData.message}
+                      onChange={handleChange}
                       className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       placeholder="Tell us about your event..."
                     />
@@ -183,9 +278,10 @@ export default function ContactPage() {
                   <div className="text-center">
                     <button
                       type="submit"
-                      className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-700 transition"
+                      disabled={isSubmitting}
+                      className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-orange-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
                   </div>
                 </form>
@@ -194,8 +290,9 @@ export default function ContactPage() {
           </div>
         </section>
         <section className=" text-center m-4 lg:m-8">
-        <h2 className="text-3xl font-bold text-center mt-8 mb-12 text-orange-500">
-        Find us here!</h2>
+          <h2 className="text-3xl font-bold text-center mt-8 mb-12 text-orange-500">
+            Find us here!
+          </h2>
           <duv className="className='p-8 my-8 rounded flex mx-auto lg:w-2/3">
             <Maps />
           </duv>
