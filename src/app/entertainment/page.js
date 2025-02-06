@@ -1,26 +1,42 @@
 "use client"
 import FadeTransition from "../../components/FadeTransition"
+import Link from "next/link"
 // src/app/entertainment/page.js
 export default function EntertainmentPage() {
     return (
       <div>
         <FadeTransition>        {/* Hero Section */}
-        <section className="relative h-[100vh]">
-          <div className="absolute inset-0 bg-black/40" />
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
+      
+        <section className="relative h-[100vh] w-full overflow-hidden">
+          <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none " />
+          {/* <div className="absolute inset-0 overflow-hidden"> */}
+          <iframe src="https://skybox.blockadelabs.com/e/9648f4e88a40b32369b016252566c0ac"       className={`absolute h-screen w-[400%] lg:w-[120%] lg:h-[120%] transition-opacity duration-500 ease-out`}
             style={{
-              backgroundImage: `url('/api/placeholder/1920/1080')`
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
             }}
-          />
-          <div className="relative h-full flex items-center justify-center text-white">
+            allow="autoplay; encrypted-media"
+            frameBorder="0"
+            title="Background video"/>
+
+          
+          {/* </div> */}
+          <div className="relative z-20 h-full flex items-center justify-center text-white">
             <div className="text-center max-w-3xl mx-auto px-4">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Entertainment Options
+                {/* 25 Years of Musical Excellence */}
               </h1>
               <p className="text-xl mb-8">
-                Discover our diverse range of professional entertainment services
+                {/* Creating unforgettable live music experiences since 1999 */}
               </p>
+              {/* <SocialBar className="justify-center mb-8" /> */}
+              <Link
+                href="/contact"
+                className="inline-block bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-orange-100 transition"
+              >
+                Book Your Event
+              </Link>
             </div>
           </div>
         </section>
