@@ -108,7 +108,7 @@ export default function ContactPage() {
           />
         )}
         {/* Hero Section - matches your current site style */}
-        {/* <section className="relative h-[100vh]">
+      <section className="relative h-[100vh] md:hidden">
           <div
             className="absolute inset-0 bg-cover z-0"
             style={{
@@ -127,7 +127,7 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
-        </section> */}
+        </section> 
 
         {/* Main Content Section */}
         {/* <section className="py-20 flex m-auto">
@@ -185,10 +185,11 @@ export default function ContactPage() {
           </div>
         </section> */}
         {/* Contact Form Section */}
+
         <section id="contact-form" className=" bg-gray-50">
           <div className="flex flex-wrap">
             <div
-              className="md:w-3/5 w-full h-96 md:H- "
+              className="md:w-3/5 w-full "
               style={{
                 backgroundImage: `url('https://images.unsplash.com/photo-1456421385613-d0666bb96b78?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
                 backgroundPosition: "center 40%", // This moves the image up to show more of the bottom
