@@ -108,51 +108,6 @@ export default function Home() {
           </section>
 
           <ClientsSection />
-          <section className="py-20 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                  <div className="text-4xl font-bold text-orange-600 mb-2">
-                    1000+
-                  </div>
-                  <div className="text-xl">Shows Worldwide</div>
-                  <p className="mt-4 text-gray-600">
-                    Each performance crafted uniquely for our clients
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                  <div className="text-4xl font-bold text-orange-600 mb-2">
-                    100%
-                  </div>
-                  <div className="text-xl">Live Music</div>
-                  <p className="mt-4 text-gray-600">
-                    No backing tracks - pure musical talent
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                  <div className="text-4xl font-bold text-orange-600 mb-2">
-                    25
-                  </div>
-                  <div className="text-xl">Years of Excellence</div>
-                  <p className="mt-4 text-gray-600">
-                    A legacy of musical expertise
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                  <div className="text-4xl font-bold text-orange-600 mb-2">
-                    Full
-                  </div>
-                  <div className="text-xl">Event Coverage</div>
-                  <p className="mt-4 text-gray-600">
-                    From ceremonies to evening parties
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
         <InstagramSection href="/contact" />
       </FadeTransition>

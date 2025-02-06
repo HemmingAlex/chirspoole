@@ -67,19 +67,37 @@ const StaggeredImageGrid = () => {
 
   return (
     <div className="relative">
+      <StaggeredReveal delay={500}>
+        <div className="aspect-square  absolute bottom-1/4 left-1/4 w-1/2 rounded-lg ">
+          {/* <img
+            src="https://images.unsplash.com/photo-1618967784217-b45e5ee5b57f?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Live performance"
+            className="w-full h-full object-cover"
+          /> */}
+          {/* Text overlay for the centered image */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="bg-orange-600 shadow-lg w-96 h-36 flex items-center  z-10 px-4 py-2 rounded-lg">
+              <span className="text-center flex font-bold text-white">
+                Full Entertainment for Ceremonies/Drinks
+                Reception/Dinner/Evening Parties
+              </span>
+            </div>
+          </div>
+        </div>
+      </StaggeredReveal>
       <div className="grid grid-cols-2 gap-4">
         {images.map((image, index) => (
           <StaggeredReveal key={index} delay={image.delay}>
-            <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
+            <div className="aspect-square m-10  rounded-lg  relative">
               {/* Image layer */}
-              <img
+              {/* <img
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover"
-              />
+              /> */}
               {/* Text overlay layer */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-black w-2/3 z-10 bg-opacity-40 px-4 py-2 rounded-lg">
+                <div className="bg-orange-600 shadow-lg w-96 h-36 flex items-center z-10 px-4 py-2 rounded-lg ">
                   <span className="text-center flex font-bold text-white">
                     {image.text}
                   </span>
@@ -89,23 +107,6 @@ const StaggeredImageGrid = () => {
           </StaggeredReveal>
         ))}
       </div>
-
-      {/* Centered overlay image with a longer delay */}
-      <StaggeredReveal delay={800}>
-        <div className="aspect-square bg-gray-200 absolute bottom-1/4 left-1/4 w-1/2 rounded-lg overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1618967784217-b45e5ee5b57f?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Live performance"
-            className="w-full h-full object-cover"
-          />
-          {/* Text overlay for the centered image */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-black w-2/3 z-10 bg-opacity-40 px-4 py-2 rounded-lg">
-              <span className="text-center flex font-bold text-white">Full Entertainment for Ceremonies/Drinks Reception/Dinner/Evening Parties</span>
-            </div>
-          </div>
-        </div>
-      </StaggeredReveal>
     </div>
   );
 };

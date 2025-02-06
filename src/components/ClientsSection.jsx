@@ -2,10 +2,10 @@
 
 const CombinedClientsSection = () => {
   // State and refs for the sliding functionality
-//   const [isDragging, setIsDragging] = useState(false);
-//   const [startX, setStartX] = useState(0);
-//   const [scrollLeft, setScrollLeft] = useState(0);
-//   const scrollRef = useRef(null);
+  //   const [isDragging, setIsDragging] = useState(false);
+  //   const [startX, setStartX] = useState(0);
+  //   const [scrollLeft, setScrollLeft] = useState(0);
+  //   const scrollRef = useRef(null);
 
   // Our comprehensive client list
   const clients = [
@@ -24,37 +24,37 @@ const CombinedClientsSection = () => {
     "Hyatt Regency Dubai",
     "Belfry Hotel & Resort",
     "Moor Hall Hotel & Spa",
-    "Harley Davidson"
+    "Harley Davidson",
   ];
 
   // Double the list for smooth infinite scrolling
-//   const repeatedClients = [...clients, ...clients];
+  //   const repeatedClients = [...clients, ...clients];
 
   // Drag handlers for the sliding bar
-//   const handleMouseDown = (e) => {
-//     setIsDragging(true);
-//     setStartX(e.pageX - scrollRef.current.offsetLeft);
-//     setScrollLeft(scrollRef.current.scrollLeft);
-//   };
+  //   const handleMouseDown = (e) => {
+  //     setIsDragging(true);
+  //     setStartX(e.pageX - scrollRef.current.offsetLeft);
+  //     setScrollLeft(scrollRef.current.scrollLeft);
+  //   };
 
-//   const handleMouseMove = (e) => {
-//     if (!isDragging) return;
-//     e.preventDefault();
-//     const x = e.pageX - scrollRef.current.offsetLeft;
-//     const walk = (x - startX);
-//     scrollRef.current.scrollLeft = scrollLeft - walk;
-//   };
+  //   const handleMouseMove = (e) => {
+  //     if (!isDragging) return;
+  //     e.preventDefault();
+  //     const x = e.pageX - scrollRef.current.offsetLeft;
+  //     const walk = (x - startX);
+  //     scrollRef.current.scrollLeft = scrollLeft - walk;
+  //   };
 
-//   const handleMouseUp = () => {
-//     setIsDragging(false);
-//   };
+  //   const handleMouseUp = () => {
+  //     setIsDragging(false);
+  //   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="text-center mb-12">
-          <img 
+          <img
             src="/assets/shades.svg"
             alt="Shades Music School"
             className="h-12 mx-auto mb-8"
@@ -68,9 +68,7 @@ const CombinedClientsSection = () => {
 
         {/* Static Client List */}
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-xl leading-relaxed">
-            {clients.join(", ")}
-          </p>
+          <p className="text-xl leading-relaxed">{clients.join(", ")}</p>
           <p className="text-gray-600 italic mt-4">To Name a few...</p>
         </div>
 
@@ -112,7 +110,7 @@ const CombinedClientsSection = () => {
               ))}
             </div>
           </div>*/}
-        </div> 
+        </div>
       </div>
     </section>
   );
