@@ -1,7 +1,7 @@
 "use client";
 import FadeTransition from "../../components/FadeTransition";
 
-import { useEffect, useState  } from "react";
+import { useEffect, useState } from "react";
 import { Mail, Phone, MapPin, X } from "lucide-react";
 import Maps from "../../components/StyledGoogleMap";
 import InstagramSection from "../../components/InstagramSection ";
@@ -67,7 +67,7 @@ export default function ContactPage() {
         "success"
       );
     } catch (error) {
-      console.error('Form submission error:', error);  
+      console.error("Form submission error:", error);
       showNotification(
         "Failed to send message. Please try again later.",
         "error"
@@ -109,35 +109,37 @@ export default function ContactPage() {
         )}
         {/* Hero Section - matches your current site style */}
         <section className="relative h-[100vh]">
-  {/* Background image - positioned to show more of the bottom */}
-  <div
-    className="absolute inset-0 bg-cover z-0"
-    style={{
-      backgroundImage: `url('https://images.unsplash.com/photo-1566421966482-ad8076104d8e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-      backgroundPosition: 'center 65%'  // This moves the image up to show more of the bottom
-    }}
-  />
-  {/* Black overlay with 40% opacity */}
-  <div className="absolute inset-0 bg-black/40 z-10" />
-  {/* Content layer */}
-  <div className="relative h-full flex items-center justify-center text-white z-20">
-    <div className="text-center max-w-3xl mx-auto px-4">
-      <h1 className="text-5xl md:text-6xl font-bold mb-6">
-        Contact Us
-      </h1>
-      <p className="text-xl mb-8">
-        Let&apos;s create your perfect musical experience together
-      </p>
-    </div>
-  </div>
-</section>
+          {/* Background image - positioned to show more of the bottom */}
+          <div
+            className="absolute inset-0 bg-cover z-0"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1566421966482-ad8076104d8e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+              backgroundPosition: "center 65%", // This moves the image up to show more of the bottom
+            }}
+          />
+          {/* Black overlay with 40% opacity */}
+          <div className="absolute inset-0 bg-black/40 z-10" />
+          {/* Content layer */}
+          <div className="relative h-full flex items-center justify-center text-white z-20">
+            <div className="text-center max-w-3xl mx-auto px-4">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                Contact Us
+              </h1>
+              <p className="text-xl mb-8">
+                Let&apos;s create your perfect musical experience together
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Main Content Section */}
         <section className="py-20 flex m-auto">
           <div className="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h2 className="text-3xl font-bold mb-16 flex justify-center md:justify-start">Get in Touch</h2>
+                <h2 className="text-3xl font-bold mb-16 flex justify-center md:justify-start">
+                  Get in Touch
+                </h2>
                 <div className="space-y-8">
                   <div className="flex items-start justify-center md:justify-start ">
                     <div className="bg-gray-900 p-3 rounded-full">
