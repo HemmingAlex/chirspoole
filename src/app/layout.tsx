@@ -4,14 +4,14 @@ import SocialIcons from "../components/SocialIocons";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Socials from "../components/SocialBar ";
-import { Goudy_Bookletter_1911 } from 'next/font/google';
-import { Menu, X } from "lucide-react";
-import MobileNavigation from "../components/MobileNavigation"
+import { Goudy_Bookletter_1911 } from "next/font/google";
+import { Menu } from "lucide-react";
+import MobileNavigation from "../components/MobileNavigation";
 
 const goudyFont = Goudy_Bookletter_1911({
-  subsets: ['latin'],  // This is required
-  weight: '400',
-  display: 'swap',
+  subsets: ["latin"], // This is required
+  weight: "400",
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -61,7 +61,6 @@ export default function RootLayout({
               <div className="flex-shrink-0">
                 <Link href="/" className="text-xl font-bold ">
                   <h1>logo</h1>
-
                 </Link>
               </div>
 
@@ -122,8 +121,10 @@ export default function RootLayout({
           </div>
 
           {/* Mobile Navigation */}
-          <MobileNavigation isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
-
+          <MobileNavigation
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          />
         </nav>
         <main>{children}</main>
         <footer className="bg-gray-900 text-white">
@@ -169,7 +170,6 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
-
       </body>
     </html>
   );
