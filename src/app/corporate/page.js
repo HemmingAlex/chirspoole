@@ -83,7 +83,7 @@ export default function CorporatePage() {
 
           }}
         >
-          <div className="py-20 bg-purple-900 bg-opacity-60">
+          <div className="py-20 bg-purple-900 bg-opacity-80">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-3xl font-bold text-center mb-12">
                 Our Corporate Services
@@ -210,7 +210,7 @@ export default function CorporatePage() {
 
           }}
         >
-          <div className="py-20 bg-orange-900 bg-opacity-60">
+          <div className="py-20 bg-orange-900 bg-opacity-80">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-3xl font-bold text-center mb-12">
                 Our Corporate Services
