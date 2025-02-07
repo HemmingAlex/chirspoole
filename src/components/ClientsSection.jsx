@@ -7,6 +7,8 @@ const CombinedClientsSection = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
   const scrollRef = useRef(null);
 
+  const [touchX, setTouchX] = useState(0);
+
   // Our comprehensive client list
   const clients = [
     "Emirates Palace Abu Dhabi",
@@ -46,6 +48,27 @@ const CombinedClientsSection = () => {
   };
 
   const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setTouchX(e.touches[0].pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    if (e.cancelable) {
+      e.preventDefault();
+    }
+    e.preventDefault();
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    const walk = x - touchX;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleTouchEnd = () => {
     setIsDragging(false);
   };
 
@@ -90,6 +113,9 @@ const CombinedClientsSection = () => {
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             style={{
               WebkitOverflowScrolling: "touch",
               scrollbarWidth: "none",
