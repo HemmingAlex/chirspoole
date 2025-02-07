@@ -7,7 +7,7 @@ import FadeTransition from "../components/FadeTransition";
 import Link from "next/link";
 import InstagramSection from "../components/InstagramSection ";
 import ClientsSection from "../components/ClientsSection";
-import StaggeredReveal from "../components/StaggeredReveal"
+import StaggeredReveal from "../components/StaggeredReveal";
 
 export default function Home() {
   const [isVideoReady, setIsVideoReady] = useState(false);
@@ -20,9 +20,6 @@ export default function Home() {
 
     return () => clearTimeout(timer);
   }, []);
-
-
-  
 
   return (
     <div>
@@ -70,46 +67,54 @@ export default function Home() {
           <section className="py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6 w-4/5">
-                <h1 className="text-black">Logo</h1>
-                  <h2 className="text-4xl font-bold mb-8 text-orange-500">
-                    THE STORY SO FAR
-                  </h2>
-                  <div className="prose prose-lg">
-                    <p>
-                      Shades Live Music was invented in London, England 25 years
-                      ago by Christopher Poole, Lead Vocalist and Director.
-                    </p>
-                    <br/>
-                    <p>
-                      What started out as a five-piece band quickly emerged into
-                      multiple musicians and performers, creating bespoke
-                      tailor-made shows for the most prestige clients, such as
-                      the Emirates Palace and Grand Hyatt
-                    </p>
-                    <br/>
-                    <p>
-                      What makes this show truly amazing is being 100% live
-                      compared to other companies who have musicians pretending
-                      to play to backing tracks. What you hear from Shades is
-                      what is truly played from our musicians.
-                    <br/>
-                    </p>
+                <div className="flex justify-center">
+                  <div className="space-y-6 w-4/5">
+                    <img
+                      src="/assets/logos/White.jpg"
+                      alt="Band performance"
+                      className="md:w-1/4 w-1/2 relative md:bottom-28 md:-mb-32 -mb-16 bottom-12 md:black"
+                    />
+                    <h2 className="text-4xl font-bold mb-8 text-orange-500 ">
+                      THE STORY SO FAR
+                    </h2>
+                    <div className="prose prose-lg">
+                      <p>
+                        Shades Live Music was invented in London, England 25
+                        years ago by Christopher Poole, Lead Vocalist and
+                        Director.
+                      </p>
+                      <br />
+                      <p>
+                        What started out as a five-piece band quickly emerged
+                        into multiple musicians and performers, creating bespoke
+                        tailor-made shows for the most prestige clients, such as
+                        the Emirates Palace and Grand Hyatt
+                      </p>
+                      <br />
+                      <p>
+                        What makes this show truly amazing is being 100% live
+                        compared to other companies who have musicians
+                        pretending to play to backing tracks. What you hear from
+                        Shades is what is truly played from our musicians.
+                        <br />
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-           <div className=" ">
-                
-              <StaggeredReveal/>
+                <div className=" ">
+                  <StaggeredReveal />
+                </div>
               </div>
-              </div> 
-
             </div>
           </section>
 
           <ClientsSection />
         </div>
+        <div className="bg-black">
+
         <InstagramSection href="/contact" />
+        </div>
       </FadeTransition>
     </div>
   );

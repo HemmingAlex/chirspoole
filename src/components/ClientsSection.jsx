@@ -110,13 +110,13 @@ const CombinedClientsSection = () => {
     <section className="py-20 bg-purple-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <img
-            src="/assets/shades.svg"
+            src="/assets/logos/BlackL.jpg"
             alt="Shades Music School"
-            className="h-12 mx-auto mb-8"
+            className="h-96 mx-auto mb-8"
           />
-        </div>
+        </div> */}
         {/* Clients Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-orange-500">OUR CLIENTS:</h2>
