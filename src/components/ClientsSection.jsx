@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-
+import FadeInList from "./FadeInList";
 const CombinedClientsSection = () => {
   // State and refs for the sliding functionality
   const [isDragging, setIsDragging] = useState(false);
@@ -123,7 +123,9 @@ const CombinedClientsSection = () => {
         </div>
         {/* Static Client List */}
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-xl leading-relaxed">{clients.join(", ")}</p>
+          <p className="text-xl leading-relaxed">
+            <FadeInList clients={clients} />
+          </p>
           <p className="text-gray-600 italic mt-4">To Name a few...</p>
         </div>
         {/* Decorative Divider */}
