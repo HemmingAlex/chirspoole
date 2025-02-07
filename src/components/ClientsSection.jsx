@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const CombinedClientsSection = () => {
   // State and refs for the sliding functionality
@@ -6,8 +6,40 @@ const CombinedClientsSection = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const scrollRef = useRef(null);
-
+  //phone
   const [touchX, setTouchX] = useState(0);
+
+  //auto function
+  const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
+  const scrollSpeed = 1; // Pixels per frame - adjust this to control speed
+  const animationFrameRef = useRef();
+
+  const handleMouseEnter = () => setAutoScrollEnabled(false);
+  const handleMouseLeave = () => setAutoScrollEnabled(true);
+
+  useEffect(() => {
+    const scroll = () => {
+      if (scrollRef.current && autoScrollEnabled) {
+        scrollRef.current.scrollLeft += scrollSpeed;
+
+        // Reset scroll position when reaching the end to create infinite scroll effect
+        if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
+          scrollRef.current.scrollLeft = 0;
+        }
+
+        animationFrameRef.current = requestAnimationFrame(scroll);
+      }
+    };
+
+    animationFrameRef.current = requestAnimationFrame(scroll);
+
+    // Cleanup function
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [autoScrollEnabled]);
 
   // Our comprehensive client list
   const clients = [
@@ -34,6 +66,7 @@ const CombinedClientsSection = () => {
 
   // Drag handlers for the sliding bar
   const handleMouseDown = (e) => {
+    setAutoScrollEnabled(false);
     setIsDragging(true);
     setStartX(e.pageX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
@@ -49,9 +82,10 @@ const CombinedClientsSection = () => {
 
   const handleMouseUp = () => {
     setIsDragging(false);
+    setAutoScrollEnabled(true);
   };
-
   const handleTouchStart = (e) => {
+    setAutoScrollEnabled(false);
     setIsDragging(true);
     setTouchX(e.touches[0].pageX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
@@ -70,8 +104,8 @@ const CombinedClientsSection = () => {
 
   const handleTouchEnd = () => {
     setIsDragging(false);
+    setAutoScrollEnabled(true);
   };
-
   return (
     <section className="py-20 bg-purple-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +133,6 @@ const CombinedClientsSection = () => {
           <div className="w-16 h-0.5 bg-gray-300"></div>
         </div> */}
         {/* Interactive Sliding Bar */}
-        sliding bar thingy made yesterday
         <div className="relative">
           {/* Gradient overlays for smooth fade effect */}
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-purple-500 to-transparent z-10"></div>
@@ -108,14 +141,16 @@ const CombinedClientsSection = () => {
           {/* Draggable content */}
           <div
             ref={scrollRef}
-            className="overflow-x-scroll scrollbar-hide cursor-grab"
+            className="overflow-x-scroll scrollbar-hide cursor-grab border-y-2 border-purple-600 border-double pt-1 mt-2"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
+            // onMouseLeave={handleMouseUp}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             style={{
               WebkitOverflowScrolling: "touch",
               scrollbarWidth: "none",
