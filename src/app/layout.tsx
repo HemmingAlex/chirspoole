@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Socials from "../components/SocialBar ";
 import { Goudy_Bookletter_1911 } from 'next/font/google';
 import { Menu, X } from "lucide-react";
-
+import MobileNavigation from "../components/MobileNavigation"
 
 const goudyFont = Goudy_Bookletter_1911({
   subsets: ['latin'],  // This is required
@@ -122,68 +122,8 @@ export default function RootLayout({
           </div>
 
           {/* Mobile Navigation */}
-          <div
-            className={`fixed inset-0 bg-black/95 z-40 transition-transform duration-300 ease-in-out  ${
-              isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            <div className="flex justify-end px-4 pt-6">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-white p-2 rounded-md hover:bg-gray-700/50 transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
+          <MobileNavigation isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
 
-            <div className="pt-24 px-4 mx-auto">
-              <div className="flex flex-col items-center space-y-4 mx-auto">
-                <Link
-                  href="/"
-                  className="text-white text-2xl font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-white text-2xl font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  About Us
-                </Link>
-                {/* <Link
-                  href="/weddings"
-                  className="text-white text-2xl font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Weddings
-                </Link>
-                <Link
-                  href="/corporate"
-                  className="text-white text-2xl font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Corporate
-                </Link>
-                <Link
-                  href="/entertainment"
-                  className="text-white text-2xl font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Entertainment
-                </Link> */}
-                <Link
-                  href="/contact"
-                  className="text-white text-2xl font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
-          </div>
         </nav>
         <main>{children}</main>
         <footer className="bg-gray-900 text-white">
