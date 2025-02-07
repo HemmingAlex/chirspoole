@@ -60,7 +60,11 @@ export default function RootLayout({
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
                 <Link href="/" className="text-xl font-bold ">
-                  <h1>logo</h1>
+                <img
+                      src="/assets/logos/BlackS.jpg"
+                      alt="Band performance"
+                      className="h-12"
+                    />
                 </Link>
               </div>
 

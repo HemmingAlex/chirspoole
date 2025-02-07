@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import FadeInList from "./FadeInList";
+import Link from "next/link";
 const CombinedClientsSection = () => {
   // State and refs for the sliding functionality
   const [isDragging, setIsDragging] = useState(false);
@@ -43,24 +44,73 @@ const CombinedClientsSection = () => {
 
   // Our comprehensive client list
   const clients = [
-    "Emirates Palace Abu Dhabi",
-    "Grand Hyatt Dubai",
-    "Formula 1",
-    "Hilton Abu Dhabi",
-    "Kempinski Djibouti",
-    "Aston Villa FC",
-    "Cadbury World",
-    "BBC TV",
-    "ITV",
-    "Melbourne Cup",
-    "Leicester City FC",
-    "Manchester United FC",
-    "Hyatt Regency Dubai",
-    "Belfry Hotel & Resort",
-    "Moor Hall Hotel & Spa",
-    "Harley Davidson",
+    {
+      name: "Emirates Palace Abu Dhabi",
+      url: "https://www.mandarinoriental.com/abu-dhabi/emirates-palace",
+    },
+    {
+      name: "Grand Hyatt Dubai",
+      url: "https://www.hyatt.com/grand/dubai",
+    },
+    {
+      name: "Formula 1",
+      url: "https://www.formula1.com",
+    },
+    {
+      name: "Hilton Abu Dhabi",
+      url: "https://www.hilton.com/en/hotels/auhyihi-hilton-abu-dhabi-yas-island/",
+    },
+    {
+      name: "Kempinski Djibouti",
+      url: "https://www.kempinski.com/djibouti",
+    },
+    {
+      name: "Aston Villa FC",
+      url: "https://www.avfc.co.uk",
+    },
+    {
+      name: "Cadbury World",
+      url: "https://www.cadburyworld.co.uk",
+    },
+    {
+      name: "BBC TV",
+      url: "https://www.bbc.co.uk/tv",
+    },
+    {
+      name: "ITV",
+      url: "https://www.itv.com",
+    },
+    {
+      name: "Melbourne Cup",
+      url: "https://www.vrc.com.au/",
+    },
+    {
+      name: "Leicester City FC",
+      url: "https://www.lcfc.com",
+    },
+    {
+      name: "Manchester United FC",
+      url: "https://www.manutd.com",
+    },
+    {
+      name: "Hyatt Regency Dubai",
+      url: "https://www.hyatt.com/regency/dubai",
+    },
+    {
+      name: "Belfry Hotel & Resort",
+      url: "https://www.thebelfry.com",
+    },
+    {
+      name: "Moor Hall Hotel & Spa",
+      url: "https://www.moorhallhotel.co.uk",
+    },
+    {
+      name: "Harley Davidson",
+      url: "https://www.harley-davidson.com",
+    },
   ];
 
+  console.log(JSON.stringify(clients, null, 2));
   // Double the list for smooth infinite scrolling
   const repeatedClients = [...clients, ...clients];
 
@@ -124,7 +174,7 @@ const CombinedClientsSection = () => {
         {/* Static Client List */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-xl leading-relaxed">
-            <FadeInList clients={clients} />
+          <FadeInList clients={clients.map(client => client.name)} />
           </p>
           <p className="text-gray-600 italic mt-4">To Name a few...</p>
         </div>
@@ -165,12 +215,14 @@ const CombinedClientsSection = () => {
               }`}
             >
               {repeatedClients.map((client, index) => (
-                <span
+                <Link
+                target="_blank"
+                  href={client?.url}
                   key={index}
-                  className="flex-shrink-0 text-xl text-gray-600 hover:text-blue-600 transition-colors whitespace-nowrap px-4"
+                  className="flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap px-4"
                 >
-                  {client}
-                </span>
+                  {client?.name}
+                </Link>
               ))}
             </div>
           </div>
