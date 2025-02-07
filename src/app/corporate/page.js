@@ -75,6 +75,54 @@ export default function CorporatePage() {
         </section>
 
         {/* Services Grid */}
+        <section
+          className=" relative"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1495556281896-46ef1eed55f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+            backgroundPosition: "center 40%", // This moves the image up to show more of the bottom
+
+          }}
+        >
+          <div className="py-20 bg-purple-900 bg-opacity-60">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-center mb-12">
+                Our Corporate Services
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-black">
+                    Award Ceremonies
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Professional entertainment for corporate awards and
+                    recognition events.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-black">
+                    Product Launches
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Make your product launch memorable with carefully curated
+                    entertainment.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-black">
+                    Team Building
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Interactive musical experiences that bring your team
+                    together.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">
@@ -83,7 +131,9 @@ export default function CorporatePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <div className="h-48 bg-gray-200 rounded-lg mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Award Ceremonies</h3>
+                <h3 className="text-xl font-semibold mb-2 text-black">
+                  Award Ceremonies
+                </h3>
                 <p className="text-gray-600 mb-4">
                   Professional entertainment for corporate awards and
                   recognition events.
@@ -91,7 +141,9 @@ export default function CorporatePage() {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <div className="h-48 bg-gray-200 rounded-lg mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Product Launches</h3>
+                <h3 className="text-xl font-semibold mb-2 text-black">
+                  Product Launches
+                </h3>
                 <p className="text-gray-600 mb-4">
                   Make your product launch memorable with carefully curated
                   entertainment.
@@ -99,7 +151,9 @@ export default function CorporatePage() {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <div className="h-48 bg-gray-200 rounded-lg mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Team Building</h3>
+                <h3 className="text-xl font-semibold mb-2 text-black">
+                  Team Building
+                </h3>
                 <p className="text-gray-600 mb-4">
                   Interactive musical experiences that bring your team together.
                 </p>
@@ -108,6 +162,94 @@ export default function CorporatePage() {
           </div>
         </section>
 
+
+
+        <section className="py-20 bg-purple-500">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-12">
+              Our Corporate Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                <h3 className="text-xl font-semibold mb-2 text-black ">
+                  Award Ceremonies
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Professional entertainment for corporate awards and
+                  recognition events.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                <h3 className="text-xl font-semibold mb-2 text-black">
+                  Product Launches
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Make your product launch memorable with carefully curated
+                  entertainment.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                <h3 className="text-xl font-semibold mb-2 text-black">
+                  Team Building
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Interactive musical experiences that bring your team together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+  <section
+          className=" relative"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1495556281896-46ef1eed55f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+            backgroundPosition: "center 40%", // This moves the image up to show more of the bottom
+
+          }}
+        >
+          <div className="py-20 bg-orange-900 bg-opacity-60">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-center mb-12">
+                Our Corporate Services
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-black">
+                    Award Ceremonies
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Professional entertainment for corporate awards and
+                    recognition events.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-black">
+                    Product Launches
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Make your product launch memorable with carefully curated
+                    entertainment.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-black">
+                    Team Building
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Interactive musical experiences that bring your team
+                    together.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Contact CTA */}
         <section className="py-20 bg-orange-600 text-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

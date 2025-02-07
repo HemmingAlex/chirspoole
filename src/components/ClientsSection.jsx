@@ -50,7 +50,7 @@ const CombinedClientsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-100">
+    <section className="py-20 bg-purple-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="text-center mb-12">
@@ -79,8 +79,8 @@ const CombinedClientsSection = () => {
         sliding bar thingy made yesterday
         <div className="relative">
           {/* Gradient overlays for smooth fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-purple-500 to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-purple-500 to-transparent z-10"></div>
 
           {/* Draggable content */}
           <div
