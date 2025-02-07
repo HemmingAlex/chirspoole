@@ -109,7 +109,8 @@ export default function Home() {
             </div>
           </section>
 
-          <ClientsSection />
+          <ClientsSection forBrand={false}/>
+          <ClientsSection forBrand={true}/>
         </div>
         <div className="bg-black">
 

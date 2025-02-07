@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import FadeInList from "./FadeInList";
 import Link from "next/link";
-const CombinedClientsSection = () => {
+const CombinedClientsSection = ({ forBrand }) => {
   // State and refs for the sliding functionality
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -47,66 +47,82 @@ const CombinedClientsSection = () => {
     {
       name: "Emirates Palace Abu Dhabi",
       url: "https://www.mandarinoriental.com/abu-dhabi/emirates-palace",
+      logo: "/EmiratesPalace.svg",
     },
     {
       name: "Grand Hyatt Dubai",
       url: "https://www.hyatt.com/grand/dubai",
+      logo: "/Hyatt_Logo.PNG",
     },
     {
       name: "Formula 1",
       url: "https://www.formula1.com",
+      logo: "/F1.svg",
     },
     {
       name: "Hilton Abu Dhabi",
       url: "https://www.hilton.com/en/hotels/auhyihi-hilton-abu-dhabi-yas-island/",
+      logo: "/HiltonHotelsLogo.PNG",
     },
     {
       name: "Kempinski Djibouti",
       url: "https://www.kempinski.com/djibouti",
+      logo: "/Kempinski_Logo_2015.PNG",
     },
     {
       name: "Aston Villa FC",
       url: "https://www.avfc.co.uk",
+      logo: "/aston-villa.svg",
     },
     {
       name: "Cadbury World",
       url: "https://www.cadburyworld.co.uk",
+      logo: "/cadbury-logo.svg",
     },
     {
       name: "BBC TV",
       url: "https://www.bbc.co.uk/tv",
+      logo: "/BBC.svg",
     },
     {
       name: "ITV",
       url: "https://www.itv.com",
+      logo: "/ITV.svg",
     },
     {
       name: "Melbourne Cup",
       url: "https://www.vrc.com.au/",
+      logo: null,
     },
     {
       name: "Leicester City FC",
       url: "https://www.lcfc.com",
+      logo: "/LeicesterCity.svg",
     },
     {
       name: "Manchester United FC",
       url: "https://www.manutd.com",
+      logo: "/ManchesterUnited.svg",
     },
     {
       name: "Hyatt Regency Dubai",
       url: "https://www.hyatt.com/regency/dubai",
+      logo: "/hyatt-regency-1.svg",
     },
     {
       name: "Belfry Hotel & Resort",
       url: "https://www.thebelfry.com",
+      logo: "/belfry-hotel-logo.PNG",
     },
     {
       name: "Moor Hall Hotel & Spa",
       url: "https://www.moorhallhotel.co.uk",
+      logo: null,
     },
     {
       name: "Harley Davidson",
       url: "https://www.harley-davidson.com",
+      logo: "/harley-davidson-9.svg",
     },
   ];
 
@@ -174,7 +190,7 @@ const CombinedClientsSection = () => {
         {/* Static Client List */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-xl leading-relaxed">
-          <FadeInList clients={clients.map(client => client.name)} />
+            <FadeInList clients={clients.map((client) => client.name)} />
           </p>
           <p className="text-gray-600 italic mt-4">To Name a few...</p>
         </div>
@@ -216,12 +232,19 @@ const CombinedClientsSection = () => {
             >
               {repeatedClients.map((client, index) => (
                 <Link
-                target="_blank"
+                  target="_blank"
                   href={client?.url}
                   key={index}
                   className="flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap px-4"
                 >
-                  {client?.name}
+                  {forBrand ? (
+                    <>{client?.name}</>
+                  ) : (
+                    <img
+                      src={`/assets/Clients${client.logo}`}
+                      className={client?.logo ? "w-fit h-32" : "hidden"}
+                    />
+                  )}
                 </Link>
               ))}
             </div>
