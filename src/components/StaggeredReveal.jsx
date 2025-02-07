@@ -67,6 +67,7 @@ const StaggeredImageGrid = () => {
 
   return (
     <div className="relative">
+      <div className="hidden md:block">
       <StaggeredReveal delay={500}>
         <div className="aspect-square  absolute bottom-1/4 left-1/4 w-1/2 rounded-lg ">
           {/* <img
@@ -107,6 +108,43 @@ const StaggeredImageGrid = () => {
           </StaggeredReveal>
         ))}
       </div>
+      </div>
+      <div className="visible md:hidden">
+          {/* <img
+            src="https://images.unsplash.com/photo-1618967784217-b45e5ee5b57f?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Live performance"
+            className="w-full h-full object-cover"
+          /> */}
+          {/* Text overlay for the centered image */}
+          <div className="my-8 inset-0 flex items-center justify-center">
+            <div className="bg-orange-600 shadow-lg w-96 h-36 flex items-center  z-10 px-4 py-2 rounded-lg">
+              <span className="text-center flex font-bold text-white">
+                Full Entertainment for Ceremonies/Drinks
+                Reception/Dinner/Evening Parties
+              </span>
+            </div>
+          </div>
+      <div className="grid grid-cols-2 gap-4">
+        {images.map((image, index) => (
+          <div key={index} >
+              {/* Image layer */}
+              {/* <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+              /> */}
+              {/* Text overlay layer */}
+              <div className="inset-0 flex items-center justify-center">
+                <div className="bg-orange-600 shadow-lg w-96 h-36 flex items-center z-10 px-4 py-2 rounded-lg ">
+                  <span className="text-center flex font-bold text-white">
+                    {image.text}
+                  </span>
+                </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
     </div>
   );
 };

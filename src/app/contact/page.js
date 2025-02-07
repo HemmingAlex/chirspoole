@@ -186,18 +186,27 @@ export default function ContactPage() {
         </section> */}
         {/* Contact Form Section */}
 
-        <section id="contact-form" className=" bg-gray-50">
-          <div className="flex flex-wrap">
+        <section id="contact-form" className=" bg-black 	">
+          <div className="flex flex-wrap 2xl:h-screen">
             <div
-              className="md:w-3/5 w-full "
+              className="md:w-3/5 w-full"
               style={{
                 backgroundImage: `url('https://images.unsplash.com/photo-1456421385613-d0666bb96b78?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
                 backgroundPosition: "center 40%", // This moves the image up to show more of the bottom
               }}
-            />
-
-            <div className="md:w-2/5 w-full pt-8 md:pt-0">
-              <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+            >
+              <div className="bg-black w-full h-full bg-opacity-70" />
+            </div>
+            <div
+              className="md:w-2/5 w-full  md:pt-0 bg-white 2xl:h-screen "
+              style={
+                {
+                  // backgroundImage: `url('https://images.unsplash.com/photo-1738599778390-af77d7cf10e6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+                  // backgroundPosition: "center 40%", // This moves the image up to show more of the bottom
+                }
+              }
+            >
+              <div className="shadow-xl overflow-hidden bg-opacity-30	bg-purple-500 2xl:h-screen">
                 <div className="p-8">
                   <h2 className="text-3xl font-bold mb-12 text-black">
                     Contact
@@ -208,9 +217,14 @@ export default function ContactPage() {
                       <Mail className="w-4 h-4 mt-1 text-orange-500" />
                       <div>
                         <p className="font-medium text-sm mb-1 text-black">
-                          EMAIL
+                          Email
                         </p>
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-gray-900 text-sm md:hidden">
+                          info@
+                          <br />
+                          shadesband.com
+                        </p>
+                        <p className="text-gray-900 text-sm hidden md:block">
                           info@shadesband.com
                         </p>
                       </div>
@@ -223,7 +237,7 @@ export default function ContactPage() {
                         <p className="font-medium text-sm mb-1 text-black">
                           OFFICE
                         </p>
-                        <p className="text-gray-500 text-sm">07899865778</p>
+                        <p className="text-gray-900 text-sm">07899865778</p>
                       </div>
                     </div>
                     {/* Mobile Section */}
@@ -233,7 +247,7 @@ export default function ContactPage() {
                         <p className="font-medium text-sm mb-1 text-black">
                           MOBILE
                         </p>
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-gray-900 text-sm">
                           Mon-Fri: 9am - 6pm
                         </p>
                       </div>
@@ -246,10 +260,10 @@ export default function ContactPage() {
                         <p className="font-medium text-sm mb-1 text-black">
                           ADRESSE
                         </p>
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-gray-900 text-sm">
                           214-218 Alcester Rd
                         </p>
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-gray-900 text-sm">
                           Birmingham B13 8EY
                         </p>
                       </div>
@@ -259,7 +273,7 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-gray-900 mb-2">
                           Your Name
                         </label>
                         <input
@@ -269,11 +283,11 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Your name"
-                          className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-4 text-gray-900 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-gray-900 mb-2">
                           Your Email
                         </label>
                         <input
@@ -283,20 +297,20 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="your.email@example.com"
-                          className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-4 text-gray-900 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-900 mb-2">
                         Event Type
                       </label>
                       <select
                         name="eventType"
                         value={formData.eventType}
                         onChange={handleChange}
-                        className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full px-4 text-gray-900 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                         required
                       >
                         <option value="">Select an event type</option>
@@ -308,7 +322,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-900 mb-2">
                         Message
                       </label>
                       <textarea
@@ -317,7 +331,7 @@ export default function ContactPage() {
                         required
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full px-4 text-gray-700 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full px-4 text-gray-900 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                         placeholder="Tell us about your event..."
                       />
                     </div>
