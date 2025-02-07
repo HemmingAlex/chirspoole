@@ -20,6 +20,18 @@ export default function CorporatePage() {
     <div>
       <FadeTransition>
         <section className="relative h-[100vh]">
+          <iframe
+            src="https://skybox.blockadelabs.com/e/22b07c955734a2fbaad1ef39db3f66f2"
+            className={`absolute h-screen w-[400%] lg:w-[120%] lg:h-[120%] transition-opacity duration-500 ease-out`}
+            style={{
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+            allow="autoplay; encrypted-media"
+            frameBorder="0"
+            title="Background video"
+          />
           <div className="absolute inset-0 bg-black/40" />
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -80,7 +92,6 @@ export default function CorporatePage() {
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1495556281896-46ef1eed55f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
             backgroundPosition: "center 40%", // This moves the image up to show more of the bottom
-
           }}
         >
           <div className="py-20 bg-purple-900 bg-opacity-80">
@@ -162,8 +173,6 @@ export default function CorporatePage() {
           </div>
         </section>
 
-
-
         <section className="py-20 bg-purple-500">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">
@@ -202,12 +211,11 @@ export default function CorporatePage() {
             </div>
           </div>
         </section>
-  <section
+        <section
           className=" relative"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1495556281896-46ef1eed55f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
             backgroundPosition: "center 40%", // This moves the image up to show more of the bottom
-
           }}
         >
           <div className="py-20 bg-orange-900 bg-opacity-80">
