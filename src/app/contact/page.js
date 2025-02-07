@@ -12,7 +12,7 @@ const Notification = ({ message, type, onClose }) => {
 
   return (
     <div
-      className={`fixed top-4 right-4 ${bgColor} text-white p-4 rounded-lg shadow-lg flex items-center space-x-2 animate-slide-in`}
+      className={`fixed top-32 right-4 ${bgColor} text-white p-4 rounded-lg shadow-lg flex items-center space-x-2 animate-slide-in`}
     >
       <span>{message}</span>
       <button onClick={onClose} className="p-1 hover:bg-white/20 rounded">
