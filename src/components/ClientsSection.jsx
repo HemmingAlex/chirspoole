@@ -249,7 +249,7 @@ const CombinedClientsSection = ({ forBrand }) => {
                     className={`flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap ${client?.logo ? "w-fit h-32 px-4" : "hidden"}`}
                   >
                     <img
-                      src={`/assets/Clients${client.logo}`}
+                      src={`/assets/ClientBrands${client.logo}`}
                       className={client?.logo ? "w-fit h-32" : "hidden"}
                     />
                   </Link>
