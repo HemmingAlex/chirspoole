@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Socials from "../components/SocialBar ";
 import { Goudy_Bookletter_1911 } from "next/font/google";
-import { Menu } from "lucide-react";
+// import { Menu } from "lucide-react";
 import MobileNavigation from "../components/MobileNavigation";
 
 const goudyFont = Goudy_Bookletter_1911({
@@ -60,11 +60,11 @@ export default function RootLayout({
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
                 <Link href="/" className="text-xl font-bold ">
-                <img
-                      src="/assets/logos/BlackS.jpg"
+                  {/* <img
+                      src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_whitetrans.svg"
                       alt="Band performance"
-                      className="h-12"
-                    />
+                      className="h-32 py-2"
+                    /> */}
                 </Link>
               </div>
 
@@ -118,7 +118,10 @@ export default function RootLayout({
                   className="text-white p-2 rounded-md hover:bg-gray-700/50 transition-colors"
                   aria-label="Toggle menu"
                 >
-                  {isMobileMenuOpen ? <div /> : <Menu className="h-6 w-6" />}
+                  {
+                    isMobileMenuOpen ? <div /> : <>Menu</>
+                    // #<Menu className="h-6 w-6" />
+                  }
                 </button>
               </div>
             </div>

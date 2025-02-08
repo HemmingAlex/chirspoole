@@ -1,4 +1,3 @@
-// MobileNavigation.tsx
 import { X } from "lucide-react";
 import Link from "next/link";
 
@@ -19,30 +18,26 @@ const MobileNavigation = ({ isOpen, onClose }) => {
         </button>
       </div>
 
-      <div className="h-screen flex items-center justify-center">
+      <div className="h-screen flex items-center justify-center  text-3xl">
         <div className="flex flex-col items-center relative bottom-20 space-y-3">
           <Link
             href="/"
-            className="text-white font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
+            className="text-white font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors text-[8vw] sm:text-[6vw] md:text-[3vw] lg:text-[2vw] xl:text-[2vw]"
             onClick={onClose}
-            style={{ fontSize: "3vw" }}
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="text-white font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
+            className="text-white font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors text-[8vw] sm:text-[6vw] md:text-[3vw] lg:text-[2vw] xl:text-[2vw]"
             onClick={onClose}
-            style={{ fontSize: "3vw" }}
           >
             About Us
           </Link>
-
           <Link
             href="/contact"
-            className="text-white font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors"
+            className="text-white font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors text-[8vw] sm:text-[6vw] md:text-[3vw] lg:text-[2vw] xl:text-[2vw]"
             onClick={onClose}
-            style={{ fontSize: "3vw" }}
           >
             Contact
           </Link>
