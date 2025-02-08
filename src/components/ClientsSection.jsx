@@ -12,10 +12,10 @@ const CombinedClientsSection = ({ forBrand }) => {
 
   //auto function
   const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
-  const scrollSpeed = 1; // Pixels per frame - adjust this to control speed
+  const scrollSpeed = 4; // Pixels per frame - adjust this to control speed
   const animationFrameRef = useRef();
 
-  const handleMouseEnter = () => setAutoScrollEnabled(false);
+  const handleMouseEnter = () => setAutoScrollEnabled(true);
   const handleMouseLeave = () => setAutoScrollEnabled(true);
 
   useEffect(() => {
@@ -173,88 +173,134 @@ const CombinedClientsSection = ({ forBrand }) => {
     setAutoScrollEnabled(true);
   };
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        {/* <div className="text-center mb-12">
+    <section
+      className={`${forBrand ? "bg-white" : "bg-gray-300"}`}
+      // style={{
+      //   backgroundImage: `url('https://images.unsplash.com/photo-1530432999454-016a47c78af3?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+      // }}
+    >
+      <div
+        className={`w-full py-20  h-ful  ${
+          forBrand ? "bg-white" : "bg-gray-300"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Logo */}
+          {/* <div className="text-center mb-12">
           <img
             src="/assets/logos/BlackL.jpg"
             alt="Shades Music School"
             className="h-96 mx-auto mb-8"
           />
         </div> */}
-        {/* Clients Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-orange-500">OUR CLIENTS:</h2>
-        </div>
-        {/* Static Client List */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-xl leading-relaxed">
-            <FadeInList clients={clients.map((client) => client.name)} />
-          </p>
-          <p className="text-gray-600 italic mt-4">To Name a few...</p>
-        </div>
-        {/* Decorative Divider */}
-        {/* <div className="flex justify-center items-center space-x-4 mb-16">
+          {/* Clients Title */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-orange-500">OUR CLIENTS:</h2>
+          </div>
+          {/* Static Client List */}
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <p className="text-xl leading-relaxed">
+              <FadeInList clients={clients.map((client) => client.name)} />
+            </p>
+            <p className="text-gray-600 italic mt-4">To Name a few...</p>
+          </div>
+          {/* Decorative Divider */}
+          {/* <div className="flex justify-center items-center space-x-4 mb-16">
           <div className="w-16 h-0.5 bg-gray-300"></div>
           <div className="w-16 h-0.5 bg-blue-600"></div>
           <div className="w-16 h-0.5 bg-gray-300"></div>
         </div> */}
-        {/* Interactive Sliding Bar */}
-        <div className="relative">
-          {/* Gradient overlays for smooth fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+          {/* Interactive Sliding Bar */}
+          <div className="relative">
+            {/* Left gradient overlay */}
+            {/* <div
+              className={`absolute left-0 top-0 bottom-0 w-32 z-10`}
+              style={{
+                background: `linear-gradient(to right, ${
+                  !forBrand
+                    ? "rgba(107, 114, 128, 0.9)" // gray-300 with 90% opacity
+                    : "rgba(255, 255, 255, 0.9)" // white with 90% opacity
+                }, transparent)`,
+              }}
+            ></div> */}
 
-          {/* Draggable content */}
-          <div
-            ref={scrollRef}
-            className="overflow-x-scroll scrollbar-hide cursor-grab border-y-2 border-gray-200 border-double pt-1 mt-2"
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            // onMouseLeave={handleMouseUp}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              WebkitOverflowScrolling: "touch",
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
-          >
+<div
+  className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r ${
+    !forBrand ? "from-gray-300" : "from-white"
+  } to-transparent z-10`}
+></div>
+
+            {/* Right gradient overlay */}
+            {/* <div
+              className={`absolute right-0 top-0 bottom-0 w-32 z-10`}
+              style={{
+                background: `linear-gradient(to left, ${
+                  !forBrand
+                    ? "rgba(107, 114, 128, 0.9)" // gray-300 with 90% opacity
+                    : "rgba(255, 255, 255, 0.9)" // white with 90% opacity
+                }, transparent)`,
+              }}
+            ></div> */}
+
+<div
+  className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l ${
+    !forBrand ? "from-gray-300" : "from-white"
+  } to-transparent z-10`}
+></div>
+
+            {/* Draggable content */}
             <div
-              className={`inline-flex space-x-8 py-4 ${
-                isDragging ? "cursor-grabbing" : ""
-              }`}
+              ref={scrollRef}
+              className={`overflow-x-scroll scrollbar-hide cursor-grab border-y-2 ${
+                forBrand ? "border-gray-200 " : "border-gray-700 "
+              } border-double pt-1 mt-2`}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              // onMouseLeave={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                WebkitOverflowScrolling: "touch",
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
+              }}
             >
-              {repeatedClients.map((client, index) =>
-                forBrand ? (
-                  <Link
-                    target="_blank"
-                    href={client?.url}
-                    key={index}
-                    className="flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap px-4"
-                  >
-                    {client?.name}
-                  </Link>
-                ) : (
-                  <Link
-                    target="_blank"
-                    href={client?.url}
-                    key={index}
-
-                    className={`flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap ${client?.logo ? "w-fit h-32 px-4" : "hidden"}`}
-                  >
-                    <img
-                      src={`/assets/ClientBrands${client.logo}`}
-                      className={client?.logo ? "w-fit h-32" : "hidden"}
-                    />
-                  </Link>
-                )
-              )}
+              <div
+                className={`inline-flex space-x-8 py-4 ${
+                  isDragging ? "cursor-grabbing" : ""
+                }`}
+              >
+                {repeatedClients.map((client, index) =>
+                  forBrand ? (
+                    <Link
+                      target="_blank"
+                      href={client?.url}
+                      key={index}
+                      className="flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap px-4"
+                    >
+                      {client?.name}
+                    </Link>
+                  ) : (
+                    <Link
+                      target="_blank"
+                      href={client?.url}
+                      key={index}
+                      className={`flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap ${
+                        client?.logo ? "w-fit h-32 px-4" : "hidden w-0" 
+                      }text-black`}
+                    >
+                      <img
+                        src={`/assets/ClientBrands${client.logo}`}
+                        className={client?.logo ? "w-fit h-32 text-black fill-black " : "hidden"}
+                      />
+                    </Link>
+                  )
+                )}
+              </div>
             </div>
           </div>
         </div>
