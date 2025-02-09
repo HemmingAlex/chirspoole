@@ -195,13 +195,13 @@ const CombinedClientsSection = ({ forBrand }) => {
         </div> */}
           {/* Clients Title */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-orange-500">OUR CLIENTS:</h2>
+            <h2 className="text-3xl font-bold text-black">OUR CLIENTS:</h2>
           </div>
           {/* Static Client List */}
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <p className="text-xl leading-relaxed">
+            <div className="text-xl leading-relaxed">
               <FadeInList clients={clients.map((client) => client.name)} />
-            </p>
+            </div>
             <p className="text-gray-600 italic mt-4">To Name a few...</p>
           </div>
           {/* Decorative Divider */}

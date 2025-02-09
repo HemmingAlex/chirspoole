@@ -20,6 +20,12 @@ const MobileNavigation = ({ isOpen, onClose }) => {
 
       <div className="h-screen flex items-center justify-center  text-3xl">
         <div className="flex flex-col items-center relative bottom-20 space-y-3">
+        <div
+            className="text-purple-600 font-semibold px-3 py-2 rounded-md  transition-colors text-[8vw] sm:text-[6vw] md:text-[3vw] lg:text-[2vw] xl:text-[2vw]"
+          >
+            Menu
+          </div>
+          
           <Link
             href="/"
             className="text-white font-semibold px-3 py-2 rounded-md hover:bg-gray-700/50 transition-colors text-[8vw] sm:text-[6vw] md:text-[3vw] lg:text-[2vw] xl:text-[2vw]"

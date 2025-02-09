@@ -214,7 +214,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-2 gap-x-12 gap-y-8 my-8">
                     {/* Email Section */}
                     <div className="flex items-start space-x-3">
-                      <Mail className="w-4 h-4 mt-1 text-orange-500" />
+                      <Mail className="w-4 h-4 mt-1 text-black" />
                       <div>
                         <p className="font-medium text-sm mb-1 text-black">
                           Email
@@ -232,7 +232,7 @@ export default function ContactPage() {
 
                     {/* Office Phone Section */}
                     <div className="flex items-start space-x-3">
-                      <Phone className="w-4 h-4 mt-1 text-orange-500" />
+                      <Phone className="w-4 h-4 mt-1 text-black" />
                       <div>
                         <p className="font-medium text-sm mb-1 text-black">
                           OFFICE
@@ -242,7 +242,7 @@ export default function ContactPage() {
                     </div>
                     {/* Mobile Section */}
                     <div className="flex items-start space-x-3">
-                      <Smartphone className="w-4 h-4 mt-1 text-orange-500" />
+                      <Smartphone className="w-4 h-4 mt-1 text-black" />
                       <div>
                         <p className="font-medium text-sm mb-1 text-black">
                           MOBILE
@@ -255,7 +255,7 @@ export default function ContactPage() {
 
                     {/* Address Section */}
                     <div className="flex items-start space-x-3">
-                      <MapPin className="w-4 h-4 mt-1 text-orange-500" />
+                      <MapPin className="w-4 h-4 mt-1 text-black" />
                       <div>
                         <p className="font-medium text-sm mb-1 text-black">
                           ADRESSE
@@ -352,12 +352,12 @@ export default function ContactPage() {
           </div>
         </section>
         <section className=" text-center m-4 lg:m-8">
-          <h2 className="text-3xl font-bold text-center mt-8 mb-12 text-orange-500">
+          <h2 className="text-3xl font-bold text-center mt-8 mb-12 text-black">
             Find us here!
           </h2>
-          <duv className="className='p-8 my-8 rounded flex mx-auto lg:w-2/3">
+          <div className="className='p-8 my-8 rounded flex mx-auto lg:w-2/3">
             <Maps />
-          </duv>
+          </div>
         </section>
       </FadeTransition>
     </div>

@@ -39,7 +39,7 @@ const AnimatedClientsList = ({ clients }) => {
 
   return (
     <div ref={sectionRef} className="max-w-4xl mx-auto text-center">
-      <p className="text-xl leading-relaxed">
+      <div className="text-xl leading-relaxed">
         {clients.map((client, index) => (
           <span
             key={index}
@@ -51,7 +51,7 @@ const AnimatedClientsList = ({ clients }) => {
             {client}
           </span>
         ))}
-      </p>
+      </div>
       <p
         className={`text-gray-600 italic transition-opacity duration-500 ${
           visibleClients.length === clients.length ? "opacity-100" : "opacity-0"

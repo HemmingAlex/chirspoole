@@ -76,9 +76,9 @@ const StaggeredImageGrid = () => {
             className="w-full h-full object-cover"
           /> */}
           {/* Text overlay for the centered image */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-orange-600 shadow-lg w-96 h-36 flex items-center  z-10 px-4 py-2 rounded-lg">
-              <span className="text-center flex font-bold text-white">
+          <div className="absolute inset-0 flex items-center justify-center m-3">
+            <div className="bg-white shadow-lg border-2 border-black border-solid flex items-center  z-10 px-4 py-2 rounded-lg">
+              <span className="text-center flex font-bold text-balck justify-center items-center w-44 h-28">
                 Full Entertainment for Ceremonies/Drinks
                 Reception/Dinner/Evening Parties
               </span>
@@ -98,8 +98,8 @@ const StaggeredImageGrid = () => {
               /> */}
               {/* Text overlay layer */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-orange-600 shadow-lg w-96 h-36 flex items-center z-10 px-4 py-2 rounded-lg ">
-                  <span className="text-center flex font-bold text-white">
+              <div className="bg-white shadow-lg border-2 border-black border-solid flex items-center  z-10 px-4 py-2 rounded-lg">
+              <span className="text-center flex font-bold text-balck justify-center items-center w-44 h-28">
                     {image.text}
                   </span>
                 </div>
@@ -117,8 +117,8 @@ const StaggeredImageGrid = () => {
           /> */}
           {/* Text overlay for the centered image */}
           <div className="my-8 inset-0 flex items-center justify-center">
-            <div className="bg-orange-600 shadow-lg w-96 h-36 flex items-center  z-10 px-4 py-2 rounded-lg">
-              <span className="text-center flex font-bold text-white">
+            <div className="bg-white shadow-lg border-2 border-black border-solid w-96 h-28 flex items-center  z-10 px-4 py-2 rounded-lg">
+              <span className="text-center flex font-bold text-black">
                 Full Entertainment for Ceremonies/Drinks
                 Reception/Dinner/Evening Parties
               </span>
@@ -135,8 +135,8 @@ const StaggeredImageGrid = () => {
               /> */}
               {/* Text overlay layer */}
               <div className="inset-0 flex items-center justify-center">
-                <div className="bg-orange-600 shadow-lg w-96 h-36 flex items-center z-10 px-4 py-2 rounded-lg ">
-                  <span className="text-center flex font-bold text-white">
+                <div className="bg-white shadow-lg border-2 border-black border-solid w-96 h-28 flex items-center z-10 px-4 py-2 rounded-lg ">
+                  <span className="text-center flex font-bold text-black">
                     {image.text}
                   </span>
                 </div>

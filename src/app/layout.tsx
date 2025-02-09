@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Socials from "../components/SocialBar ";
 import { Goudy_Bookletter_1911 } from "next/font/google";
-// import { Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import MobileNavigation from "../components/MobileNavigation";
 
 const goudyFont = Goudy_Bookletter_1911({
@@ -119,7 +119,7 @@ export default function RootLayout({
                   aria-label="Toggle menu"
                 >
                   {
-                    isMobileMenuOpen ? <div /> : <>Menu</>
+                    isMobileMenuOpen ? <div /> : <><Menu/></>
                     // #<Menu className="h-6 w-6" />
                   }
                 </button>
