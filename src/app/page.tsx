@@ -18,7 +18,7 @@ export default function Home() {
     const timer = setTimeout(() => {
       setIsVideoReady(true);
     }, 1000); // Add a small delay to ensure iframe has started loading
-
+console.log(isVideoReady, "remmebr this")
     return () => clearTimeout(timer);
   }, []);
 
