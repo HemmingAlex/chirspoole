@@ -4,11 +4,9 @@ import React, { useState, useEffect } from "react";
 // import Image from "next/image";
 // import useCountUp from '../hooks/useCountUp';
 import FadeTransition from "../components/FadeTransition";
-import Link from "next/link";
 import InstagramSection from "../components/InstagramSection ";
 import ClientsSection from "../components/ClientsSection";
 import StaggeredReveal from "../components/StaggeredReveal";
-import { Volume2, Volume } from "lucide-react";
 import YouTubePlayer from "../components/MutableYotubePlayer";
 
 export default function Home() {
