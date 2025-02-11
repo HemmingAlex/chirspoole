@@ -175,9 +175,7 @@ const CombinedClientsSection = ({ forBrand }) => {
   return (
     <section
       className={`${forBrand ? "bg-white" : "bg-gray-300"}`}
-      // style={{
-      //   backgroundImage: `url('https://images.unsplash.com/photo-1530432999454-016a47c78af3?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-      // }}
+
     >
       <div
         className={`w-full py-20  h-ful  ${
@@ -297,10 +295,14 @@ const CombinedClientsSection = ({ forBrand }) => {
                         src={`/assets/ClientBrands${client.logo}`}
                         className={
                           client?.logo
-                            ? "w-fit h-32 text-black fill-black "
-                            : "hidden"
+                          ? "w-fit h-32 text-black fill-black "
+                          : "hidden"
                         }
                       />
+                      <div className="flex justify-center m-3">
+
+                        {client.name}
+                      </div>
                     </Link>
                   ) : (
                     <></>

@@ -4,16 +4,16 @@ import SocialIcons from "../components/SocialIocons";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Socials from "../components/SocialBar ";
-import { Goudy_Bookletter_1911 } from "next/font/google";
+import { Lato } from "next/font/google";
 // import { Menu } from "lucide-react";
 import MobileNavigation from "../components/MobileNavigation";
 
-const goudyFont = Goudy_Bookletter_1911({
-  subsets: ["latin"], // This is required
-  weight: "400",
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400"], // Note: weight should be in an array
   display: "swap",
+  variable: "--font-lato", // Add this to use as a CSS variable
 });
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,7 +48,7 @@ export default function RootLayout({
   }, [isMobileMenuOpen]);
 
   return (
-    <html lang="en" className={goudyFont.className}>
+    <html lang="en"className={`${lato.className} ${lato.variable}`}>
       <body className="min-h-screen">
         <SocialIcons />
         <nav
@@ -68,7 +68,7 @@ export default function RootLayout({
                     
                 </Link>
               </div>
-
+              
               {/* Desktop Navigation */}
               <div className="hidden 3xl:block">
                 <div className="ml-10 flex items-center space-x-4">
