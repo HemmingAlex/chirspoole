@@ -30,7 +30,7 @@ const InstagramSection = ({ href }) => {
       <Luey />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo and Call to Action */}
-        <div className="text-center space-y-6 max-w-2xl mx-auto">
+        <div className="text-center space-y-6 max-w-2xl mx-auto text-white">
           {/* <h3 className="text-2xl font-bold">LET US ENTERTAIN YOU</h3> */}
           <div className="w-96"></div>
           <div className="space-y-2">
@@ -54,7 +54,7 @@ const InstagramSection = ({ href }) => {
       </div>
 
       {/* Logo and Instagram Text */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 text-white">
         <h2 className="text-2xl font-bold mb-12">FOLLOW US ON INSTAGRAM</h2>
       </div>
 

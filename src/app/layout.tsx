@@ -119,7 +119,7 @@ export default function RootLayout({
                   aria-label="Toggle menu"
                 >
                   {
-                    isMobileMenuOpen ? <div /> : <><Menu/></>
+                    isMobileMenuOpen ? <div /> : <>Menu</>
                     // #<Menu className="h-6 w-6" />
                   }
                 </button>

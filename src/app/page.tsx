@@ -39,19 +39,19 @@ console.log(isVideoReady, "remmebr this")
           {/* Our Story Section */}
           <section className="pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="flex justify-center">
                   <div className="space-y-6 w-4/5">
                     <img
                       src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_Blktrans.svg"
                       alt="Band performance"
-                      className=" relative  md:black"
+                      className=" relative lg:w-1/3  md:black flex mt-4"
                     />
-                    <h2 className="text-4xl font-bold mb-8 text -black ">
-                      THE STORY SO FAR
-                    </h2>
-                    <div className="prose prose-lg">
-                      <p>
+       
+                    <div className="prose prose-lg items-center flex flex-wrap">
+                      <div className="h-fit ">
+
+                      <p className="">
                         Shades Live Music was invented in London, England 25
                         years ago by Christopher Poole, Lead Vocalist and
                         Director.
@@ -71,11 +71,16 @@ console.log(isVideoReady, "remmebr this")
                         Shades is what is truly played from our musicians.
                         <br />
                       </p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className=" ">
+                  <div>
+
+                <h2 className="text-4xl font-bold mt-16 text -black ">
+                      THE STORY SO FAR
+                    </h2>
                   <StaggeredReveal />
                 </div>
               </div>
