@@ -12,7 +12,7 @@ const CombinedClientsSection = ({ forBrand }) => {
 
   //auto function
   const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
-  const scrollSpeed = 4; // Pixels per frame - adjust this to control speed
+  const scrollSpeed = 1.7; // Pixels per frame - adjust this to control speed
   const animationFrameRef = useRef();
 
   const handleMouseEnter = () => setAutoScrollEnabled(true);
@@ -51,7 +51,7 @@ const CombinedClientsSection = ({ forBrand }) => {
     },
     {
       name: "Grand Hyatt Dubai",
-      url: "https://www.hyatt.com/grand/dubai",
+      url: "https://www.hyatt.com/grand-hyatt/en-US/dxbgh-grand-hyatt-dubai",
       logo: "/Hyatt_Logo.PNG",
     },
     {
@@ -224,11 +224,11 @@ const CombinedClientsSection = ({ forBrand }) => {
               }}
             ></div> */}
 
-<div
-  className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r ${
-    !forBrand ? "from-gray-300" : "from-white"
-  } to-transparent z-10`}
-></div>
+            <div
+              className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r ${
+                !forBrand ? "from-gray-300" : "from-white"
+              } to-transparent z-10`}
+            ></div>
 
             {/* Right gradient overlay */}
             {/* <div
@@ -242,11 +242,11 @@ const CombinedClientsSection = ({ forBrand }) => {
               }}
             ></div> */}
 
-<div
-  className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l ${
-    !forBrand ? "from-gray-300" : "from-white"
-  } to-transparent z-10`}
-></div>
+            <div
+              className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l ${
+                !forBrand ? "from-gray-300" : "from-white"
+              } to-transparent z-10`}
+            ></div>
 
             {/* Draggable content */}
             <div
@@ -284,20 +284,26 @@ const CombinedClientsSection = ({ forBrand }) => {
                     >
                       {client?.name}
                     </Link>
-                  ) : (
+                  ) : client.logo ? (
                     <Link
                       target="_blank"
                       href={client?.url}
                       key={index}
                       className={`flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap ${
-                        client?.logo ? "w-fit h-32 px-4" : "hidden w-0" 
+                        client?.logo ? "w-fit h-32 px-4" : "hidden w-0"
                       }text-black`}
                     >
                       <img
                         src={`/assets/ClientBrands${client.logo}`}
-                        className={client?.logo ? "w-fit h-32 text-black fill-black " : "hidden"}
+                        className={
+                          client?.logo
+                            ? "w-fit h-32 text-black fill-black "
+                            : "hidden"
+                        }
                       />
                     </Link>
+                  ) : (
+                    <></>
                   )
                 )}
               </div>
