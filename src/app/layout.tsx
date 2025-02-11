@@ -60,11 +60,12 @@ export default function RootLayout({
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
                 <Link href="/" className="text-xl font-bold ">
-                  {/* <img
+                  <img
                       src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_whitetrans.svg"
                       alt="Band performance"
-                      className="h-32 py-2"
-                    /> */}
+                      className="h-24 py-2"
+                    />
+                    
                 </Link>
               </div>
 
@@ -113,6 +114,7 @@ export default function RootLayout({
 
               {/* Mobile menu button */}
               <div className="">
+                
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   className="text-white p-2 rounded-md hover:bg-gray-700/50 transition-colors"
