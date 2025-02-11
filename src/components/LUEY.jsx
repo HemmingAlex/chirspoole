@@ -1,8 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const LUEY = () => {
+  const svgRef = useRef(null);
+
   useEffect(() => {
-    // Animation function from your original script
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // When the SVG comes into view
+          if (entry.isIntersecting) {
+            // Start the animation
+            setTextAnimation(0.1, 3.7, 2, "ease-in-out", "#ffffff", false);
+            // Once animation starts, we don't need to observe anymore
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (svgRef.current) {
+      observer.observe(svgRef.current);
+    }
+
     function setTextAnimation(
       delay,
       duration,
@@ -19,7 +39,7 @@ const LUEY = () => {
         path.style["stroke-dashoffset"] = `${length}px`;
         path.style["stroke-dasharray"] = `${length}px`;
         path.style["strokeWidth"] = `${strokeWidth}px`;
-        path.style["stroke"] = `${strokeColor}`;
+        path.style["stroke"] = strokeColor;
         path.style[
           "animation"
         ] = `${duration}s svg-text-anim ${mode} ${timingFunction}`;
@@ -27,12 +47,11 @@ const LUEY = () => {
       }
     }
 
-    // Call the animation function with your original parameters
-    setTextAnimation(0.1, 3.7, 2, "ease-in-out", "#ffffff", true);
+    // Cleanup observer on component unmount
+    return () => observer.disconnect();
   }, []);
-
   return (
-    <div className="w-full px-4 md:w-2/3 md:px-0 mx-auto">
+    <div ref={svgRef} className="w-full px-4 md:w-2/3 md:px-0 mx-auto">
       {/* Just paste your entire SVG here */}
       <svg
         // width="600.3"

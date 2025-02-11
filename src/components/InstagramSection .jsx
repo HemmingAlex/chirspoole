@@ -36,16 +36,16 @@ const InstagramSection = ({ href }) => {
           <div className="space-y-2">
             {href !== "contact" ? (
               <a href={href} className="text-xl">
-                CONTACT <span className="text-blue-600">OUR TEAM</span>
+                CONTACT <span className="text-purple-600">OUR TEAM</span>
               </a>
             ) : (
               <Link href="/contact" className="text-xl">
-                CONTACT <span className="text-blue-600">OUR TEAM</span>
+                CONTACT <span className="text-purple-600">OUR TEAM</span>
               </Link>
             )}
 
             <p className="text-xl">
-              <span className="text-blue-600">
+              <span className="text-purple-600">
                 FOR YOUR BESPOKE TAILOR-MADE SPECIAL SHOW
               </span>
             </p>
