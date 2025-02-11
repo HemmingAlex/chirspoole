@@ -52,7 +52,7 @@ const CombinedClientsSection = ({ forBrand }) => {
     {
       name: "Grand Hyatt Dubai",
       url: "https://www.hyatt.com/grand-hyatt/en-US/dxbgh-grand-hyatt-dubai",
-      logo: "/Hyatt_Logo.PNG",
+      logo: "/Hyatt_Logo.png",
     },
     {
       name: "Formula 1",
@@ -62,12 +62,12 @@ const CombinedClientsSection = ({ forBrand }) => {
     {
       name: "Hilton Abu Dhabi",
       url: "https://www.hilton.com/en/hotels/auhyihi-hilton-abu-dhabi-yas-island/",
-      logo: "/HiltonHotelsLogo.PNG",
+      logo: "/HiltonHotelsLogo.png",
     },
     {
       name: "Kempinski Djibouti",
       url: "https://www.kempinski.com/djibouti",
-      logo: "/Kempinski_Logo_2015.PNG",
+      logo: "/Kempinski_Logo_2015.png",
     },
     {
       name: "Aston Villa FC",
@@ -112,7 +112,7 @@ const CombinedClientsSection = ({ forBrand }) => {
     {
       name: "Belfry Hotel & Resort",
       url: "https://www.thebelfry.com",
-      logo: "/belfry-hotel-logo.PNG",
+      logo: "/belfry-hotel-logo.png",
     },
     {
       name: "Moor Hall Hotel & Spa",
