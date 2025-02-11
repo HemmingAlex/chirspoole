@@ -37,7 +37,7 @@ console.log(isVideoReady, "remmebr this")
         {/* Rest of the content */}
         <div className="relative bg-white text-gray-700">
           {/* Our Story Section */}
-          <section className="py-20">
+          <section className="pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="flex justify-center">
@@ -45,7 +45,7 @@ console.log(isVideoReady, "remmebr this")
                     <img
                       src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_Blktrans.svg"
                       alt="Band performance"
-                      className=" relative md:bottom-28 md:-mb-32 -mb-16 bottom-12 md:black"
+                      className=" relative  md:black"
                     />
                     <h2 className="text-4xl font-bold mb-8 text -black ">
                       THE STORY SO FAR
