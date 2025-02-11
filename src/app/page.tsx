@@ -18,7 +18,7 @@ export default function Home() {
     const timer = setTimeout(() => {
       setIsVideoReady(true);
     }, 1000); // Add a small delay to ensure iframe has started loading
-console.log(isVideoReady, "remmebr this")
+    console.log(isVideoReady, "remmebr this");
     return () => clearTimeout(timer);
   }, []);
 
@@ -47,51 +47,50 @@ console.log(isVideoReady, "remmebr this")
                       alt="Band performance"
                       className=" relative lg:w-1/3  md:black flex mt-4"
                     />
-       
+
                     <div className="prose prose-lg items-center flex flex-wrap">
                       <div className="h-fit ">
-
-                      <p className="">
-                        Shades Live Music was invented in London, England 25
-                        years ago by Christopher Poole, Lead Vocalist and
-                        Director.
-                      </p>
-                      <br />
-                      <p>
-                        What started out as a five-piece band quickly emerged
-                        into multiple musicians and performers, creating bespoke
-                        tailor-made shows for the most prestige clients, such as
-                        the Emirates Palace and Grand Hyatt
-                      </p>
-                      <br />
-                      <p>
-                        What makes this show truly amazing is being 100% live
-                        compared to other companies who have musicians
-                        pretending to play to backing tracks. What you hear from
-                        Shades is what is truly played from our musicians.
+                        <p className="">
+                          Shades Live Music was invented in London, England 25
+                          years ago by Christopher Poole, Lead Vocalist and
+                          Director.
+                        </p>
                         <br />
-                      </p>
+                        <p>
+                          What started out as a five-piece band quickly emerged
+                          into multiple musicians and performers, creating
+                          bespoke tailor-made shows for the most prestige
+                          clients, such as the Emirates Palace and Grand Hyatt
+                        </p>
+                        <br />
+                        <p>
+                          What makes this show truly amazing is being 100% live
+                          compared to other companies who have musicians
+                          pretending to play to backing tracks. What you hear
+                          from Shades is what is truly played from our
+                          musicians.
+                          <br />
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                  <div>
-
-                <h2 className="text-4xl font-bold mt-16 text -black ">
-                      THE STORY SO FAR
-                    </h2>
+                <div>
+                  <h2 className="text-4xl font-bold mt-16 text -black ">
+                    THE STORY SO FAR
+                  </h2>
                   <StaggeredReveal />
                 </div>
               </div>
             </div>
           </section>
+          <div className="bg-black">
+            <InstagramSection href="/contact" />
+          </div>
 
           <ClientsSection forBrand={false} />
           {/* <ClientsSection forBrand={true} /> */}
-        </div>
-        <div className="bg-black">
-          <InstagramSection href="/contact" />
         </div>
       </FadeTransition>
     </div>
