@@ -59,7 +59,7 @@ const InstagramSection = ({ href }) => {
       </div>
 
       {/* Video Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 m-8 md:w-2/3 md:mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 m-8 md:w-ful md:mx-auto">
         {instagramVideos.map((video) => (
           <Link
             key={video.id}
