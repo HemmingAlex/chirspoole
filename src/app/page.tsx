@@ -42,15 +42,14 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="flex justify-center">
                   <div className="space-y-6 w-4/5">
-                    <img
-                      src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_Blktrans.svg"
-                      alt="Band performance"
-                      className=" relative lg:w-1/3  md:black flex mt-4"
-                    />
-
                     <div className="prose prose-lg items-center flex flex-wrap">
-                      <div className="h-fit ">
-                        <p className="">
+                      <div className="h-fit">
+                      <h2 className="text-4xl font-bold text -black "
+                      style={{marginTop: "101px"}}
+                      >
+                    THE STORY SO FAR
+                  </h2>
+                        <p className="mt-4">
                           Shades Live Music was invented in London, England 25
                           years ago by Christopher Poole, Lead Vocalist and
                           Director.
@@ -77,9 +76,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h2 className="text-4xl font-bold mt-16 text -black ">
-                    THE STORY SO FAR
-                  </h2>
+              
                   <StaggeredReveal />
                 </div>
               </div>
