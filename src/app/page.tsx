@@ -44,11 +44,12 @@ export default function Home() {
                   <div className="space-y-6 w-4/5">
                     <div className="prose prose-lg items-center flex flex-wrap">
                       <div className="h-fit">
-                      <h2 className="text-4xl font-bold text -black "
-                      style={{marginTop: "101px"}}
-                      >
-                    THE STORY SO FAR
-                  </h2>
+                        <h2
+                          className="text-4xl font-bold text -black "
+                          style={{ marginTop: "101px" }}
+                        >
+                          THE STORY SO FAR
+                        </h2>
                         <p className="mt-4">
                           Shades Live Music was invented in London, England 25
                           years ago by Christopher Poole, Lead Vocalist and
@@ -76,18 +77,17 @@ export default function Home() {
                 </div>
 
                 <div>
-              
                   <StaggeredReveal />
                 </div>
               </div>
             </div>
           </section>
-          <div className="bg-black">
-            <InstagramSection href="/contact" />
-          </div>
 
           <ClientsSection forBrand={false} />
           {/* <ClientsSection forBrand={true} /> */}
+          <div className="bg-black">
+            <InstagramSection href="/contact" />
+          </div>
         </div>
       </FadeTransition>
     </div>
