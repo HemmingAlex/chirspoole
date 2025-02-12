@@ -295,10 +295,10 @@ const CombinedClientsSection = ({ forBrand }) => {
                         src={`/assets/ClientBrands${client.logo}`}
                         className={
                           client?.logo
-                          ? "w-fit h-32 text-black fill-black "
+                          ? "w-fit h-32 text-black flex justify-center m-3 fill-black mx-auto "
                           : "hidden"
                         }
-                      />
+                        />
                       <div className="flex justify-center m-3">
 
                         {client.name}
