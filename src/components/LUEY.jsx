@@ -51,7 +51,7 @@ const LUEY = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <div ref={svgRef} className="w-full px-4 md:w-2/3 md:px-0 mx-auto">
+    <div ref={svgRef} className="w-full px-4 md:w-1/3 md:px-0 mx-auto">
       {/* Just paste your entire SVG here */}
       <svg
         // width="600.3"
