@@ -52,13 +52,6 @@ const AnimatedClientsList = ({ clients }) => {
           </span>
         ))}
       </div>
-      <p
-        className={`text-gray-600 italic transition-opacity duration-500 ${
-          visibleClients.length === clients.length ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        To Name a few...
-      </p>
     </div>
   );
 };
