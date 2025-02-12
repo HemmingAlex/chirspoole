@@ -47,7 +47,7 @@ const AnimatedClientsList = ({ clients }) => {
               visibleClients.includes(index) ? "opacity-100" : "opacity-0"
             }`}
           >
-            {index > 0 ? ", " : ""}
+            {index > 0 ? <> &nbsp; &#8226; &nbsp; </> : ""}
             {client}
           </span>
         ))}
