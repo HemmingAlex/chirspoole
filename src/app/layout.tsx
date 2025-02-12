@@ -48,27 +48,34 @@ export default function RootLayout({
   }, [isMobileMenuOpen]);
 
   return (
-    <html lang="en"className={`${lato.className} ${lato.variable}`}>
+    <html lang="en" className={`${lato.className} ${lato.variable}`}>
       <body className="min-h-screen">
         <SocialIcons />
         <nav
           className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-            isScrolled ? "bg-black text-white shadow-md" : "bg-transparent"
+            isScrolled ? "bg-white wblack shadow-md" : "bg-transparent wwhite"
           }`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
-                <Link href="/" className="text-xl font-bold ">
-                  <img
+                <Link href="/" className="wxl font-bold ">
+                  {!isScrolled ? (
+                    <img
                       src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_whitetrans.svg"
                       alt="Band performance"
                       className="h-24 py-2"
                     />
-                    
+                  ) : (
+                    <img
+                      src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_Blktrans.svg"
+                      alt="Band performance"
+                      className="h-24 py-2"
+                    />
+                  )}
                 </Link>
               </div>
-              
+
               {/* Desktop Navigation */}
               <div className="hidden 3xl:block">
                 <div className="ml-10 flex items-center space-x-4">
@@ -114,14 +121,15 @@ export default function RootLayout({
 
               {/* Mobile menu button */}
               <div className="">
-                
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="text-white p-2 rounded-md hover:bg-gray-700/50 transition-colors"
+                  className={` ${
+                    isScrolled ? "text-black" : "text-white"
+                  } p-2 rounded-md hover:bg-gray-700/50 transition-colors`}
                   aria-label="Toggle menu"
                 >
                   {
-                    isMobileMenuOpen ? <div /> : <>Menu</>
+                    isMobileMenuOpen ? <div />:<>Menu</>
                     // #<Menu className="h-6 w-6" />
                   }
                 </button>
