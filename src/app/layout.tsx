@@ -71,7 +71,7 @@ export default function RootLayout({
                     //   className="h-24 py-2"
                     // />
                     <img
-                      src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_Blktrans.svg"
+                      src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal4.png"
                       alt="Band performance"
                       className="h-24 py-2"
                     />

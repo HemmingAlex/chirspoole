@@ -43,7 +43,7 @@ const AnimatedClientsList = ({ clients }) => {
         {clients.map((client, index) => (
           <span
             key={index}
-            className={`transition-opacity duration-500 ${
+            className={`font-semibold transition-opacity duration-500 ${
               visibleClients.includes(index) ? "opacity-100" : "opacity-0"
             }`}
           >
