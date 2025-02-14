@@ -47,81 +47,97 @@ const CombinedClientsSection = ({ forBrand }) => {
     {
       name: "Emirates Palace Abu Dhabi",
       url: "https://www.mandarinoriental.com/abu-dhabi/emirates-palace",
+      size: null,
       logo: "/EmiratesPalace.svg",
     },
     {
       name: "Grand Hyatt Dubai",
       url: "https://www.hyatt.com/grand-hyatt/en-US/dxbgh-grand-hyatt-dubai",
+      size: null,
       logo: "/Hyatt_Logo.png",
     },
     {
       name: "Formula 1",
       url: "https://www.formula1.com",
+      size: null,
       logo: "/F1.svg",
     },
     {
       name: "Hilton Abu Dhabi",
       url: "https://www.hilton.com/en/hotels/auhyihi-hilton-abu-dhabi-yas-island/",
+      size: null,
       logo: "/HiltonHotelsLogo.png",
     },
     {
       name: "Kempinski Djibouti",
       url: "https://www.kempinski.com/djibouti",
+      size: null,
       logo: "/Kempinski_Logo_2015.png",
     },
     {
       name: "Aston Villa FC",
       url: "https://www.avfc.co.uk",
+      size: null,
       logo: "/aston-villa.svg",
     },
     {
       name: "Cadbury World",
       url: "https://www.cadburyworld.co.uk",
+      size: null,
       logo: "/cadbury-logo.svg",
     },
     {
       name: "BBC TV",
       url: "https://www.bbc.co.uk/tv",
+      size: null,
       logo: "/BBC.svg",
     },
     {
       name: "ITV",
       url: "https://www.itv.com",
+      size: null,
       logo: "/ITV.svg",
     },
     {
       name: "Melbourne Cup",
       url: "https://www.vrc.com.au/",
+      size: null,
       logo: null,
     },
     {
       name: "Leicester City FC",
       url: "https://www.lcfc.com",
+      size: null,
       logo: "/LeicesterCity.svg",
     },
     {
       name: "Manchester United FC",
       url: "https://www.manutd.com",
+      size: null,
       logo: "/ManchesterUnited.svg",
     },
     {
       name: "Hyatt Regency Dubai",
       url: "https://www.hyatt.com/regency/dubai",
+      size: null,
       logo: "/hyatt-regency-1.svg",
     },
     {
       name: "Belfry Hotel & Resort",
       url: "https://www.thebelfry.com",
+      size: null,
       logo: "/belfry-hotel-logo.png",
     },
     {
       name: "Moor Hall Hotel & Spa",
       url: "https://www.moorhallhotel.co.uk",
+      size: null,
       logo: null,
     },
     {
       name: "Harley Davidson",
       url: "https://www.harley-davidson.com",
+      size: null,
       logo: "/harley-davidson-9.svg",
     },
   ];
@@ -173,89 +189,36 @@ const CombinedClientsSection = ({ forBrand }) => {
     setAutoScrollEnabled(true);
   };
   return (
-    <section
-      className={`${forBrand ? "bg-white" : "bg-gray-300"}`}
-
-    >
-      <div
-        className={`w-full py-20  h-ful  ${
-          forBrand ? "bg-white" : "bg-gray-300"
-        }`}
-      >
+    <section className={`${forBrand ? "bg-white" : "bg-white"}`}>
+      <div className={`w-full py-20 ${forBrand ? "bg-white" : "bg-white"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
-          {/* <div className="text-center mb-12">
-          <img
-            src="/assets/logos/BlackL.jpg"
-            alt="Shades Music School"
-            className="h-96 mx-auto mb-8"
-          />
-        </div> */}
-          {/* Clients Title */}
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-black">OUR CLIENTS:</h2>
           </div>
-          {/* Static Client List */}
+
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="text-xl leading-relaxed">
               <FadeInList clients={clients.map((client) => client.name)} />
             </div>
             <p className="text-gray-600 italic mt-4">To Name a few...</p>
           </div>
-          {/* Decorative Divider */}
-          {/* <div className="flex justify-center items-center space-x-4 mb-16">
-          <div className="w-16 h-0.5 bg-gray-300"></div>
-          <div className="w-16 h-0.5 bg-blue-600"></div>
-          <div className="w-16 h-0.5 bg-gray-300"></div>
-        </div> */}
-          {/* Interactive Sliding Bar */}
-          <div className="relative">
-            {/* Left gradient overlay */}
-            {/* <div
-              className={`absolute left-0 top-0 bottom-0 w-32 z-10`}
-              style={{
-                background: `linear-gradient(to right, ${
-                  !forBrand
-                    ? "rgba(107, 114, 128, 0.9)" // gray-300 with 90% opacity
-                    : "rgba(255, 255, 255, 0.9)" // white with 90% opacity
-                }, transparent)`,
-              }}
-            ></div> */}
 
+          <div className="relative bg-gray-400">
             <div
-              className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r ${
-                !forBrand ? "from-gray-300" : "from-white"
-              } to-transparent z-10`}
-            ></div>
-
-            {/* Right gradient overlay */}
-            {/* <div
-              className={`absolute right-0 top-0 bottom-0 w-32 z-10`}
-              style={{
-                background: `linear-gradient(to left, ${
-                  !forBrand
-                    ? "rgba(107, 114, 128, 0.9)" // gray-300 with 90% opacity
-                    : "rgba(255, 255, 255, 0.9)" // white with 90% opacity
-                }, transparent)`,
-              }}
-            ></div> */}
-
+              className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r ${"from-white"} to-transparent z-10`}
+            />
             <div
-              className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l ${
-                !forBrand ? "from-gray-300" : "from-white"
-              } to-transparent z-10`}
-            ></div>
+              className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l ${"from-white"} to-transparent z-10`}
+            />
 
-            {/* Draggable content */}
             <div
               ref={scrollRef}
               className={`overflow-x-scroll scrollbar-hide cursor-grab border-y-2 ${
-                forBrand ? "border-gray-200 " : "border-gray-700 "
-              } border-double pt-1 mt-2`}
+                forBrand ? "border-gray-200" : "border-gray-700"
+              } border-double pt-1`}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
-              // onMouseLeave={handleMouseUp}
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -268,7 +231,7 @@ const CombinedClientsSection = ({ forBrand }) => {
               }}
             >
               <div
-                className={`inline-flex space-x-8 py-4 ${
+                className={`inline-flex items-center space-x-8 py-4 ${
                   isDragging ? "cursor-grabbing" : ""
                 }`}
               >
@@ -287,26 +250,24 @@ const CombinedClientsSection = ({ forBrand }) => {
                       target="_blank"
                       href={client?.url}
                       key={index}
-                      className={`flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap ${
-                        client?.logo ? "w-fit h-32 px-4" : "hidden w-0"
-                      }text-black`}
+                      className="flex flex-col items-center justify-between h-40 px-4 flex-shrink-0"
                     >
-                      <img
-                        src={`/assets/ClientBrands${client.logo}`}
-                        className={
-                          client?.logo
-                          ? "w-fit h-32 text-black flex justify-center m-3 fill-black mx-auto "
-                          : "hidden"
-                        }
+                      <div className="flex items-center justify-center h-40">
+                        <img
+                          src={`/assets/ClientBrands${client.logo}`}
+                          alt={client.name}
+                          className={`max-h-32 w-auto object-contain ${
+                            client.size === "small"
+                              ? "max-w-[120px]"
+                              : "max-w-[160px]"
+                          }`}
                         />
-                      <div className="flex justify-center m-3">
-
+                      </div>
+                      <div className="text-sm text-center text-gray-600 mt-2">
                         {client.name}
                       </div>
                     </Link>
-                  ) : (
-                    <></>
-                  )
+                  ) : null
                 )}
               </div>
             </div>

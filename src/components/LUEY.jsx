@@ -10,7 +10,7 @@ const LUEY = () => {
           // When the SVG comes into view
           if (entry.isIntersecting) {
             // Start the animation
-            setTextAnimation(0.1, 3.7, 2, "ease-in-out", "#ffffff", false);
+            setTextAnimation(0.1, 3.7, 0.2, "ease-in-out", "#ffffff", false);
             // Once animation starts, we don't need to observe anymore
             observer.unobserve(entry.target);
           }
@@ -51,7 +51,7 @@ const LUEY = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <div ref={svgRef} className="w-full px-4 md:w-1/3 md:px-0 mx-auto">
+    <div ref={svgRef} className="w-3/4 px-4 md:w-1/3 md:px-0 mx-auto">
       {/* Just paste your entire SVG here */}
       <svg
         // width="600.3"
