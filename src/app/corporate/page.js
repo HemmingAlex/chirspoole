@@ -2,6 +2,9 @@
 
 import { useEffect } from "react";
 import FadeTransition from "../../components/FadeTransition";
+import ANimation from "../../components/TextAnimation"
+import StorySection from "../../components/StorySection";
+
 export default function CorporatePage() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -86,6 +89,8 @@ export default function CorporatePage() {
           </div>
         </section>
 
+          <StorySection image="https://images.unsplash.com/photo-1513092186897-683e31a91216?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+  <ANimation/>
         {/* Services Grid */}
         <section
           className=" relative"
@@ -94,7 +99,7 @@ export default function CorporatePage() {
             backgroundPosition: "center 40%", // This moves the image up to show more of the bottom
           }}
         >
-          <div className="py-20 bg-purple-900 bg-opacity-80">
+          <div className="py-20 bg-purple-900 bg-opacity-90">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-3xl font-bold text-center mb-12">
                 Our Corporate Services

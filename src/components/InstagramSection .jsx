@@ -27,7 +27,7 @@ const InstagramSection = ({ href }) => {
 
   return (
     <section className="py-20 ">
-      <Luey />
+      {/* <Luey /> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo and Call to Action */}
         <div className="text-center space-y-6 max-w-2xl mx-auto text-white">

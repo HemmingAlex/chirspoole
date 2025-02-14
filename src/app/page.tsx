@@ -8,6 +8,8 @@ import InstagramSection from "../components/InstagramSection ";
 import ClientsSection from "../components/ClientsSection";
 import StaggeredReveal from "../components/StaggeredReveal";
 import YouTubePlayer from "../components/MutableYotubePlayer";
+import ParallaxSection from "../components/ParallaxSection"; // Add this import
+import StorySection from "../components/StorySection";
 
 export default function Home() {
   const [isVideoReady, setIsVideoReady] = useState(false);
@@ -43,35 +45,7 @@ export default function Home() {
                 <div className="flex justify-center">
                   <div className="space-y-6 w-4/5">
                     <div className="prose prose-lg items-center flex flex-wrap">
-                      <div className="h-fit">
-                        <h2
-                          className="text-4xl font-bold text -black "
-                          style={{ marginTop: "101px" }}
-                        >
-                          THE STORY SO FAR
-                        </h2>
-                        <p className="mt-4">
-                          Shades Live Music was invented in London, England 25
-                          years ago by Christopher Poole, Lead Vocalist and
-                          Director.
-                        </p>
-                        <br />
-                        <p>
-                          What started out as a five-piece band quickly emerged
-                          into multiple musicians and performers, creating
-                          bespoke tailor-made shows for the most prestige
-                          clients, such as the Emirates Palace and Grand Hyatt
-                        </p>
-                        <br />
-                        <p>
-                          What makes this show truly amazing is being 100% live
-                          compared to other companies who have musicians
-                          pretending to play to backing tracks. What you hear
-                          from Shades is what is truly played from our
-                          musicians.
-                          <br />
-                        </p>
-                      </div>
+                      <StorySection image={null} />
                     </div>
                   </div>
                 </div>
@@ -82,13 +56,13 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <div className="bg-black">
-            <InstagramSection href="/contact" />
-          </div>
+
+          <ParallaxSection />
 
           <ClientsSection forBrand={false} />
           {/* <ClientsSection forBrand={true} /> */}
         </div>
+        <InstagramSection href="/contact" />
       </FadeTransition>
     </div>
   );
