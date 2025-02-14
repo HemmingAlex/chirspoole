@@ -5,6 +5,7 @@ import FadeTransition from "../../components/FadeTransition";
 import ANimation from "../../components/TextAnimation"
 import StorySection from "../../components/StorySection";
 import Counter from "../../components/Counter";
+import Link from "next/link";
 
 export default function CorporatePage() {
   useEffect(() => {
@@ -107,16 +108,21 @@ export default function CorporatePage() {
               </h2>
               <Counter/>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white p-6 rounded-lg shadow-lg">
-                  <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                <Link href="/about" className="bg-white p-6 rounded-lg shadow-lg">
+                  <div className="h-48 bg-gray-200 rounded-lg mb-4  overflow-hidden" >
+                  <img
+                    src="/assets/Kamil.jpg"
+                    alt="Band performance"
+                    className=" "
+                                      />
+                  </div>
                   <h3 className="text-xl font-semibold mb-2 text-black">
-                    Award Ceremonies
+                    Meet our Team
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Professional entertainment for corporate awards and
-                    recognition events.
+                   We have a team fo experienced professional musicians ready to entertain 
                   </p>
-                </div>
+                </Link>
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                   <div className="h-48 bg-gray-200 rounded-lg mb-4" />
                   <h3 className="text-xl font-semibold mb-2 text-black">
