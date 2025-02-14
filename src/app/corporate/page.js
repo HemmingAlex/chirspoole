@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import FadeTransition from "../../components/FadeTransition";
 import ANimation from "../../components/TextAnimation"
 import StorySection from "../../components/StorySection";
+import Counter from "../../components/Counter";
 
 export default function CorporatePage() {
   useEffect(() => {
@@ -104,6 +105,7 @@ export default function CorporatePage() {
               <h2 className="text-3xl font-bold text-center mb-12">
                 Our Corporate Services
               </h2>
+              <Counter/>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                   <div className="h-48 bg-gray-200 rounded-lg mb-4" />
