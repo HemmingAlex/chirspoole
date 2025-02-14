@@ -82,12 +82,12 @@ export default function Home() {
               </div>
             </div>
           </section>
-
-          <ClientsSection forBrand={false} />
-          {/* <ClientsSection forBrand={true} /> */}
           <div className="bg-black">
             <InstagramSection href="/contact" />
           </div>
+
+          <ClientsSection forBrand={false} />
+          {/* <ClientsSection forBrand={true} /> */}
         </div>
       </FadeTransition>
     </div>
