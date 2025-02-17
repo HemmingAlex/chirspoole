@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Luey from "../components/LUEY";
+// import Link from "next/link";
 
 const ParallaxSection = () => {
   const ref = useRef(null);
@@ -27,10 +28,23 @@ const ParallaxSection = () => {
       <div className="relative z-20 flex items-center justify-center h-full">
         <div className="w-full">
           <div className="text-center text-white">
-          <Luey />
+            <Luey />
             <p className="text-xl max-w-2xl mx-auto py-4 px-4">
               Creating unforgettable musical experiences for over 25 years
             </p>
+            {/* <div className="space-y-2 text-white py-8">
+              <Link href="/contact" className="text-xl ">
+                <span className="text-purple-400 hover:text-white transition-all">
+                  CONTACT OUR TEAM
+                </span>
+              </Link>
+
+              <p className="text-xl">
+                <span className="text-white">
+                  FOR YOUR BESPOKE TAILOR-MADE SPECIAL SHOW
+                </span>
+              </p>
+            </div> */}
           </div>
         </div>
       </div>

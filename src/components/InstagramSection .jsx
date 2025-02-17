@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Luey from "../components/LUEY";
-const InstagramSection = ({ href }) => {
+const InstagramSection = () => {
   // Sample Instagram video thumbnails - replace with your actual content
   const instagramVideos = [
     {
@@ -26,33 +26,8 @@ const InstagramSection = ({ href }) => {
   ];
 
   return (
-    <section className="py-20 ">
-      {/* <Luey /> */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Logo and Call to Action */}
-        <div className="text-center space-y-6 max-w-2xl mx-auto text-white">
-          {/* <h3 className="text-2xl font-bold">LET US ENTERTAIN YOU</h3> */}
-          <div className="w-96"></div>
-          <div className="space-y-2">
-            {href !== "contact" ? (
-              <a href={href} className="text-xl">
-                CONTACT <span className="text-purple-600">OUR TEAM</span>
-              </a>
-            ) : (
-              <Link href="/contact" className="text-xl">
-                CONTACT <span className="text-purple-600">OUR TEAM</span>
-              </Link>
-            )}
-
-            <p className="text-xl">
-              <span className="text-purple-600">
-                FOR YOUR BESPOKE TAILOR-MADE SPECIAL SHOW
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-
+    <section className="py-20 bg-black">
+  
       {/* Logo and Instagram Text */}
       <div className="text-center mb-12 text-white">
         <h2 className="text-2xl font-bold mb-12">FOLLOW US ON INSTAGRAM</h2>
