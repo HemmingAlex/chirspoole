@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-// import SocialBar from "../components/SocialBar ";
+import Luey from "../components/LUEY";
 // import Image from "next/image";
 // import useCountUp from '../hooks/useCountUp';
 import Link from "next/link";
@@ -62,25 +62,25 @@ export default function Home() {
 
           <ClientsSection forBrand={false} />
           {/* <ClientsSection forBrand={true} /> */}
-          <ParallaxSection />
+          <Luey />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Logo and Call to Action */}
-            <div className="text-center space-y-6 max-w-2xl mx-auto text-white">
-              {/* <h3 className="text-2xl font-bold">LET US ENTERTAIN YOU</h3> */}
-              <div className="w-96"></div>
-              {/* <div className="space-y-2 text-black py-8">
-                <Link href="/contact" className="text-xl">
-                  CONTACT <span className="text-purple-600">OUR TEAM</span>
-                </Link>
+          <img
+                      src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal4.png"
+                      alt="Band performance"
+                      className="lg:w-1/4 w-fit md:1/3 mx-auto -py-2 -my-2 "
+                    />
+          <div className="space-y-2 text-black pb-32 text-center">
+            <Link href="/contact" className="text-xl ">
+              <span className="text-purple-800 hover:text-purple-600 transition-all">
+                CONTACT OUR TEAM
+              </span>
+            </Link>
 
-                <p className="text-xl">
-                  <span className="text-purple-600">
-                    FOR YOUR BESPOKE TAILOR-MADE SPECIAL SHOW
-                  </span>
-                </p>
-              </div> */}
-            </div>
+            <p className="text-xl">
+              <span className="text-black">
+                FOR YOUR BESPOKE TAILOR-MADE SPECIAL SHOW
+              </span>
+            </p>
           </div>
         </div>
       </FadeTransition>
