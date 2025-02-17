@@ -69,7 +69,7 @@ export default function Home() {
             <div className="text-center space-y-6 max-w-2xl mx-auto text-white">
               {/* <h3 className="text-2xl font-bold">LET US ENTERTAIN YOU</h3> */}
               <div className="w-96"></div>
-              <div className="space-y-2 text-black py-8">
+              {/* <div className="space-y-2 text-black py-8">
                 <Link href="/contact" className="text-xl">
                   CONTACT <span className="text-purple-600">OUR TEAM</span>
                 </Link>
@@ -79,7 +79,7 @@ export default function Home() {
                     FOR YOUR BESPOKE TAILOR-MADE SPECIAL SHOW
                   </span>
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

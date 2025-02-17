@@ -256,7 +256,7 @@ const CombinedClientsSection = ({ forBrand }) => {
                         <img
                           src={`/assets/ClientBrands${client.logo}`}
                           alt={client.name}
-                          className={`max-h-72 w-auto object-contain min-w-[220px] ${
+                          className={`max-h-64 w-auto object-contain min-w-[180px] ${
                             client.size === "small"
                               ? "max-w-[220px]"
                               : "max-w-[260px]"
