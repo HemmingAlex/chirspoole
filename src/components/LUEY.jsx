@@ -68,11 +68,11 @@ const LUEY = () => {
               }
               60% {
                 stroke-dashoffset: 0;
-                fill: #00000;
+                fill: balck;
               }
               100% {
                 stroke-dashoffset: 0;
-                fill: #00000;
+                fill: black;
               }
             }
           `}
