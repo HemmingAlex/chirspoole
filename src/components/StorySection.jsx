@@ -3,7 +3,7 @@ import React from "react";
 
 const StorySection = ({ image }) => {
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className=" pb-16 bg-white overflow-hidden">
       <div
         className={`${image ? "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" : ""}`}
       >
@@ -20,6 +20,11 @@ const StorySection = ({ image }) => {
             viewport={{ once: true }}
             className="space-y-6"
           >
+            <img
+              src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal4.png"
+              alt="Band performance"
+              className="max-h-96 mx-auto"
+            />
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -36,20 +41,22 @@ const StorySection = ({ image }) => {
               className="text-gray-700 space-y-6"
             >
               <p className="mt-4 text-center">
-              Shades Live Music was formed in London, England 25 years ago by
-Christopher Poole, Lead Vocalist and Director.
+                Shades Live Music was formed in London, England 25 years ago by
+                Christopher Poole, Lead Vocalist and Director.
               </p>
 
               <p className="text-center">
-              What started out as a five-piece band quickly emerged into multiple
-musicians and performers, creating bespoke tailor-made shows for the most
-prestige clients, such as the Emirates Palace, and The Grand Hyatt Dubai.
+                What started out as a five-piece band quickly emerged into
+                multiple musicians and performers, creating bespoke tailor-made
+                shows for the most prestige clients, such as the Emirates
+                Palace, and The Grand Hyatt Dubai.
               </p>
 
               <p className="text-center">
-              What makes our shows truly amazing, is every note played by our musicians
-is live. We bring together the finest performers to deliver exceptional
-musical experiences and to create the perfect atmosphere for any events.
+                What makes our shows truly amazing, is every note played by our
+                musicians is live. We bring together the finest performers to
+                deliver exceptional musical experiences and to create the
+                perfect atmosphere for any events.
               </p>
             </motion.div>
           </motion.div>

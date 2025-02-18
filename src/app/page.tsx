@@ -41,29 +41,19 @@ export default function Home() {
         {/* Rest of the content */}
         <div className="relative bg-white text-gray-700">
           {/* Our Story Section */}
-          <section className="pb-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="flex justify-center">
-                  <div className="space-y-6 w-4/5">
-                    <div className="prose prose-lg items-center flex flex-wrap">
-                      <StorySection image={null} />
-                    </div>
-                  </div>
-                </div>
+          <section className="pb-20 w-3/4 lg:w-2/3 mx-auto">
+            <StorySection image={null} />
 
-                <div className=" m-auto text-center font-bold">
-                  <p className="" style={{ maxWidth: "550px" }}>
-                    We Supply Entertainment for Ceremonies - Drinks Reception -
-                    Dinner - Evening Parties - Birthdays - Funerals - Jewish
-                    Weddings &amp; Bar Mitzvah - Asian Weddings -Proposals -
-                    Luxury Events
-                  </p>
+            <div className="m-auto text-center font-bold">
+              <p className="" style={{}}>
+                We Supply Entertainment for Ceremonies - Drinks Reception -
+                Dinner - Evening Parties - Birthdays - Funerals - Jewish
+                Weddings &amp; Bar Mitzvah - Asian Weddings -Proposals - Luxury
+                Events
+              </p>
 
-                  <br />
-                  <p>Each Show Tailor-Made for Your Special Event</p>
-                </div>
-              </div>
+              <br />
+              <p>Each Show Tailor-Made for Your Special Event</p>
             </div>
           </section>
           <Counter />

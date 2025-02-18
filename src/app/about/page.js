@@ -123,10 +123,10 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-gray-600 text-lg">
                   The Shades are a dynamic function and party band performing an
-                  extensive repertoire spanning from the 50s through to today&apos;s
-                  contemporary hits. Our versatility allows us to create the
-                  perfect atmosphere for any event, adapting our performance to
-                  match your unique vision.
+                  extensive repertoire spanning from the 50s through to
+                  today&apos;s contemporary hits. Our versatility allows us to
+                  create the perfect atmosphere for any event, adapting our
+                  performance to match your unique vision.
                 </p>
                 <p className="text-gray-600 text-lg">
                   With a track record of performances at prestigious venues
