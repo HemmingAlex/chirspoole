@@ -62,7 +62,7 @@ const StatCounter = ({ endValue, label, icon: Icon }) => {
       <div className="text-center">
         <div className="inline-flex items-baseline">
           <span className="text-5xl font-bold">{count.toLocaleString()}</span>
-          <span className="text-3xl font-bold ml-1">+</span>
+          <span className="text-3xl font-bold ml-1">{label !=="LIVE" ? "+" : "%"}</span>
         </div>
         <div className="text-lg mt-2 text-gray-200">{label}</div>
       </div>
@@ -79,7 +79,7 @@ const StatsShowcase = () => {
     },
     {
       value: 100,
-      label: "% LIVE",
+      label: "LIVE",
       icon: Trophy
     },
     {
@@ -98,7 +98,7 @@ const StatsShowcase = () => {
       icon: Globe
     },
     {
-      value: 500,
+      value: 75,
       label: "Themed Shows",
       icon: Star
     }

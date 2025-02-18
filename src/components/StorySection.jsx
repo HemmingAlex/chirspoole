@@ -26,7 +26,7 @@ const StorySection = ({ image }) => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl text-center font-bold text-black mt-[101px]"
             >
-              THE STORY SO FAR
+              Our STORY SO FAR
             </motion.h2>
 
             <motion.div
