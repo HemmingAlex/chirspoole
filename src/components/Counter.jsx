@@ -57,7 +57,7 @@ const StatCounter = ({ endValue, label, icon: Icon }) => {
       transition={{ duration: 0.5 }}
     >
       <div className="mb-4">
-        <Icon className="w-8 h-8 text-purple-300" />
+        <Icon className="w-8 h-8 text-black" />
       </div>
       <div className="text-center">
         <div className="inline-flex items-baseline">
