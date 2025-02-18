@@ -9,6 +9,7 @@ import InstagramSection from "../components/InstagramSection ";
 import ClientsSection from "../components/ClientsSection";
 import StaggeredReveal from "../components/StaggeredReveal";
 import YouTubePlayer from "../components/MutableYotubePlayer";
+import Counter from "../components/Counter";
 // import ParallaxSection from "../components/ParallaxSection"; // Add this import
 import StorySection from "../components/StorySection";
 
@@ -51,12 +52,22 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div>
-                  <StaggeredReveal />
+                <div className=" m-auto text-center font-bold">
+                  <p className="" style={{ maxWidth: "550px" }}>
+                    We Supply Entertainment for Ceremonies - Drinks Reception -
+                    Dinner - Evening Parties - Birthdays - Funerals - Jewish
+                    Weddings &amp; Bar Mitzvah - Asian Weddings -Proposals -
+                    Luxury Events
+                  </p>
+
+                  <br />
+                  <p>Each Show Tailor-Made for Your Special Event</p>
                 </div>
+                {/* <StaggeredReveal /> */}
               </div>
             </div>
           </section>
+          <Counter />
 
           <InstagramSection />
 
@@ -65,10 +76,10 @@ export default function Home() {
           <Luey />
 
           <img
-                      src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal4.png"
-                      alt="Band performance"
-                      className="lg:w-1/4 w-fit md:1/3 mx-auto -py-2 -my-2"
-                    />
+            src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal4.png"
+            alt="Band performance"
+            className="lg:w-1/4 w-fit md:1/3 mx-auto -py-2 -my-2"
+          />
           <div className="space-y-2 text-black pb-32 text-center">
             <Link href="/contact" className="text-xl ">
               <span className="text-purple-800 hover:text-purple-600 transition-all">

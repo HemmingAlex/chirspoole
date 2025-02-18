@@ -74,38 +74,38 @@ const StatsShowcase = () => {
   const stats = [
     {
       value: 1000,
-      label: "Live Shows Performed",
+      label: "SHOWS PERFORMED WORLDWIDE",
       icon: Music
     },
     {
-      value: 300,
-      label: "Satisfied Clients",
+      value: 100,
+      label: "% LIVE",
       icon: Trophy
     },
     {
-      value: 100,
-      label: "Professional Musicians",
+      value: 75,
+      label: "MUSICIANS &amp; PERFORMERS",
       icon: Users
     },
     {
       value: 25,
-      label: "Years of Excellence",
+      label: "YEARS OF EXCELLANCE",
       icon: Clock
     },
     {
       value: 50,
-      label: "International Venues",
+      label: "INTERNATIONAL VENUES",
       icon: Globe
     },
     {
       value: 500,
-      label: "5-Star Reviews",
+      label: "Themed Shows",
       icon: Star
     }
   ];
 
   return (
-    <section className="pb-8">
+    <section className="p-8 pb-16 bg-purple-900 bg-opacity-90 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

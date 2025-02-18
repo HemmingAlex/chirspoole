@@ -24,7 +24,7 @@ const StorySection = ({ image }) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl font-bold text-black mt-[101px]"
+              className="text-4xl text-center font-bold text-black mt-[101px]"
             >
               THE STORY SO FAR
             </motion.h2>
@@ -35,23 +35,21 @@ const StorySection = ({ image }) => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-gray-700 space-y-6"
             >
-              <p className="mt-4">
-                Shades Live Music was invented in London, England 25 years ago
-                by Christopher Poole, Lead Vocalist and Director.
+              <p className="mt-4 text-center">
+              Shades Live Music was formed in London, England 25 years ago by
+Christopher Poole, Lead Vocalist and Director.
               </p>
 
-              <p>
-                What started out as a five-piece band quickly emerged into
-                multiple musicians and performers, creating bespoke tailor-made
-                shows for the most prestige clients, such as the Emirates Palace
-                and Grand Hyatt.
+              <p className="text-center">
+              What started out as a five-piece band quickly emerged into multiple
+musicians and performers, creating bespoke tailor-made shows for the most
+prestige clients, such as the Emirates Palace, and The Grand Hyatt Dubai.
               </p>
 
-              <p>
-                What makes this show truly amazing is being 100% live compared
-                to other companies who have musicians pretending to play to
-                backing tracks. What you hear from Shades is what is truly
-                played from our musicians.
+              <p className="text-center">
+              What makes our shows truly amazing, is every note played by our musicians
+is live. We bring together the finest performers to deliver exceptional
+musical experiences and to create the perfect atmosphere for any events.
               </p>
             </motion.div>
           </motion.div>
