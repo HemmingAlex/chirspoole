@@ -7,7 +7,7 @@ import Link from "next/link";
 import FadeTransition from "../components/FadeTransition";
 import InstagramSection from "../components/InstagramSection ";
 import ClientsSection from "../components/ClientsSection";
-import StaggeredReveal from "../components/StaggeredReveal";
+// import StaggeredReveal from "../components/StaggeredReveal";
 import YouTubePlayer from "../components/MutableYotubePlayer";
 import Counter from "../components/Counter";
 // import ParallaxSection from "../components/ParallaxSection"; // Add this import
@@ -63,7 +63,6 @@ export default function Home() {
                   <br />
                   <p>Each Show Tailor-Made for Your Special Event</p>
                 </div>
-                {/* <StaggeredReveal /> */}
               </div>
             </div>
           </section>
