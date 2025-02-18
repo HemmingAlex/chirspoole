@@ -352,7 +352,7 @@ export default function ContactPage() {
           </div>
         </section>
         <section className=" text-center m-4 lg:m-8">
-          <h2 className="text-3xl font-bold text-center mt-8 mb-12 text-black">
+          <h2 className="text-3xl font-bold text-center mt-8 mb-12 dark:text-white ">
             Find us here!
           </h2>
           <div className="className='p-8 my-8 rounded flex mx-auto lg:w-2/3">
