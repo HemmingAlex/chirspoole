@@ -84,7 +84,7 @@ const StatsShowcase = () => {
     },
     {
       value: 75,
-      label: "MUSICIANS &amp; PERFORMERS",
+      label: <>MUSICIANS &amp; PERFORMERS</>,
       icon: Users
     },
     {
