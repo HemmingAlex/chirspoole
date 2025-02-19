@@ -10,7 +10,7 @@ const LUEY = () => {
           // When the SVG comes into view
           if (entry.isIntersecting) {
             // Start the animation
-            setTextAnimation(0.1, 3.7, 0.2, "ease-in-out", "#00000", false);
+            setTextAnimation(0.1, 3.7, 4.2, "ease-in-out", "#00000", false);
             // Once animation starts, we don't need to observe anymore
             observer.unobserve(entry.target);
           }
@@ -85,11 +85,11 @@ const LUEY = () => {
           stroke="#00000"
           strokeWidth="0.05mm"
           fill="#00000"
-          style={{ stroke: "#00000", strokeWidth: "0.25mm", fill: "none" }}
+          style={{ stroke: "#00000", strokeWidth: "1.25mm", fill: "none" }}
         >
           {/* Paste your paths here */}
           <svg width="1355.05" height="110.051" viewBox="0 0 1555.05 136.051" xmlns="http://www.w3.org/2000/svg">
-	<g id="svgGroup" strokeLinecap="round" fillRule="evenodd" fontSize="9pt" stroke="#00000" strokeWidth="0.25mm" fill="none" style={{stroke:"#000",strokeWidth:"0.25mm",fill:"none"}}>
+	<g id="svgGroup" strokeLinecap="round" fillRule="evenodd" fontSize="9pt" stroke="#00000" strokeWidth="1.25mm" fill="none" style={{stroke:"#000",strokeWidth:"1.25mm",fill:"none"}}>
   <path d="M 1.8 1.201 L 1.8 104.551 L 55.35 104.551 L 55.35 106.201 L 0 106.201 L 0 1.201 L 1.8 1.201 Z" id="0" vector-effect="non-scaling-stroke"/>
 		<path d="M 76.35 1.201 L 137.7 1.201 L 137.7 2.851 L 78.15 2.851 L 78.15 52.051 L 128.7 52.051 L 128.7 53.701 L 78.15 53.701 L 78.15 104.551 L 137.85 104.551 L 137.7 106.201 L 76.35 106.201 L 76.35 1.201 Z" id="1" vector-effect="non-scaling-stroke"/>
 		<path d="M 151.35 1.201 L 232.35 1.201 L 232.35 2.851 L 192.9 2.851 L 192.9 106.201 L 191.1 106.201 L 191.1 2.851 L 151.35 2.851 L 151.35 1.201 Z" id="2" vector-effect="non-scaling-stroke"/>
