@@ -250,13 +250,13 @@ const CombinedClientsSection = ({ forBrand }) => {
                       target="_blank"
                       href={client?.url}
                       key={index}
-                      className="flex flex-col items-center justify-between h-72 px-4 flex-shrink-0"
+                      className="flex flex-col items-center justify-between h-40 px-4 flex-shrink-0"
                     >
-                      <div className="flex items-center justify-center h-72">
+                      <div className="flex items-center justify-center h-40">
                         <img
                           src={`/assets/ClientBrands${client.logo}`}
                           alt={client.name}
-                          className={`max-h-64 w-auto object-contain min-w-[180px] ${
+                          className={`max-h-32 w-auto object-contain min-w-[180px] ${
                             client.size === "small"
                               ? "max-w-[220px]"
                               : "max-w-[260px]"
