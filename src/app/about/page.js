@@ -202,7 +202,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold mb-4 text-orange-500">
                     Luxury Hotels & Resorts
                   </h3>
-                  <ul className="space-y-2 text-gray-600">
+                  <ul className="space-y-2 text-black">
                     <li>Emirates Palace Abu Dhabi</li>
                     <li>Grand Hyatt Dubai</li>
                     <li>Hilton Abu Dhabi</li>

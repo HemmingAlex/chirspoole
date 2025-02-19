@@ -38,7 +38,7 @@ const AnimatedClientsList = ({ clients }) => {
   }, [clients, hasAnimated]);
 
   return (
-    <div ref={sectionRef} className="max-w-4xl mx-auto text-center">
+    <div ref={sectionRef} className="max-w-4xl mx-auto text-cente text-black">
       <div className="text-xl leading-relaxed">
         {clients.map((client, index) => (
           <span

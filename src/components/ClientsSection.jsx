@@ -200,7 +200,7 @@ const CombinedClientsSection = ({ forBrand }) => {
             <div className="text-xl leading-relaxed">
               <FadeInList clients={clients.map((client) => client.name)} />
             </div>
-            <p className="text-gray-600 italic mt-4">To Name a few...</p>
+            <p className="text-black italic mt-4">To Name a few...</p>
           </div>
 
           <div className="relative bg-gray-400">
@@ -241,7 +241,7 @@ const CombinedClientsSection = ({ forBrand }) => {
                       target="_blank"
                       href={client?.url}
                       key={index}
-                      className="flex-shrink-0 text-xl text-gray-600 hover:text-purple-900 transition-colors whitespace-nowrap px-4"
+                      className="flex-shrink-0 text-xl text-balck hover:text-purple-900 transition-colors whitespace-nowrap px-4"
                     >
                       {client?.name}
                     </Link>
@@ -263,7 +263,7 @@ const CombinedClientsSection = ({ forBrand }) => {
                           }`}
                         />
                       </div>
-                      <div className="text-lg text-center text-gray-600 mt-2">
+                      <div className="text-lg text-center text-black mt-2">
                         {client.name}
                       </div>
                     </Link>
