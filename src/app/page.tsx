@@ -12,6 +12,7 @@ import YouTubePlayer from "../components/MutableYotubePlayer";
 import Counter from "../components/Counter";
 // import ParallaxSection from "../components/ParallaxSection"; // Add this import
 import StorySection from "../components/StorySection";
+import ShadesReviews from "../components/ShadesReviews";
 
 export default function Home() {
   const [isVideoReady, setIsVideoReady] = useState(false);
@@ -59,7 +60,7 @@ export default function Home() {
           <Counter />
 
           <InstagramSection />
-
+<ShadesReviews/>
           <ClientsSection forBrand={false} />
           {/* <ClientsSection forBrand={true} /> */}
           <Luey />
