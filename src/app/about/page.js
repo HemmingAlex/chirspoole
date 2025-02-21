@@ -5,6 +5,16 @@ import { Music, Mic, Users, Star } from "lucide-react";
 import Socials from "../../components/SocialBar ";
 import FadeTransition from "../../components/FadeTransition";
 
+
+import dynamic from 'next/dynamic';
+
+// Import with no SSR
+const AboutUsSphere = dynamic(() => import('../../components/AboutUsSphere'), {
+  ssr: false,
+  loading: () => <div className="w-full h-screen flex items-center justify-center bg-gray-900 text-white">Loading 3D model...</div>
+});
+
+
 export default function AboutPage() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -22,6 +32,8 @@ export default function AboutPage() {
   return (
     <div>
       <FadeTransition>
+
+        <AboutUsSphere/>
         {/* Hero Section */}
         <section className="relative h-[100vh]">
           <div
