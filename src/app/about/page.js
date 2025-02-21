@@ -4,16 +4,15 @@ import { useEffect } from "react";
 import { Music, Mic, Users, Star } from "lucide-react";
 import Socials from "../../components/SocialBar ";
 import FadeTransition from "../../components/FadeTransition";
+// import AboutUsSphere from "../../components/AboutUsSphere";
 
 
 import dynamic from 'next/dynamic';
 
-// Import with no SSR
 const AboutUsSphere = dynamic(() => import('../../components/AboutUsSphere'), {
   ssr: false,
   loading: () => <div className="w-full h-screen flex items-center justify-center bg-gray-900 text-white">Loading 3D model...</div>
 });
-
 
 export default function AboutPage() {
   useEffect(() => {
