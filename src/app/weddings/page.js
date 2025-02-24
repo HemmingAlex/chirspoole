@@ -1,158 +1,150 @@
-"use client"
+"use client";
+import React, { useState, useEffect } from "react";
 import YouTubePlayer from "../../components/MutableYotubePlayer";
-import react, { useState } from "react";
+import { motion } from "framer-motion";
 
+const ServiceSection = ({ title, isVisible, children, imageUrls = [] }) => (
+  <motion.section
+    initial={{ opacity: 0, y: 50 }}
+    animate={isVisible ? { opacity: 1, y: 0 } : {}}
+    transition={{ duration: 0.6 }}
+    className="py-16 bg-white"
+  >
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-2 gap-4">
+          {imageUrls.map((url, index) => (
+            <div
+              key={index}
+              className="aspect-square rounded-lg overflow-hidden"
+            >
+              <img
+                src="/assets/Chris.jpg"
+                alt="Wedding service"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold mb-6 text-purple-800">{title}</h2>
+          {children}
+        </div>
+      </div>
+    </div>
+  </motion.section>
+);
 
-// src/app/weddings/page.js
 export default function WeddingsPage() {
-const [muted, setMuted] = useState('1')
+  const [muted, setMuted] = useState("1");
+  const [visibleSections, setVisibleSections] = useState({
+    ceremony: false,
+    reception: false,
+    dinner: false,
+    evening: false,
+  });
   const videoId = "CZVKTBY3tNk";
 
-    return (
-      <div>
-        {/* Hero Section */}
-        <section className="relative h-[100vh] w-full overflow-hidden">
-          <div className="absolute inset-0 bg-black/30 z-10 " />
-          <YouTubePlayer
-            videoId={videoId}
-            muted={muted}
-            onMuteChange={(newMutedState) => setMuted(newMutedState)}
-          />
-        </section>
-  
-        {/* Services Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Our Wedding Services</h2>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Ceremony Music</h3>
-                    <p className="text-gray-600">
-                      Professional musicians for your wedding ceremony, creating the perfect atmosphere for your special moments.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Reception Entertainment</h3>
-                    <p className="text-gray-600">
-                      Full band or DJ services to keep your guests dancing all night long.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Custom Packages</h3>
-                    <p className="text-gray-600">
-                      Tailored entertainment packages to match your vision and budget.
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-8">
-                  <a 
-                    href="/contact" 
-                    className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition"
-                  >
-                    Request a Quote
-                  </a>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square bg-gray-200 rounded-lg" />
-                <div className="aspect-square bg-gray-200 rounded-lg" />
-                <div className="aspect-square bg-gray-200 rounded-lg" />
-                <div className="aspect-square bg-gray-200 rounded-lg" />
-              </div>
-            </div>
-          </div>
-        </section>
-  
-        {/* Testimonials */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">What Couples Say</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="bg-white p-6 rounded-lg shadow-lg">
-                  <div className="text-yellow-400 mb-4">★★★★★</div>
-                  <p className="text-gray-600 mb-4">
-                    &quot;The team was absolutely amazing! They made our wedding day truly special with their incredible performance.&quot;
-                  </p>
-                  <p className="font-semibold">- Happy Couple {i}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-  
-        {/* FAQ Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">How far in advance should we book?</h3>
-                  <p className="text-gray-600">
-                    We recommend booking at least 6-12 months in advance for wedding services, especially during peak season (May-September). However, we occasionally have availability for shorter notice bookings.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">What music styles do you offer?</h3>
-                  <p className="text-gray-600">
-                    Our musicians are versatile and can perform various styles including classical, jazz, contemporary pop, rock, and traditional wedding music. We&quot;ll work with you to create the perfect playlist for your special day.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Do you provide all necessary equipment?</h3>
-                  <p className="text-gray-600">
-                    Yes, we bring all required professional-grade sound equipment, lighting, and instruments. We&quot;ll coordinate with your venue to ensure proper setup and acoustic requirements are met.
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Can we request specific songs?</h3>
-                  <p className="text-gray-600">
-                    Absolutely! We encourage you to provide a list of must-play songs and any songs you&quot;d prefer not to hear. We&quot;ll work with you to ensure the music matches your vision perfectly.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">What happens if there&quot;s an emergency?</h3>
-                  <p className="text-gray-600">
-                    We maintain a network of professional backup musicians and have comprehensive contingency plans in place. Your wedding entertainment is guaranteed to proceed smoothly no matter what.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Do you offer ceremony and reception packages?</h3>
-                  <p className="text-gray-600">
-                    Yes, we offer comprehensive packages that cover both ceremony and reception. We can seamlessly transition between different parts of your wedding day with appropriate music and entertainment.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-  
-        {/* Contact CTA */}
-        <section className="py-20 bg-blue-600 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Make Your Wedding Day Special?</h2>
-            <p className="text-xl mb-8">Contact us today to discuss your wedding entertainment needs</p>
-            <div className="flex justify-center space-x-4">
-              <a 
-                href="/contact" 
-                className="inline-block bg-white text-blue-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition"
-              >
-                Get in Touch
-              </a>
-              <a 
-                href="/packages" 
-                className="inline-block border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition"
-              >
-                View Packages
-              </a>
-            </div>
-          </div>
-        </section>
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = {
+        ceremony: document.getElementById("ceremony"),
+        reception: document.getElementById("drinks-reception"),
+        dinner: document.getElementById("dinner"),
+        evening: document.getElementById("evening-party"),
+      };
+
+      Object.entries(sections).forEach(([key, section]) => {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight * 0.75;
+          setVisibleSections((prev) => ({ ...prev, [key]: isVisible }));
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div>
+      {/* Hero Section */}
+      <section className="relative h-screen w-full overflow-hidden">
+        <div className="absolute inset-0 bg-black/30 z-10" />
+        <YouTubePlayer
+          videoId={videoId}
+          muted={muted}
+          onMuteChange={(newMutedState) => setMuted(newMutedState)}
+        />
+      </section>
+
+      {/* Service Sections */}
+      <div id="ceremony">
+        <ServiceSection
+          title="CEREMONY"
+          isVisible={visibleSections.ceremony}
+          imageUrls={[1, 2, 3, 4]}
+        >
+          <p className="text-gray-600">Professional ceremony content here...</p>
+        </ServiceSection>
       </div>
-    )
-  }
+
+      <div id="drinks-reception">
+        <ServiceSection
+          title="DRINKS RECEPTION"
+          isVisible={visibleSections.reception}
+          imageUrls={[1, 2, 3, 4]}
+        >
+          <p className="text-gray-600">Drinks reception content here...</p>
+        </ServiceSection>
+      </div>
+
+      <div id="dinner">
+        <ServiceSection
+          title="DINNER"
+          isVisible={visibleSections.dinner}
+          imageUrls={[1, 2, 3, 4]}
+        >
+          <p className="text-gray-600">Dinner entertainment content here...</p>
+        </ServiceSection>
+      </div>
+
+      <div id="evening-party">
+        <ServiceSection
+          title="EVENING PARTY"
+          isVisible={visibleSections.evening}
+          imageUrls={[1, 2, 3, 4]}
+        >
+          <p className="text-gray-600">Evening party content here...</p>
+        </ServiceSection>
+      </div>
+
+      {/* Prestige Clients Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-800 to-purple-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            Our Prestige Clients
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="aspect-square bg-white rounded-lg shadow-lg p-4"
+              >
+                <div className="w-full h-full flex items-center justify-center">
+                  <img
+                    src="/assets/Chris.jpg"
+                    alt={`Client ${i}`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
