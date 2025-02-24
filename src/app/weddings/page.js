@@ -1,26 +1,23 @@
+"use client"
+import YouTubePlayer from "../../components/MutableYotubePlayer";
+import react, { useState } from "react";
+
+
 // src/app/weddings/page.js
 export default function WeddingsPage() {
+const [muted, setMuted] = useState('1')
+  const videoId = "CZVKTBY3tNk";
+
     return (
       <div>
         {/* Hero Section */}
-        <section className="relative h-[100vh]">
-          <div className="absolute inset-0 bg-black/40" />
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url('/api/placeholder/1920/1080')`
-            }}
+        <section className="relative h-[100vh] w-full overflow-hidden">
+          <div className="absolute inset-0 bg-black/30 z-10 " />
+          <YouTubePlayer
+            videoId={videoId}
+            muted={muted}
+            onMuteChange={(newMutedState) => setMuted(newMutedState)}
           />
-          <div className="relative h-full flex items-center justify-center text-white">
-            <div className="text-center max-w-3xl mx-auto px-4">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Wedding Entertainment
-              </h1>
-              <p className="text-xl mb-8">
-                Creating the perfect soundtrack for your special day
-              </p>
-            </div>
-          </div>
         </section>
   
         {/* Services Section */}
