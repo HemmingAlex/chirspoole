@@ -7,7 +7,8 @@ import Socials from "../components/SocialBar ";
 import { Lato } from "next/font/google";
 // import { Menu } from "lucide-react";
 import MobileNavigation from "../components/MobileNavigation";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
+import PageTransition from "../components/PageTransition"
 
 const lato = Lato({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ export default function RootLayout({
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
+  const isHomePage = pathname === "/";
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > window.innerHeight);
@@ -51,13 +52,16 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${lato.className} ${lato.variable}`}>
+
       <body className="min-h-screen">
         <SocialIcons />
         <nav
           className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-            isScrolled || !isHomePage ? "bg-white wblack shadow-md" : "bg-transparent wwhite"
+            isScrolled || !isHomePage
+              ? "bg-white wblack shadow-md"
+              : "bg-transparent wwhite"
           }`}
-        >
+          >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
@@ -71,9 +75,9 @@ export default function RootLayout({
                     //   className="h-24 py-2"
                     // />
                     <img
-                      src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal4.png"
-                      alt="Band performance"
-                      className="h-24 py-2"
+                    src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal4.png"
+                    alt="Band performance"
+                    className="h-24 py-2"
                     />
                   )}
                 </Link>
@@ -85,38 +89,38 @@ export default function RootLayout({
                   <Link
                     href="/"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
-                  >
+                    >
                     Home
                   </Link>
                   <Link
                     href="/about"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
-                  >
+                    >
                     About Us
                   </Link>
                   {/* <Link
                     href="/weddings"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
-                  >
+                    >
                     Weddings
-                  </Link>
-                  <Link
+                    </Link>
+                    <Link
                     href="/corporate"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
-                  >
+                    >
                     Corporate
-                  </Link>
-                  <Link
+                    </Link>
+                    <Link
                     href="/entertainment"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
-                  >
+                    >
                     Entertainment
-                  </Link> */}
+                    </Link> */}
 
                   <Link
                     href="/contact"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
-                  >
+                    >
                     Contact
                   </Link>
                 </div>
@@ -130,7 +134,7 @@ export default function RootLayout({
                     isScrolled || !isHomePage ? "text-black" : "text-white"
                   } p-2 rounded-md hover:bg-gray-700/50 transition-colors`}
                   aria-label="Toggle menu"
-                >
+                  >
                   {
                     isMobileMenuOpen ? <div /> : <>Menu</>
                     // #<Menu className="h-6 w-6" />
@@ -144,16 +148,21 @@ export default function RootLayout({
           <MobileNavigation
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
-          />
+            />
         </nav>
-        <main>{children}</main>
+        <main>
+            <PageTransition>
+          {children}
+            </PageTransition>
+
+        </main>
         <footer className="bg-gray-900 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
                 <p>Email: info@shadesband.com</p>
-                <p>Phone: 07899865778</p>
+                <p>Phone: 0044-7899-86577</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -190,6 +199,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+
       </body>
     </html>
   );

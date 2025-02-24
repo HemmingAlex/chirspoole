@@ -2,7 +2,7 @@
 import FadeTransition from "../../components/FadeTransition";
 
 import { useEffect, useState } from "react";
-import { Mail, Phone, MapPin, X, Smartphone } from "lucide-react";
+import { Mail, Phone, X } from "lucide-react";
 import Maps from "../../components/StyledGoogleMap";
 // import InstagramSection from "../../components/InstagramSection ";
 
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-                      <p className="text-gray-600">07899865778</p>
+                      <p className="text-gray-600">0044-7899-86577</p>
                       <p className="text-gray-600">Mon-Fri: 9am - 6pm</p>
                     </div>
                   </div>
@@ -206,7 +206,7 @@ export default function ContactPage() {
                 }
               }
             >
-              <div className="shadow-xl overflow-hidden bg-opacity-30	bg-purple-500 2xl:h-screen">
+              <div className="shadow-xl overflow-hidden	bg-purple-800 2xl:h-screen">
                 <div className="p-8">
                   <h2 className="text-3xl font-bold mb-12 text-black">
                     Contact
@@ -237,11 +237,11 @@ export default function ContactPage() {
                         <p className="font-medium text-sm mb-1 text-black">
                           OFFICE
                         </p>
-                        <p className="text-gray-900 text-sm">07899865778</p>
+                        <p className="text-gray-900 text-sm">0044-7899-86577</p>
                       </div>
                     </div>
                     {/* Mobile Section */}
-                    <div className="flex items-start space-x-3">
+                    {/* <div className="flex items-start space-x-3">
                       <Smartphone className="w-4 h-4 mt-1 text-black" />
                       <div>
                         <p className="font-medium text-sm mb-1 text-black">
@@ -251,14 +251,14 @@ export default function ContactPage() {
                           Mon-Fri: 9am - 6pm
                         </p>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Address Section */}
-                    <div className="flex items-start space-x-3">
+                    {/* <div className="flex items-start space-x-3">
                       <MapPin className="w-4 h-4 mt-1 text-black" />
                       <div>
                         <p className="font-medium text-sm mb-1 text-black">
-                          ADRESSE
+                        ADDRESS
                         </p>
                         <p className="text-gray-900 text-sm">
                           214-218 Alcester Rd
@@ -267,7 +267,7 @@ export default function ContactPage() {
                           Birmingham B13 8EY
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -316,7 +316,13 @@ export default function ContactPage() {
                         <option value="">Select an event type</option>
                         <option value="wedding">Wedding</option>
                         <option value="corporate">Corporate Event</option>
-                        <option value="entertainment">Entertainment</option>
+                        <option value="asian">Asian Wedding</option>
+                        <option value="jewish">
+                          Jewish Wedding/Bar Mitzva
+                        </option>
+                        <option value="">Select an event type</option>
+                        <option value="funerals">Funerals</option>
+                        <option value="proposals">Proposals</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
