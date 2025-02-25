@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import YouTubePlayer from "../../components/MutableYotubePlayer";
 import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const clientImages = [
   "/assets/Chris.jpg",
