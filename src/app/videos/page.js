@@ -1,150 +1,131 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import YouTubePlayer from "../../components/MutableYotubePlayer";
-import { motion } from "framer-motion";
+import React from "react";
+import VideoGallery from "../../components/VideoGallery";
+import FadeTransition from "../../components/FadeTransition";
 
-const ServiceSection = ({ title, isVisible, children, imageUrls = [] }) => (
-  <motion.section
-    initial={{ opacity: 0, y: 50 }}
-    animate={isVisible ? { opacity: 1, y: 0 } : {}}
-    transition={{ duration: 0.6 }}
-    className="py-16 bg-white"
-  >
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div className="grid grid-cols-2 gap-4">
-          {imageUrls.map((url, index) => (
-            <div
-              key={index}
-              className="aspect-square rounded-lg overflow-hidden"
-            >
-              <img
-                src="/assets/Chris.jpg"
-                alt="Wedding service"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
-        <div>
-          <h2 className="text-3xl font-bold mb-6 text-purple-800">{title}</h2>
-          {children}
-        </div>
-      </div>
-    </div>
-  </motion.section>
-);
+export default function GalleryPage() {
+  // You could fetch your videos from an API or CMS here
+  const galleryVideos = [
+    {
+      id: 1,
+      title: "Wedding Performance at The Savoy",
+      description:
+        "Full band performance featuring our signature cocktail hour set",
+      thumbnailUrl: "/assets/Chris.jpg",
 
-export default function WeddingsPage() {
-  const [muted, setMuted] = useState("1");
-  const [visibleSections, setVisibleSections] = useState({
-    ceremony: false,
-    reception: false,
-    dinner: false,
-    evening: false,
-  });
-  const videoId = "CZVKTBY3tNk";
+      youtubeId: "CZVKTBY3tNk",
+      duration: "3:45",
+      category: "Weddings",
+    },
+    {
+      id: 2,
+      title: "Goldman Sachs Annual Party",
+      description: "Corporate entertainment for 500+ guests",
+      thumbnailUrl: "/assets/Chris.jpg",
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = {
-        ceremony: document.getElementById("ceremony"),
-        reception: document.getElementById("drinks-reception"),
-        dinner: document.getElementById("dinner"),
-        evening: document.getElementById("evening-party"),
-      };
+      youtubeId: "VYOjWnS4cMY",
+      duration: "4:20",
+      category: "Corporate",
+    },
+    {
+      id: 3,
+      title: "Sir Richards 60th Birthday",
+      description:
+        "Special birthday celebration with full band and brass section",
+      thumbnailUrl: "/assets/Chris.jpg",
 
-      Object.entries(sections).forEach(([key, section]) => {
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight * 0.75;
-          setVisibleSections((prev) => ({ ...prev, [key]: isVisible }));
-        }
-      });
-    };
+      youtubeId: "dQw4w9WgXcQ",
+      duration: "8:15",
+      category: "Birthdays",
+    },
+    {
+      id: 4,
+      title: "Bar Mitzvah Celebration",
+      description: "Energetic performance for Jacobs special day",
+      thumbnailUrl: "/assets/Chris.jpg",
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      youtubeId: "jNQXAC9IVRw",
+      duration: "5:30",
+      category: "Jewish Events",
+    },
+    {
+      id: 5,
+      title: "Asian Wedding at Grosvenor House",
+      description:
+        "Fusion performance combining traditional and modern elements",
+      thumbnailUrl: "/assets/Chris.jpg",
+
+      youtubeId: "RubBzkZzpUA",
+      duration: "6:15",
+      category: "Asian Weddings",
+    },
+    {
+      id: 6,
+      title: "Summer Wedding at Claridges",
+      description: "Elegant summer wedding performance",
+      thumbnailUrl: "/assets/Chris.jpg",
+
+      youtubeId: "LXb3EKWsInQ",
+      duration: "7:20",
+      category: "Weddings",
+    },
+    {
+      id: 7,
+      title: "Microsoft Product Launch",
+      description: "High-energy corporate entertainment",
+      thumbnailUrl: "/assets/Chris.jpg",
+
+      youtubeId: "XsD0F-NhJ4A",
+      duration: "4:45",
+      category: "Corporate",
+    },
+    {
+      id: 8,
+      title: "Anniversary Celebration",
+      description: "25th wedding anniversary special performance",
+      thumbnailUrl: "/assets/Chris.jpg",
+
+      youtubeId: "YykjpeuMNEk",
+      duration: "5:10",
+      category: "Weddings",
+    },
+  ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 bg-black/30 z-10" />
-        <YouTubePlayer
-          videoId={videoId}
-          muted={muted}
-          onMuteChange={(newMutedState) => setMuted(newMutedState)}
-        />
-      </section>
+    <div className="bg-white min-h-screen">
+      <FadeTransition>
+        <div className="py-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl font-bold text-gray-800 mb-4">
+                Our Performances
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Browse our collection of performances at weddings, corporate
+                events, birthdays, and other special occasions.
+              </p>
+            </div>
 
-      {/* Service Sections */}
-      <div id="ceremony">
-        <ServiceSection
-          title="CEREMONY"
-          isVisible={visibleSections.ceremony}
-          imageUrls={[1, 2, 3, 4]}
-        >
-          <p className="text-gray-600">Professional ceremony content here...</p>
-        </ServiceSection>
-      </div>
+            <VideoGallery videos={galleryVideos} />
 
-      <div id="drinks-reception">
-        <ServiceSection
-          title="DRINKS RECEPTION"
-          isVisible={visibleSections.reception}
-          imageUrls={[1, 2, 3, 4]}
-        >
-          <p className="text-gray-600">Drinks reception content here...</p>
-        </ServiceSection>
-      </div>
-
-      <div id="dinner">
-        <ServiceSection
-          title="DINNER"
-          isVisible={visibleSections.dinner}
-          imageUrls={[1, 2, 3, 4]}
-        >
-          <p className="text-gray-600">Dinner entertainment content here...</p>
-        </ServiceSection>
-      </div>
-
-      <div id="evening-party">
-        <ServiceSection
-          title="EVENING PARTY"
-          isVisible={visibleSections.evening}
-          imageUrls={[1, 2, 3, 4]}
-        >
-          <p className="text-gray-600">Evening party content here...</p>
-        </ServiceSection>
-      </div>
-
-      {/* Prestige Clients Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-800 to-purple-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Our Prestige Clients
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="aspect-square bg-white rounded-lg shadow-lg p-4"
+            <div className="mt-20 text-center">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Want to see us live?
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Contact our team to discuss how we can make your event
+                unforgettable
+              </p>
+              <a
+                href="/contact"
+                className="inline-block bg-purple-800 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition-colors"
               >
-                <div className="w-full h-full flex items-center justify-center">
-                  <img
-                    src="/assets/Chris.jpg"
-                    alt={`Client ${i}`}
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </div>
-            ))}
+                Get in Touch
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </FadeTransition>
     </div>
   );
 }

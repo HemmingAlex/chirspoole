@@ -1,8 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import YouTubePlayer from "../../components/MutableYotubePlayer";
+import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
+const clientImages = [
+  "/assets/Chris.jpg",
+  "/assets/Chris.jpg",
+  "/assets/Chris.jpg",
+];
 const ServiceSection = ({ title, isVisible, children, imageUrls = [] }) => (
   <motion.section
     initial={{ opacity: 0, y: 50 }}
@@ -13,18 +20,7 @@ const ServiceSection = ({ title, isVisible, children, imageUrls = [] }) => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="grid grid-cols-2 gap-4">
-          {imageUrls.map((url, index) => (
-            <div
-              key={index}
-              className="aspect-square rounded-lg overflow-hidden"
-            >
-              <img
-                src="/assets/Chris.jpg"
-                alt="Wedding service"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          <Lightbox />
         </div>
         <div>
           <h2 className="text-3xl font-bold mb-6 text-purple-800">{title}</h2>
@@ -142,6 +138,17 @@ export default function WeddingsPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-r from-purple-800 to-purple-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            Our Prestige Clients
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <Lightbox images={clientImages} />
           </div>
         </div>
       </section>

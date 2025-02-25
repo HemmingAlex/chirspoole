@@ -1,0 +1,240 @@
+/* VideoGallery.module.css */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Category filters */
+.categoryFilters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.categoryButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.categoryButton:hover {
+  background-color: #e0e0e0;
+}
+
+.activeCategory {
+  background-color: #6b46c1; /* Purple to match your Shades branding */
+  color: white;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.videoCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background-color: white;
+}
+
+.videoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnailContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.videoCard:hover .thumbnail {
+  transform: scale(1.05);
+}
+
+.duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.videoCard:hover .playButton {
+  opacity: 1;
+  background-color: rgba(107, 70, 193, 0.8); /* Purple to match your Shades branding */
+}
+
+.videoTitle {
+  padding: 1rem 1rem 0.5rem;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.videoDescription {
+  padding: 0 1rem 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Modal styles */
+.videoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.videoContainer {
+  width: 90%;
+  max-width: 1000px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1rem;
+}
+
+.closeButton:hover {
+  background-color: rgba(107, 70, 193, 0.8); /* Purple to match your Shades branding */
+}
+
+.youtubePlayerWrapper {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  background-color: #000;
+}
+
+.modalContent {
+  padding: 1.5rem;
+}
+
+.modalTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modalDescription {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .videoContainer {
+    width: 95%;
+  }
+  
+  .categoryFilters {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .categoryButton {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}

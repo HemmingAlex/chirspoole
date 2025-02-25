@@ -54,6 +54,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+<div className="bg-black">
 
         {/* History Section */}
         <section className="py-20">
@@ -342,6 +343,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        </div>
+
       </FadeTransition>
     </div>
   );

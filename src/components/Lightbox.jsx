@@ -12,9 +12,9 @@ const Lightbox = ({ images }) => {
     ? images 
     : [
         { id: 1, url: '/assets/Chris.jpg', alt: 'Service 1' },
-        { id: 2, url: '/assets/Chris.jpg', alt: 'Service 2' },
-        { id: 3, url: '/assets/Chris.jpg', alt: 'Service 3' },
-        { id: 4, url: '/assets/Chris.jpg', alt: 'Service 4' },
+        { id: 2, url: '/assets/Jack.jpg', alt: 'Service 2' },
+        { id: 3, url: '/assets/Kamil.jpg', alt: 'Service 3' },
+        { id: 4, url: '/assets/Paul.jpg', alt: 'Service 4' },
       ];
   
   const openLightbox = (image) => {
