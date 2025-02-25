@@ -107,7 +107,7 @@ const AboutUsSphere = () => {
         const loader = new GLTFLoader();
 
         loader.load(
-          "/models/gitar.glb",
+          "/models/detect.glb",
           (gltf) => {
             if (gltf.scene) {
               const newModel = gltf.scene.clone();
