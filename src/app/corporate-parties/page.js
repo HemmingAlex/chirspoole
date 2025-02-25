@@ -9,7 +9,7 @@ const clientImages = [
   "/assets/Chris.jpg",
   "/assets/Chris.jpg",
 ];
-const ServiceSection = ({ title, isVisible, children, imageUrls = [] }) => (
+const ServiceSection = ({ title, isVisible, children }) => (
   <motion.section
     initial={{ opacity: 0, y: 50 }}
     animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -80,7 +80,6 @@ export default function WeddingsPage() {
         <ServiceSection
           title="CEREMONY"
           isVisible={visibleSections.ceremony}
-          imageUrls={[1, 2, 3, 4]}
         >
           <p className="text-gray-600">Professional ceremony content here...</p>
         </ServiceSection>
@@ -90,7 +89,6 @@ export default function WeddingsPage() {
         <ServiceSection
           title="DRINKS RECEPTION"
           isVisible={visibleSections.reception}
-          imageUrls={[1, 2, 3, 4]}
         >
           <p className="text-gray-600">Drinks reception content here...</p>
         </ServiceSection>
@@ -100,7 +98,6 @@ export default function WeddingsPage() {
         <ServiceSection
           title="DINNER"
           isVisible={visibleSections.dinner}
-          imageUrls={[1, 2, 3, 4]}
         >
           <p className="text-gray-600">Dinner entertainment content here...</p>
         </ServiceSection>
@@ -110,7 +107,6 @@ export default function WeddingsPage() {
         <ServiceSection
           title="EVENING PARTY"
           isVisible={visibleSections.evening}
-          imageUrls={[1, 2, 3, 4]}
         >
           <p className="text-gray-600">Evening party content here...</p>
         </ServiceSection>
