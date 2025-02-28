@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import YouTubePlayer from "../../components/MutableYotubePlayer";
-// import Lightbox from "../../components/Lightbox";
+import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 
 // Real images for each section
@@ -455,7 +455,7 @@ export default function WeddingsPage() {
             Our Prestige Clients
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {/* <Lightbox images={clientImages} /> */}
+            <Lightbox images={clientImages} />
           </div>
         </div>
       </section>
