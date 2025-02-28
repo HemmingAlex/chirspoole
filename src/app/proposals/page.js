@@ -633,6 +633,7 @@ export default function WeddingsPage() {
             For immediate assistance, please call: (555) 123-4567
           </p>
         </div>
+        <></>
       </section>
     </div>
   );
