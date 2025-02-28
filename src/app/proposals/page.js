@@ -373,7 +373,7 @@ const EveningContent = () => (
     </p>
     <p className="mb-4 text-lg leading-relaxed">
       Choose from live bands, DJs, or solo performers, each carefully selected to match 
-      your wedding's vibe. From the first dance to the final song, our entertainers will 
+      your wedding&apos;s vibe. From the first dance to the final song, our entertainers will 
       keep the energy high and your guests on their feet.
     </p>
     <div className="mt-6">
@@ -580,9 +580,9 @@ export default function WeddingsPage() {
               className="bg-gray-50 p-6 rounded-lg shadow-lg"
             >
               <p className="text-gray-600 italic mb-4">
-                "The Shade Band made our wedding day absolutely magical. Their string quartet during 
-                the ceremony brought tears to everyone's eyes, and the band had everyone dancing all 
-                night long. Truly exceptional musicians!"
+                &quot;The Shade Band made our wedding day absolutely magical. Their string quartet during 
+                the ceremony brought tears to everyone&apos;s eyes, and the band had everyone dancing all 
+                night long. Truly exceptional musicians!&quot;
               </p>
               <p className="font-semibold">- Sarah & Michael</p>
             </motion.div>
@@ -591,9 +591,9 @@ export default function WeddingsPage() {
               className="bg-gray-50 p-6 rounded-lg shadow-lg"
             >
               <p className="text-gray-600 italic mb-4">
-                "We couldn't have asked for better entertainment. From helping us select the perfect 
+                &quot;We couldn't have asked for better entertainment. From helping us select the perfect 
                 music for each part of our day to the flawless performances, the team went above and 
-                beyond to make our wedding unforgettable."
+                beyond to make our wedding unforgettable.&quot;
               </p>
               <p className="font-semibold">- Emma & David</p>
             </motion.div>
@@ -602,9 +602,9 @@ export default function WeddingsPage() {
               className="bg-gray-50 p-6 rounded-lg shadow-lg"
             >
               <p className="text-gray-600 italic mb-4">
-                "Our guests are still talking about how amazing the music was at our wedding! The 
+                &quot;Our guests are still talking about how amazing the music was at our wedding! The 
                 singers were phenomenal, and the band kept the dance floor packed all night. Worth 
-                every penny and more!"
+                every penny and more!&quot;
               </p>
               <p className="font-semibold">- James & Rebecca</p>
             </motion.div>
