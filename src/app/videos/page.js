@@ -94,7 +94,7 @@ export default function GalleryPage() {
   return (
     <div className="bg-white min-h-screen">
       <FadeTransition>
-        <div className="py-10">
+        <div className="py-10 bg-purple-400">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold text-gray-800 mb-4">
