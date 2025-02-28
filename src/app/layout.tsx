@@ -57,7 +57,7 @@ export default function RootLayout({
         <SocialIcons />
         <nav
           className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-            isScrolled || !isHomePage
+            isScrolled
               ? "bg-white wblack shadow-md"
               : "bg-transparent wwhite"
           }`}
@@ -66,8 +66,12 @@ export default function RootLayout({
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
                 <Link href="/" className="wxl font-bold ">
-                  {!isScrolled && isHomePage ? (
-                    <></>
+                  {!isScrolled ? (
+                    <><img
+                    src="/assets/extract/w/Shades_music_logo_newhat_0225HD_12.svg"
+                    alt="Band performance"
+                    className="h-24 py-2"
+                    /></>
                   ) : (
                     // <img
                     //   src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_whitetrans.svg"
@@ -131,7 +135,7 @@ export default function RootLayout({
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   className={` ${
-                    isScrolled || !isHomePage ? "text-black" : "text-white"
+                    isScrolled ? "text-black" : "text-white"
                   } p-2 rounded-md hover:bg-gray-700/50 transition-colors`}
                   aria-label="Toggle menu"
                   >
