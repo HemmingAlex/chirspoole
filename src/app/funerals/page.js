@@ -28,7 +28,7 @@ const serviceTypes = [
     id: "ceremony",
     title: "FUNERAL CEREMONY",
     description:
-      "Our professional musicians provide dignified and moving musical accompaniment for funeral ceremonies. We work closely with you to select appropriate pieces that honor your loved one's memory and provide comfort during this difficult time.",
+      "Our professional musicians provide dignified and moving musical accompaniment for funeral ceremonies. We work closely with you to select appropriate pieces that honor your loved one&apos;s memory and provide comfort during this difficult time.",
     description2:
       "The Shade Band offers solo instrumentalists, vocalists, small ensembles, or full band performances to match your preferences and the tone of the service.",
     image:
@@ -46,7 +46,7 @@ const serviceTypes = [
     id: "tribute",
     title: "MUSICAL TRIBUTES",
     description:
-      "A musical tribute can be one of the most touching moments in a funeral service. Whether it's performing a loved one's favorite song, a meaningful hymn, or a classical piece that captures their spirit, The Shade Band delivers heartfelt performances that honor their memory and provide comfort to family and friends.",
+      "A musical tribute can be one of the most touching moments in a funeral service. Whether it&apos;s performing a loved one&apos;s favorite song, a meaningful hymn, or a classical piece that captures their spirit, The Shade Band delivers heartfelt performances that honor their memory and provide comfort to family and friends.",
     image:
       "https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -54,7 +54,7 @@ const serviceTypes = [
     id: "postlude",
     title: "POSTLUDE & GRAVESIDE",
     description:
-      "We provide appropriate musical accompaniment for the conclusion of the service and at graveside ceremonies. The Shade Band can perform traditional pieces, contemporary selections, or cultural music specific to your family's traditions, offering a final musical tribute as you say goodbye.",
+      "We provide appropriate musical accompaniment for the conclusion of the service and at graveside ceremonies. The Shade Band can perform traditional pieces, contemporary selections, or cultural music specific to your family&apos;s traditions, offering a final musical tribute as you say goodbye.",
     image:
       "https://images.unsplash.com/photo-1618365568330-9163739e9400?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -188,8 +188,6 @@ const TestimonialCard = ({ text, author, image, index }) => (
 
 export default function FuneralServicesPage() {
   const [muted, setMuted] = useState("1");
-  const [lightboxImages, setLightboxImages] = useState([]);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
   const testimonialsRef = useRef(null);
   const testimonialsControls = useAnimation();
   const testimonialsInView = useInView(testimonialsRef, {
@@ -197,7 +195,7 @@ export default function FuneralServicesPage() {
     threshold: 0.2,
   });
 
-  // Classical piano music - Beethoven's Moonlight Sonata
+  // Classical piano music - Beethoven&apos;s Moonlight Sonata
   const videoId = "4Tr0otuiQuU";
 
   useEffect(() => {
@@ -206,19 +204,7 @@ export default function FuneralServicesPage() {
     }
   }, [testimonialsControls, testimonialsInView]);
 
-  // Prepare images for lightbox
-  useEffect(() => {
-    setLightboxImages(
-      bandImages.map((src) => ({
-        src: src,
-        alt: "The Shade Band Performance",
-      }))
-    );
-  }, []);
 
-  const openLightbox = () => {
-    setLightboxOpen(true);
-  };
 
   return (
     <div className="bg-gray-50">
@@ -293,7 +279,7 @@ export default function FuneralServicesPage() {
               <p className="text-gray-600 mb-4">
                 We offer a diverse repertoire that spans classical, religious,
                 traditional, and contemporary music to ensure we can honor your
-                loved one's memory in the most fitting way.
+                loved one&apos;s memory in the most fitting way.
               </p>
               <p className="text-gray-600">
                 Our approach is always compassionate, respectful, and tailored
@@ -404,7 +390,7 @@ export default function FuneralServicesPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <TestimonialCard
-              text="The musicians from The Shade Band provided such beautiful music for my father's service. Their rendition of his favorite song brought tears to everyone's eyes and provided a moment of beauty during our grief."
+              text="The musicians from The Shade Band provided such beautiful music for my father&apos;s service. Their rendition of his favorite song brought tears to everyone&apos;s eyes and provided a moment of beauty during our grief."
               author="Sarah Thompson"
               image={testimonialImages[0]}
               index={0}
@@ -493,7 +479,7 @@ export default function FuneralServicesPage() {
           </div>
           <div className="text-center mt-10">
             <p className="text-gray-600 mb-6">
-              Don't see what you're looking for? We can learn special requests
+              Don&apos;t see what you&apos;re looking for? We can learn special requests
               with advance notice.
             </p>
             <motion.button
