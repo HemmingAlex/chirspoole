@@ -174,7 +174,7 @@ const AnimatedServiceSection = ({ service, index }) => {
 };
 
 // Testimonial card component
-const TestimonialCard = ({ text, author, image, index }) => (
+const TestimonialCard = ({ text, author, image }) => (
   <motion.div variants={fadeInUp} className="bg-white p-6 rounded-lg shadow-lg">
     <div className="flex items-center mb-4">
       <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
@@ -203,8 +203,6 @@ export default function FuneralServicesPage() {
       testimonialsControls.start("visible");
     }
   }, [testimonialsControls, testimonialsInView]);
-
-
 
   return (
     <div className="bg-gray-50">
@@ -390,7 +388,7 @@ export default function FuneralServicesPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <TestimonialCard
-              text="The musicians from The Shade Band provided such beautiful music for my father&apos;s service. Their rendition of his favorite song brought tears to everyone&apos;s eyes and provided a moment of beauty during our grief."
+              text="The musicians from The Shade Band provided such beautiful music for my father's service. Their rendition of his favorite song brought tears to everyone's eyes and provided a moment of beauty during our grief."
               author="Sarah Thompson"
               image={testimonialImages[0]}
               index={0}
@@ -479,8 +477,8 @@ export default function FuneralServicesPage() {
           </div>
           <div className="text-center mt-10">
             <p className="text-gray-600 mb-6">
-              Don&apos;t see what you&apos;re looking for? We can learn special requests
-              with advance notice.
+              Don&apos;t see what you&apos;re looking for? We can learn special
+              requests with advance notice.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
