@@ -249,7 +249,7 @@ export default function WeddingsPage() {
           </li>
           <li className="flex items-center">
             <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
-            Children's Entertainment
+            Children&lsquo;s Entertainment
           </li>
           <li className="flex items-center">
             <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
@@ -277,7 +277,7 @@ export default function WeddingsPage() {
       </p>
       <p className="mb-4 text-lg leading-relaxed">
         Choose from a variety of musical styles to suit the tone of your
-        event—whether it's soft jazz, classical string quartets, or tasteful
+        event—whether it&lsquo;s soft jazz, classical string quartets, or tasteful
         acoustic tunes, our performers will set the right mood for your guests.
         The music will gently fill the air, allowing for an intimate dining
         experience while keeping the energy light and enjoyable.
@@ -285,7 +285,7 @@ export default function WeddingsPage() {
       <p className="mb-4 text-lg leading-relaxed">
         We offer flexible options that can transition seamlessly throughout the
         evening, from a subtle background soundtrack during the meal to more
-        upbeat tunes for when it's time to get the party started.
+        upbeat tunes for when it&lsquo;s time to get the party started.
       </p>
       <div className="mt-6">
         <p className="font-semibold text-lg mb-2 text-purple-800">
@@ -340,7 +340,7 @@ export default function WeddingsPage() {
       </p>
       <p className="mb-4 text-lg leading-relaxed">
         Choose from a variety of musical acts, including live bands, DJs, or
-        solo performers, each carefully selected to match your wedding's vibe
+        solo performers, each carefully selected to match your wedding&lsquo;s vibe
         and your personal preferences. From the first dance to the final song,
         our entertainers will keep the energy high, ensuring everyone is on
         their feet and enjoying every moment.
