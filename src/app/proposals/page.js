@@ -122,6 +122,7 @@ const ServiceSection = ({ id, title, isVisible, children, imageUrls = [] }) => {
   
   // Auto-advance the slideshow every 5 seconds
   useEffect(() => {
+    console.log(isVisible, 'this is probably pointless plz check')
     const timer = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
     }, 5000);
@@ -591,7 +592,7 @@ export default function WeddingsPage() {
               className="bg-gray-50 p-6 rounded-lg shadow-lg"
             >
               <p className="text-gray-600 italic mb-4">
-                &quot;We couldn't have asked for better entertainment. From helping us select the perfect 
+                &quot;We couldn&apos;t have asked for better entertainment. From helping us select the perfect 
                 music for each part of our day to the flawless performances, the team went above and 
                 beyond to make our wedding unforgettable.&quot;
               </p>
