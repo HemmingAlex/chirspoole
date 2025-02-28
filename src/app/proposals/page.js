@@ -585,7 +585,7 @@ export default function WeddingsPage() {
                 the ceremony brought tears to everyone&apos;s eyes, and the band had everyone dancing all 
                 night long. Truly exceptional musicians!&quot;
               </p>
-              <p className="font-semibold">- Sarah & Michael</p>
+              <p className="font-semibold text-gray-800">- Sarah & Michael</p>
             </motion.div>
             <motion.div 
               whileHover={{ y: -5 }}
@@ -596,7 +596,7 @@ export default function WeddingsPage() {
                 music for each part of our day to the flawless performances, the team went above and 
                 beyond to make our wedding unforgettable.&quot;
               </p>
-              <p className="font-semibold">- Emma & David</p>
+              <p className="font-semibold text-gray-800">- Emma & David</p>
             </motion.div>
             <motion.div 
               whileHover={{ y: -5 }}
@@ -607,7 +607,7 @@ export default function WeddingsPage() {
                 singers were phenomenal, and the band kept the dance floor packed all night. Worth 
                 every penny and more!&quot;
               </p>
-              <p className="font-semibold">- James & Rebecca</p>
+              <p className="font-semibold text-gray-800">- James & Rebecca</p>
             </motion.div>
           </div>
         </div>
