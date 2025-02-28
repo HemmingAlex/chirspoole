@@ -180,7 +180,7 @@ const TestimonialCard = ({ text, author, image }) => (
       <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
         <Image src={image} alt={author} fill className="object-cover" />
       </div>
-      <p className="font-semibold">{author}</p>
+      <p className="font-semibold text-gray-700">{author}</p>
     </div>
     <p className="text-gray-600 italic">{text}</p>
   </motion.div>
