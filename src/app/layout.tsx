@@ -7,7 +7,7 @@ import Socials from "../components/SocialBar ";
 import { Lato } from "next/font/google";
 // import { Menu } from "lucide-react";
 import MobileNavigation from "../components/MobileNavigation";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import PageTransition from "../components/PageTransition"
 
 const lato = Lato({
@@ -23,8 +23,8 @@ export default function RootLayout({
 }>) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
+  // const pathname = usePathname();
+  // const isHomePage = pathname === "/";
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > window.innerHeight);
