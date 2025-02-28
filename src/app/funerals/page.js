@@ -379,32 +379,42 @@ export default function FuneralServicesPage() {
         initial="hidden"
         animate={testimonialsControls}
         variants={staggerChildren}
-        className="py-20 bg-gradient-to-r from-purple-900 to-purple-800"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">Testimonials</h2>
-            <div className="w-24 h-1 bg-white mx-auto"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TestimonialCard
-              text="The musicians from The Shade Band provided such beautiful music for my father's service. Their rendition of his favorite song brought tears to everyone's eyes and provided a moment of beauty during our grief."
-              author="Sarah Thompson"
-              image={testimonialImages[0]}
-              index={0}
-            />
-            <TestimonialCard
-              text="The quartet was professional, respectful, and played with such emotion. Their music was the perfect tribute to my mother who loved classical music."
-              author="James Wilson"
-              image={testimonialImages[1]}
-              index={1}
-            />
-            <TestimonialCard
-              text="We were at a loss for how to make the service special, but The Shade Band guided us through selecting meaningful pieces. The music brought comfort to our family during an incredibly difficult day."
-              author="Maria Rodriguez"
-              image={testimonialImages[2]}
-              index={2}
-            />
+          <div
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1566421966482-ad8076104d8e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+              backgroundPosition: "center 65%", // This moves the image up to show more of the bottom
+            }}
+          >
+        <div className="py-20 bg-purple-900 bg-opacity-35">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-white mb-4">
+                  Testimonials
+                </h2>
+                <div className="w-24 h-1 bg-white mx-auto"></div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <TestimonialCard
+                  text="The musicians from The Shade Band provided such beautiful music for my father's service. Their rendition of his favorite song brought tears to everyone's eyes and provided a moment of beauty during our grief."
+                  author="Sarah Thompson"
+                  image={testimonialImages[0]}
+                  index={0}
+                />
+                <TestimonialCard
+                  text="The quartet was professional, respectful, and played with such emotion. Their music was the perfect tribute to my mother who loved classical music."
+                  author="James Wilson"
+                  image={testimonialImages[1]}
+                  index={1}
+                />
+                <TestimonialCard
+                  text="We were at a loss for how to make the service special, but The Shade Band guided us through selecting meaningful pieces. The music brought comfort to our family during an incredibly difficult day."
+                  author="Maria Rodriguez"
+                  image={testimonialImages[2]}
+                  index={2}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </motion.section>
