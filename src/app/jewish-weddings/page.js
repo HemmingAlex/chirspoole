@@ -203,7 +203,7 @@ export default function JewishWeddingsPage() {
         Make your Jewish wedding or Bar Mitzvah celebration an unforgettable event with
         entertainment that perfectly complements the joy and tradition of your special occasion.
         We offer a range of entertainment options tailored to honor Jewish customs and bring
-        excitement and energy to the celebration. Whether you're hosting an intimate ceremony
+        excitement and energy to the celebration. Whether you&apos;re hosting an intimate ceremony
         or a grand celebration, our entertainment ensures that your event is filled with joy,
         laughter, and unforgettable moments.
       </p>
@@ -219,7 +219,7 @@ export default function JewishWeddingsPage() {
             <span className="font-medium">Traditional Ceremony Music:</span> Enhance your wedding with classical Jewish music,
             including our beautiful string quartet or traditional instruments such as our
             beautiful Violinists, flute, or harpists. We can also incorporate beloved Jewish
-            wedding songs like "Siman Tov u'Mazal Tov" or "Jerusalem of Gold."
+            wedding songs like &quot;Siman Tov u&apos;Mazal Tov&quot; or &quot;Jerusalem of Gold.&quot;
           </p>
         </li>
         <li className="flex">
@@ -311,7 +311,7 @@ export default function JewishWeddingsPage() {
           <p>
             <span className="font-medium">DJ and Dance Party:</span> Our professional DJ specialises in creating a high-energy
             atmosphere with a mix of Jewish music and popular hits, perfect for teens and
-            adults alike. We'll ensure your Bar Mitzvah party stays lively and exciting with
+            adults alike. We&apos;ll ensure your Bar Mitzvah party stays lively and exciting with
             customized playlists.
           </p>
         </li>
@@ -385,7 +385,7 @@ export default function JewishWeddingsPage() {
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Customizable Themes:</span> Whether you're envisioning a traditional or modern event,
+            <span className="font-medium">Customizable Themes:</span> Whether you&apos;re envisioning a traditional or modern event,
             we can design entertainment to match your theme and vision. Our services can be
             fully tailored to complement your style, from elegant ballroom weddings to vibrant
             and festive Bar Mitzvahs.
