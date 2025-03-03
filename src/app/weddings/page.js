@@ -38,25 +38,25 @@ const sectionImages = {
 
 const valuesArray = [
   {
-    icon: <Mic className="h-8 w-8 text-orange-500" />,
+    icon: <Mic className="h-8 w-8 text-purple-800" />,
     title: "100% Live Performance",
     description:
       "Every note is played live - no backing tracks, no miming, just pure musical talent.",
   },
   {
-    icon: <Music className="h-8 w-8 text-orange-500" />,
+    icon: <Music className="h-8 w-8 text-purple-800" />,
     title: "Custom Experiences",
     description:
       "Each performance is tailored to create the perfect atmosphere for your special event.",
   },
   {
-    icon: <Star className="h-8 w-8 text-orange-500" />,
+    icon: <Star className="h-8 w-8 text-purple-800" />,
     title: "World-Class Musicians",
     description:
       "We bring together the finest performers to deliver exceptional musical experiences.",
   },
   {
-    icon: <Users className="h-8 w-8 text-orange-500" />,
+    icon: <Users className="h-8 w-8 text-purple-800" />,
     title: "Full-Service Events",
     description:
       "From ceremonies to evening parties, we provide comprehensive entertainment solutions.",
@@ -502,7 +502,7 @@ export default function WeddingsPage() {
 
       <section className="py-20 bg-gray-50 text-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-16 text-orange-500">
+          <h2 className="text-3xl font-bold text-center mb-16 text-purple-800">
             The Shades Difference
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -512,7 +512,7 @@ export default function WeddingsPage() {
                   <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                     {value?.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 text-center text-orange-500">
+                  <h3 className="text-xl font-semibold mb-4 text-center text-purple-800">
                     {value?.title}
                   </h3>
                   <p className="text-gray-600 text-center">
