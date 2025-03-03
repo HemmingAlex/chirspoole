@@ -38,25 +38,25 @@ const sectionImages = {
 
 const valuesArray = [
   {
-    icon: <Mic className="h-8 w-8 text-purple-800" />,
+    icon: <Mic className="h-8 w-8 text-orange-800" />,
     title: "100% Live Performance",
     description:
       "Every note is played live - no backing tracks, no miming, just pure musical talent.",
   },
   {
-    icon: <Music className="h-8 w-8 text-purple-800" />,
+    icon: <Music className="h-8 w-8 text-orange-800" />,
     title: "Custom Experiences",
     description:
       "Each performance is tailored to create the perfect atmosphere for your special event.",
   },
   {
-    icon: <Star className="h-8 w-8 text-purple-800" />,
+    icon: <Star className="h-8 w-8 text-orange-800" />,
     title: "World-Class Musicians",
     description:
       "We bring together the finest performers to deliver exceptional musical experiences.",
   },
   {
-    icon: <Users className="h-8 w-8 text-purple-800" />,
+    icon: <Users className="h-8 w-8 text-orange-800" />,
     title: "Full-Service Events",
     description:
       "From ceremonies to evening parties, we provide comprehensive entertainment solutions.",
@@ -132,7 +132,7 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
           {/* Right side - Content */}
           <div className="w-full xl:w-1/2 pb-8">
             <motion.h2
-              className="text-3xl font-bold mb-6 text-purple-800"
+              className="text-3xl font-bold mb-6 text-orange-800"
               initial={{ opacity: 0, x: -20 }}
               animate={isVisible ? { opacity: 1, x: 0 } : {}}
               transition={{
@@ -188,60 +188,60 @@ export default function WeddingsPage() {
         Walk Down the Isle - Ceremony - The Kiss
       </p>
       <div className="mt-6">
-        <p className="font-semibold text-lg mb-2 text-purple-800">
+        <p className="font-semibold text-lg mb-2 text-orange-800">
           Services Offered for The Ceremony:
         </p>
         <ul className="grid grid-cols-2 gap-2 mt-3">
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Choir
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Violinist
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             String quartet
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Harpist
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Organist/Pianist
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Guitarist
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Vocalists
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Duos
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Trios
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Ensembles
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Orchestra
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Performers & Animal releases
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Customized Playlists
           </li>
         </ul>
@@ -274,44 +274,44 @@ export default function WeddingsPage() {
         and unforgettable start to the celebration.
       </p>
       <div className="mt-6">
-        <p className="font-semibold text-lg mb-2 text-purple-800">
+        <p className="font-semibold text-lg mb-2 text-orange-800">
           Services Offered:
         </p>
         <ul className="grid grid-cols-2 gap-2 mt-3">
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Solo performers (Guitarist, Pianist, Violinist, etc.)
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Jazz bands or ensembles
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Acoustic duos or trios
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Performers/Fire /Statues
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Magicians
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Children&lsquo;s Entertainment
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Giant Garden Games
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Cocktail flair bartending
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Custom playlists for a relaxed vibe
           </li>
         </ul>
@@ -339,40 +339,40 @@ export default function WeddingsPage() {
         upbeat tunes for when it&lsquo;s time to get the party started.
       </p>
       <div className="mt-6">
-        <p className="font-semibold text-lg mb-2 text-purple-800">
+        <p className="font-semibold text-lg mb-2 text-orange-800">
           Services Offered:
         </p>
         <ul className="grid grid-cols-2 gap-2 mt-3">
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Singing Waiters
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Solo musicians (Pianist, Guitarist, Harpist, etc.)
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Jazz bands or String Quartets
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Speciality performers
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Duos/Trios
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Full Party Band in-between Courses
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Classical or Contemporary Ensembles
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Custom playlists for the dinner mood
           </li>
         </ul>
@@ -402,28 +402,28 @@ export default function WeddingsPage() {
         guests engaged and the celebration going all night long.
       </p>
       <div className="mt-6">
-        <p className="font-semibold text-lg mb-2 text-purple-800">
+        <p className="font-semibold text-lg mb-2 text-orange-800">
           Services Offered:
         </p>
         <ul className="grid grid-cols-2 gap-2 mt-3">
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             5–36-piece Live band
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Professional DJ with customized playlists
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Solo musicians for more intimate vibes
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             Interactive entertainment (live karaoke, photo booths, etc.)
           </li>
           <li className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
             First dance with Live Band or Musicians
           </li>
         </ul>
@@ -503,17 +503,17 @@ export default function WeddingsPage() {
       <section className="py-20 relative overflow-hidden">
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
-          <img
+          {/* <img
             src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
             alt="Background"
             className="w-full h-full object-cover object-center"
-          />
+          /> */}
           <div className="absolute inset-0 bg-gray-900/80"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.h2
-            className="text-4xl font-bold text-center mb-16 text-white"
+            className="text-4xl font-bold text-center mb-16 text-orange-500"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -533,7 +533,7 @@ export default function WeddingsPage() {
               <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
                 <div className="flex items-center mb-6">
                   <motion.div
-                    className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
+                    className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
@@ -541,7 +541,7 @@ export default function WeddingsPage() {
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-purple-700"
+                      className="h-6 w-6 text-orange-700"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -554,7 +554,7 @@ export default function WeddingsPage() {
                       />
                     </svg>
                   </motion.div>
-                  <h3 className="text-2xl font-semibold text-purple-700">
+                  <h3 className="text-2xl font-semibold text-orange-700">
                     Luxury Hotels & Resorts
                   </h3>
                 </div>
@@ -576,7 +576,7 @@ export default function WeddingsPage() {
                       transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
                       viewport={{ once: true }}
                     >
-                      <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+                      <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
                       {client}
                     </motion.li>
                   ))}
@@ -594,7 +594,7 @@ export default function WeddingsPage() {
               <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
                 <div className="flex items-center mb-6">
                   <motion.div
-                    className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
+                    className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200, delay: 0.4 }}
@@ -602,7 +602,7 @@ export default function WeddingsPage() {
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-purple-700"
+                      className="h-6 w-6 text-orange-500"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -621,7 +621,7 @@ export default function WeddingsPage() {
                       />
                     </svg>
                   </motion.div>
-                  <h3 className="text-2xl font-semibold text-purple-700">
+                  <h3 className="text-2xl font-semibold text-orange-500">
                     Sports & Entertainment
                   </h3>
                 </div>
@@ -643,7 +643,7 @@ export default function WeddingsPage() {
                       transition={{ duration: 0.3, delay: 0.3 + index * 0.05 }}
                       viewport={{ once: true }}
                     >
-                      <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+                      <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
                       {client}
                     </motion.li>
                   ))}
@@ -661,7 +661,7 @@ export default function WeddingsPage() {
               <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
                 <div className="flex items-center mb-6">
                   <motion.div
-                    className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
+                    className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200, delay: 0.6 }}
@@ -669,7 +669,7 @@ export default function WeddingsPage() {
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-purple-700"
+                      className="h-6 w-6 text-orange-500"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -682,7 +682,7 @@ export default function WeddingsPage() {
                       />
                     </svg>
                   </motion.div>
-                  <h3 className="text-2xl font-semibold text-purple-700">
+                  <h3 className="text-2xl font-semibold text-orange-700">
                     Corporate & Brands
                   </h3>
                 </div>
@@ -703,7 +703,7 @@ export default function WeddingsPage() {
                       transition={{ duration: 0.3, delay: 0.5 + index * 0.05 }}
                       viewport={{ once: true }}
                     >
-                      <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+                      <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
                       {client}
                     </motion.li>
                   ))}
@@ -733,7 +733,7 @@ export default function WeddingsPage() {
             alt="Background"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-purple-900/90 bg-gradient-to-b from-purple-900/90 to-indigo-900/90"></div>
+          <div className="absolute inset-0 bg-orange-900/90 bg-gradient-to-b from-orange-900/90 to-yellow-400/90"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -778,7 +778,7 @@ export default function WeddingsPage() {
                   </motion.div>
 
                   <motion.h3
-                    className="text-xl font-semibold mb-4 text-center text-purple-800"
+                    className="text-xl font-semibold mb-4 text-center text-orange-800"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
