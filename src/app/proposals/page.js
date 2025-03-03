@@ -67,7 +67,7 @@ const valuesArray = [
 const AnimatedText = ({ text, isVisible }) => {
   // Convert text to words for better animation
   const words = text.split(" ");
-  
+
   return (
     <>
       {words.map((word, wordIndex) => (
@@ -75,11 +75,16 @@ const AnimatedText = ({ text, isVisible }) => {
           {wordIndex > 0 && (
             <motion.span
               className="inline-block"
-              style={{ width: '0.5em' }} // Explicit space width
+              style={{ width: "0.5em" }} // Explicit space width
               initial={{ opacity: 0 }}
               animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.3, delay: 0.08 * (wordIndex * word.length) }}
-            >&nbsp;</motion.span>
+              transition={{
+                duration: 0.3,
+                delay: 0.08 * (wordIndex * word.length),
+              }}
+            >
+              &nbsp;
+            </motion.span>
           )}
           {word.split("").map((char, charIndex) => (
             <motion.span
@@ -102,7 +107,14 @@ const AnimatedText = ({ text, isVisible }) => {
   );
 };
 
-const ServiceSection = ({ id, title, content, images, isVisible, imageOnRight = false }) => {
+const ServiceSection = ({
+  id,
+  title,
+  content,
+  images,
+  isVisible,
+  imageOnRight = false,
+}) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Auto-advance the slideshow every 5 seconds
@@ -133,7 +145,7 @@ const ServiceSection = ({ id, title, content, images, isVisible, imageOnRight = 
             />
           </motion.div>
         ))}
-        
+
         {/* Image navigation dots */}
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
           {images.map((_, index) => (
@@ -141,8 +153,8 @@ const ServiceSection = ({ id, title, content, images, isVisible, imageOnRight = 
               key={`${id}-dot-${index}`}
               onClick={() => setCurrentImageIndex(index)}
               className={`w-2 h-2 rounded-full transition-all ${
-                index === currentImageIndex 
-                  ? "bg-orange-500 scale-125" 
+                index === currentImageIndex
+                  ? "bg-orange-500 scale-125"
                   : "bg-white/70 hover:bg-white"
               }`}
               aria-label={`View image ${index + 1}`}
@@ -212,7 +224,9 @@ export default function ProposalsPage() {
   // Auto-advance the hero slideshow every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sectionImages.hero.length);
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % sectionImages.hero.length
+      );
     }, 5000);
 
     return () => clearInterval(timer);
@@ -245,11 +259,13 @@ export default function ProposalsPage() {
   const IntroductionContent = () => (
     <div className="text-gray-700 text-lg">
       <p className="mb-4 text-lg leading-relaxed">
-        Make your proposal an unforgettable moment with entertainment that perfectly
-        complements the magic of your special day. At Shades Live Music, we specialize in
-        creating personalized, romantic, and memorable experiences that will leave your partner
-        in awe. Whether you're planning an intimate proposal or a grand gesture, we offer
-        entertainment services to set the perfect tone and make the moment truly extraordinary.
+        Make your proposal an unforgettable moment with entertainment that
+        perfectly complements the magic of your special day. At Shades Live
+        Music, we specialize in creating personalized, romantic, and memorable
+        experiences that will leave your partner in awe. Whether you&apos;re
+        planning an intimate proposal or a grand gesture, we offer entertainment
+        services to set the perfect tone and make the moment truly
+        extraordinary.
       </p>
     </div>
   );
@@ -263,30 +279,35 @@ export default function ProposalsPage() {
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Live Music or Musicians:</span> Set the mood with live performances from talented
-            musicians. Whether it's our solo guitarist playing your favourite love songs, our
-            string quartet for a classic feel, or our jazz band for an elegant touch, we curate the
-            perfect soundtrack for your proposal.
+            <span className="font-medium">Live Music or Musicians:</span> Set
+            the mood with live performances from talented musicians. Whether
+            it&apos;s our solo guitarist playing your favourite love songs, our
+            string quartet for a classic feel, or our jazz band for an elegant
+            touch, we curate the perfect soundtrack for your proposal.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Flash Mob Proposals:</span> Create a fun and unforgettable moment with a surprise
-            flash mob performance! Our professional dancers can coordinate a flash mob that
-            leads to the big question, offering an exciting and lively proposal experience.
+            <span className="font-medium">Flash Mob Proposals:</span> Create a
+            fun and unforgettable moment with a surprise flash mob performance!
+            Our professional dancers can coordinate a flash mob that leads to
+            the big question, offering an exciting and lively proposal
+            experience.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Private Serenades:</span> Nothing says romance like a private serenade. Surprise your
-            partner with a live serenade by our vocalists or instrumentalists in a setting that's
-            meaningful to you both, whether it's in a park, on a rooftop, or at a private event.
+            <span className="font-medium">Private Serenades:</span> Nothing says
+            romance like a private serenade. Surprise your partner with a live
+            serenade by our vocalists or instrumentalists in a setting
+            that&apos;s meaningful to you both, whether it&apos;s in a park, on
+            a rooftop, or at a private event.
           </p>
         </li>
       </ul>
-      
+
       <div className="mt-6">
         <p className="font-semibold text-lg mb-2 text-orange-800">
           Live Music Options:
@@ -330,26 +351,31 @@ export default function ProposalsPage() {
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Custom Video Messages:</span> Capture the essence of your relationship with a
-            personalized video montage. From the beginning of your journey together to the
-            moment you ask, this heartfelt tribute will add a special touch to your proposal.
+            <span className="font-medium">Custom Video Messages:</span> Capture
+            the essence of your relationship with a personalized video montage.
+            From the beginning of your journey together to the moment you ask,
+            this heartfelt tribute will add a special touch to your proposal.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Themed Experiences:</span> Bring your vision to life with a themed proposal. Whether
-            it's a vintage-inspired gathering or a destination-themed setup, we can provide
-            entertainment that ties seamlessly into your theme, including props, performers,
-            and music.
+            <span className="font-medium">Themed Experiences:</span> Bring your
+            vision to life with a themed proposal. Whether it&apos;s a
+            vintage-inspired gathering or a destination-themed setup, we can
+            provide entertainment that ties seamlessly into your theme,
+            including props, performers, and music.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Interactive Games or Challenges:</span> Add an element of surprise with a scavenger
-            hunt or puzzle that leads your partner to the proposal location. Incorporating fun
-            and interactive activities will make the moment even more memorable and
+            <span className="font-medium">
+              Interactive Games or Challenges:
+            </span>{" "}
+            Add an element of surprise with a scavenger hunt or puzzle that
+            leads your partner to the proposal location. Incorporating fun and
+            interactive activities will make the moment even more memorable and
             personal.
           </p>
         </li>
@@ -398,27 +424,30 @@ export default function ProposalsPage() {
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Private Party Entertainment:</span> After the proposal, celebrate with an intimate
-            gathering. We offer our DJ, live band, and even entertainers like magicians or
-            comedians to keep the fun going as you and your guests revel in the moment.
+            <span className="font-medium">Private Party Entertainment:</span>{" "}
+            After the proposal, celebrate with an intimate gathering. We offer
+            our DJ, live band, and even entertainers like magicians or comedians
+            to keep the fun going as you and your guests revel in the moment.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Romantic Dance Floor:</span> After you pop the question, share your first dance with a
-            professional dance performance, whether it's a slow, romantic waltz or a
+            <span className="font-medium">Romantic Dance Floor:</span> After you
+            pop the question, share your first dance with a professional dance
+            performance, whether it&apos;s a slow, romantic waltz or a
             choreographed routine to a special song.
           </p>
         </li>
       </ul>
-      
+
       <p className="mb-4 text-lg leading-relaxed">
-        Our team is dedicated to helping you create a proposal that reflects your love story, and
-        we work closely with you to make your vision a reality. Let us help you plan an
-        unforgettable proposal that will create lifelong memories for you and your partner.
+        Our team is dedicated to helping you create a proposal that reflects
+        your love story, and we work closely with you to make your vision a
+        reality. Let us help you plan an unforgettable proposal that will create
+        lifelong memories for you and your partner.
       </p>
-      
+
       <div className="mt-6">
         <p className="font-semibold text-lg mb-2 text-orange-800">
           Celebration Services:
@@ -458,15 +487,15 @@ export default function ProposalsPage() {
       {/* Hero Section with Slideshow instead of video */}
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-10" />
-        
+
         {/* Slideshow for hero section */}
         <div className="relative h-full w-full">
           {sectionImages.hero.map((src, index) => (
             <motion.div
               key={`hero-image-${index}`}
               initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: index === currentImageIndex ? 1 : 0 
+              animate={{
+                opacity: index === currentImageIndex ? 1 : 0,
               }}
               transition={{ duration: 1.5 }}
               className="absolute inset-0"
@@ -479,7 +508,7 @@ export default function ProposalsPage() {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Title Overlay */}
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center">
           <motion.div
@@ -492,9 +521,10 @@ export default function ProposalsPage() {
               Perfect Proposal Moments
             </h1>
             <p className="text-xl text-white max-w-2xl mx-auto mb-8 drop-shadow-md">
-              Create an unforgettable proposal experience with our bespoke entertainment services
+              Create an unforgettable proposal experience with our bespoke
+              entertainment services
             </p>
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05, backgroundColor: "#f97316" }}
               whileTap={{ scale: 0.95 }}
               className="bg-orange-500 text-white py-3 px-8 rounded-lg font-semibold transition duration-300 shadow-lg"
@@ -503,7 +533,7 @@ export default function ProposalsPage() {
             </motion.button>
           </motion.div>
         </div>
-        
+
         {/* Navigation dots for hero slideshow */}
         <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center gap-3">
           {sectionImages.hero.map((_, index) => (
@@ -511,8 +541,8 @@ export default function ProposalsPage() {
               key={`hero-dot-${index}`}
               onClick={() => setCurrentImageIndex(index)}
               className={`w-3 h-3 rounded-full transition-all ${
-                index === currentImageIndex 
-                  ? "bg-orange-500 scale-125" 
+                index === currentImageIndex
+                  ? "bg-orange-500 scale-125"
                   : "bg-white/70 hover:bg-white"
               }`}
               aria-label={`View hero image ${index + 1}`}
