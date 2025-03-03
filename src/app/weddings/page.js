@@ -35,6 +35,30 @@ const sectionImages = {
   ],
 };
 
+const AnimatedText = ({ text, isVisible }) => {
+  return (
+    <>
+      {text.split('').map((char, index) => (
+        <motion.span
+          key={`char-${index}`}
+          initial={{ opacity: 0 }}
+          animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ 
+            duration: 0.3, 
+            delay: index * 0.08, // Staggered delay based on character position
+            ease: "easeOut" 
+          }}
+          className="inline-block"
+        >
+          {char}
+        </motion.span>
+      ))}
+    </>
+  );
+};
+
+
+
 const ServiceSection = ({ id, title, content, images, isVisible }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -63,7 +87,7 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
               {images.map((src, index) => (
                 <motion.div
                   key={`${id}-image-${index}`}
-                  initial={{ opacity: 0 }}
+                  initial={{ opacity: 0,delay:2 }}
                   animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0"
@@ -92,7 +116,8 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
                 stiffness: 100,
               }}
             >
-              {title}
+                          <AnimatedText text={title} isVisible={isVisible} />
+
             </motion.h2>
             {content}
           </div>
