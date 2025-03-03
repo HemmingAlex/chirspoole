@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import YouTubePlayer from "../../components/MutableYotubePlayer";
 import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
+import { Mic, Music, Star, Users } from "lucide-react";
 
 // Real images for each section
 const clientImages = [
@@ -34,6 +35,33 @@ const sectionImages = {
     "https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80",
   ],
 };
+
+const valuesArray = [
+  {
+    icon: <Mic className="h-8 w-8 text-orange-500" />,
+    title: "100% Live Performance",
+    description:
+      "Every note is played live - no backing tracks, no miming, just pure musical talent.",
+  },
+  {
+    icon: <Music className="h-8 w-8 text-orange-500" />,
+    title: "Custom Experiences",
+    description:
+      "Each performance is tailored to create the perfect atmosphere for your special event.",
+  },
+  {
+    icon: <Star className="h-8 w-8 text-orange-500" />,
+    title: "World-Class Musicians",
+    description:
+      "We bring together the finest performers to deliver exceptional musical experiences.",
+  },
+  {
+    icon: <Users className="h-8 w-8 text-orange-500" />,
+    title: "Full-Service Events",
+    description:
+      "From ceremonies to evening parties, we provide comprehensive entertainment solutions.",
+  },
+];
 
 const AnimatedText = ({ text, isVisible }) => {
   return (
@@ -470,7 +498,32 @@ export default function WeddingsPage() {
         images={sectionImages.evening}
         isVisible={visibleSections.evening}
       />
+      {/* Values Section */}
 
+      <section className="py-20 bg-gray-50 text-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-16 text-orange-500">
+            The Shades Difference
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {valuesArray.map((value, index) => (
+              <div key={index}>
+                <div className="bg-white p-6 rounded-lg shadow-lg h-full">
+                  <div className="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    {value?.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-center text-orange-500">
+                    {value?.title}
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    {value?.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Second Prestige Clients Section with Lightbox (from original code) */}
       <section className="py-20 bg-gradient-to-r from-purple-800 to-purple-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
