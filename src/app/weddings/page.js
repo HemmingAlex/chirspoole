@@ -499,247 +499,309 @@ export default function WeddingsPage() {
         isVisible={visibleSections.evening}
       />
 
-     {/* Enhanced Prestigious Clients Section with animations and background */}
-<section className="py-20 relative overflow-hidden">
-  {/* Background image with overlay */}
-  <div className="absolute inset-0 z-0">
-    <img 
-      src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80" 
-      alt="Background" 
-      className="w-full h-full object-cover object-center"
-    />
-    <div className="absolute inset-0 bg-gray-900/80"></div>
-  </div>
-  
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <motion.h2 
-      className="text-4xl font-bold text-center mb-16 text-white"
-      initial={{ opacity: 0, y: -20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      Our Prestigious Clients
-    </motion.h2>
-    
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {/* Hospitality */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        viewport={{ once: true, margin: "-50px" }}
-      >
-        <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
-          <div className="flex items-center mb-6">
-            <motion.div 
-              className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-            </motion.div>
-            <h3 className="text-2xl font-semibold text-purple-700">
-              Luxury Hotels & Resorts
-            </h3>
-          </div>
-          <ul className="space-y-3 text-gray-800">
-            {["Emirates Palace Abu Dhabi", "Grand Hyatt Dubai", "Hilton Abu Dhabi", 
-              "Kempinski Djibouti", "Hyatt Regency Dubai", "Belfry Hotel & Resort", "Moor Hall Hotel & Spa"].map((client, index) => (
-              <motion.li 
-                key={index}
-                className="flex items-center"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 + (index * 0.05) }}
-                viewport={{ once: true }}
-              >
-                <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
-                {client}
-              </motion.li>
-            ))}
-          </ul>
+      {/* Enhanced Prestigious Clients Section with animations and background */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
+            alt="Background"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gray-900/80"></div>
         </div>
-      </motion.div>
 
-      {/* Sports */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        viewport={{ once: true, margin: "-50px" }}
-      >
-        <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
-          <div className="flex items-center mb-6">
-            <motion.div 
-              className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, delay: 0.4 }}
-              viewport={{ once: true }}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.h2
+            className="text-4xl font-bold text-center mb-16 text-white"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            Our Prestigious Clients
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Hospitality */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+                <div className="flex items-center mb-6">
+                  <motion.div
+                    className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-purple-700"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      />
+                    </svg>
+                  </motion.div>
+                  <h3 className="text-2xl font-semibold text-purple-700">
+                    Luxury Hotels & Resorts
+                  </h3>
+                </div>
+                <ul className="space-y-3 text-gray-800">
+                  {[
+                    "Emirates Palace Abu Dhabi",
+                    "Grand Hyatt Dubai",
+                    "Hilton Abu Dhabi",
+                    "Kempinski Djibouti",
+                    "Hyatt Regency Dubai",
+                    "Belfry Hotel & Resort",
+                    "Moor Hall Hotel & Spa",
+                  ].map((client, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-center"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
+                      viewport={{ once: true }}
+                    >
+                      <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+                      {client}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
-            <h3 className="text-2xl font-semibold text-purple-700">
-              Sports & Entertainment
-            </h3>
+
+            {/* Sports */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+                <div className="flex items-center mb-6">
+                  <motion.div
+                    className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 200, delay: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-purple-700"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </motion.div>
+                  <h3 className="text-2xl font-semibold text-purple-700">
+                    Sports & Entertainment
+                  </h3>
+                </div>
+                <ul className="space-y-3 text-gray-800">
+                  {[
+                    "Aston Villa FC",
+                    "Leicester City FC",
+                    "Manchester United FC",
+                    "Formula 1",
+                    "Melbourne Cup",
+                    "BBC TV",
+                    "ITV",
+                  ].map((client, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-center"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.3 + index * 0.05 }}
+                      viewport={{ once: true }}
+                    >
+                      <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+                      {client}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Corporate */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+                <div className="flex items-center mb-6">
+                  <motion.div
+                    className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 200, delay: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-purple-700"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </motion.div>
+                  <h3 className="text-2xl font-semibold text-purple-700">
+                    Corporate & Brands
+                  </h3>
+                </div>
+                <ul className="space-y-3 text-gray-800">
+                  {[
+                    "Cadbury World",
+                    "Harley Davidson",
+                    "Mercedes-Benz",
+                    "Jaguar Land Rover",
+                    "And many more prestigious",
+                    "organizations worldwide...",
+                  ].map((client, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-center"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.5 + index * 0.05 }}
+                      viewport={{ once: true }}
+                    >
+                      <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+                      {client}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
           </div>
-          <ul className="space-y-3 text-gray-800">
-            {["Aston Villa FC", "Leicester City FC", "Manchester United FC", 
-              "Formula 1", "Melbourne Cup", "BBC TV", "ITV"].map((client, index) => (
-              <motion.li 
-                key={index}
-                className="flex items-center"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 + (index * 0.05) }}
-                viewport={{ once: true }}
-              >
-                <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
-                {client}
-              </motion.li>
-            ))}
-          </ul>
+
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            <Lightbox images={clientImages} />
+          </motion.div>
         </div>
-      </motion.div>
+      </section>
 
-      {/* Corporate */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        viewport={{ once: true, margin: "-50px" }}
-      >
-        <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
-          <div className="flex items-center mb-6">
-            <motion.div 
-              className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </motion.div>
-            <h3 className="text-2xl font-semibold text-purple-700">
-              Corporate & Brands
-            </h3>
-          </div>
-          <ul className="space-y-3 text-gray-800">
-            {["Cadbury World", "Harley Davidson", "Mercedes-Benz", 
-              "Jaguar Land Rover", "And many more prestigious", "organizations worldwide..."].map((client, index) => (
-              <motion.li 
-                key={index}
-                className="flex items-center"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.5 + (index * 0.05) }}
-                viewport={{ once: true }}
-              >
-                <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
-                {client}
-              </motion.li>
-            ))}
-          </ul>
+      {/* Enhanced Values Section with animations */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1541439158503-43a5023c6a9b?auto=format&fit=crop&q=80"
+            alt="Background"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-purple-900/90 bg-gradient-to-b from-purple-900/90 to-indigo-900/90"></div>
         </div>
-      </motion.div>
-    </div>
-    
-    <motion.div 
-      className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.8 }}
-      viewport={{ once: true, margin: "-50px" }}
-    >
-      <Lightbox images={clientImages} />
-    </motion.div>
-  </div>
-</section>
 
-{/* Enhanced Values Section with animations */}
-<section className="py-20 relative overflow-hidden">
-  {/* Background image with overlay */}
-  <div className="absolute inset-0 z-0">
-    <img 
-      src="https://images.unsplash.com/photo-1541439158503-43a5023c6a9b?auto=format&fit=crop&q=80" 
-      alt="Background" 
-      className="w-full h-full object-cover object-center"
-    />
-    <div className="absolute inset-0 bg-purple-900/90 bg-gradient-to-b from-purple-900/90 to-indigo-900/90"></div>
-  </div>
-  
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <motion.h2 
-      className="text-4xl font-bold text-center mb-16 text-white"
-      initial={{ opacity: 0, y: -20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      The Shades Difference
-    </motion.h2>
-    
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-      {valuesArray.map((value, index) => (
-        <motion.div 
-          key={index}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 * index }}
-          viewport={{ once: true, margin: "-50px" }}
-          whileHover={{ y: -10, transition: { duration: 0.3 } }}
-        >
-          <div className="bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-xl h-full">
-            <motion.div 
-              className="bg-blue-100 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
-              initial={{ scale: 0, rotate: -30 }}
-              whileInView={{ scale: 1, rotate: 0 }}
-              transition={{ type: "spring", stiffness: 200, delay: 0.2 + (index * 0.1) }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.1, 
-                rotate: 5, 
-                transition: { duration: 0.3 } 
-              }}
-            >
-              {value?.icon}
-            </motion.div>
-            
-            <motion.h3 
-              className="text-xl font-semibold mb-4 text-center text-purple-800"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.3 + (index * 0.1) }}
-              viewport={{ once: true }}
-            >
-              {value?.title}
-            </motion.h3>
-            
-            <motion.p 
-              className="text-gray-600 text-center"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.4 + (index * 0.1) }}
-              viewport={{ once: true }}
-            >
-              {value?.description}
-            </motion.p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.h2
+            className="text-4xl font-bold text-center mb-16 text-white"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            The Shades Difference
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {valuesArray.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                viewport={{ once: true, margin: "-50px" }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              >
+                <div className="bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-xl h-full">
+                  <motion.div
+                    className="bg-blue-100 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
+                    initial={{ scale: 0, rotate: -30 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 200,
+                      delay: 0.2 + index * 0.1,
+                    }}
+                    viewport={{ once: true }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: 5,
+                      transition: { duration: 0.3 },
+                    }}
+                  >
+                    {value?.icon}
+                  </motion.div>
+
+                  <motion.h3
+                    className="text-xl font-semibold mb-4 text-center text-purple-800"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {value?.title}
+                  </motion.h3>
+
+                  <motion.p
+                    className="text-gray-600 text-center"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {value?.description}
+                  </motion.p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
     </div>
   );
 }
