@@ -103,13 +103,13 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="py-8 bg-white"
+      className="py-0 bg-white"
     >
       <div className="p-0 ">
-        <div className="flex flex-wrap px-8 lg:px-0">
+        <div className="flex flex-wrap px-0">
           {/* Left side - Just like original but with slideshow */}
-          <div className="w-full px-8 lg:w-1/2">
-            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-lg h-full">
+          <div className="w-full py-0 my-0 pr-8 lg:w-1/2">
+            <div className="relative aspect-video w-full overflow-hidden  shadow-lg h-full">
               {images.map((src, index) => (
                 <motion.div
                   key={`${id}-image-${index}`}
