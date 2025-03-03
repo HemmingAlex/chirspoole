@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 import { Mic, Music, Star, Heart } from "lucide-react";
@@ -65,45 +65,11 @@ const valuesArray = [
 ];
 
 const AnimatedText = ({ text, isVisible }) => {
-  // Convert text to words for better animation
-  const words = text.split(" ");
-
+  // Simple implementation that doesn't cause re-renders
   return (
-    <>
-      {words.map((word, wordIndex) => (
-        <React.Fragment key={`word-${wordIndex}`}>
-          {wordIndex > 0 && (
-            <motion.span
-              className="inline-block"
-              style={{ width: "0.5em" }} // Explicit space width
-              initial={{ opacity: 0 }}
-              animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-              transition={{
-                duration: 0.3,
-                delay: 0.08 * (wordIndex * word.length),
-              }}
-            >
-              &nbsp;
-            </motion.span>
-          )}
-          {word.split("").map((char, charIndex) => (
-            <motion.span
-              key={`char-${wordIndex}-${charIndex}`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-              transition={{
-                duration: 0.3,
-                delay: 0.08 * (wordIndex * word.length + charIndex),
-                ease: "easeOut",
-              }}
-              className="inline-block"
-            >
-              {char}
-            </motion.span>
-          ))}
-        </React.Fragment>
-      ))}
-    </>
+    <div className="text-orange-800">
+      {text}
+    </div>
   );
 };
 
@@ -113,7 +79,7 @@ const ServiceSection = ({
   content,
   images,
   isVisible,
-  imageOnRight = false,
+  imageOnRight = false ,
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -126,86 +92,109 @@ const ServiceSection = ({
     return () => clearInterval(timer);
   }, [images.length]);
 
-  // Image slideshow component - reused for both left and right layouts
-  const ImageSlideshow = () => (
-    <div className="w-full py-0 my-0 lg:w-1/2 px-4">
-      <div className="relative aspect-video w-full overflow-hidden shadow-lg h-full rounded-xl">
-        {images.map((src, index) => (
-          <motion.div
-            key={`${id}-image-${index}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-            className="absolute inset-0"
-          >
-            <img
-              src={src}
-              alt={`${title} image ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        ))}
-
-        {/* Image navigation dots */}
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-          {images.map((_, index) => (
-            <button
-              key={`${id}-dot-${index}`}
-              onClick={() => setCurrentImageIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === currentImageIndex
-                  ? "bg-orange-500 scale-125"
-                  : "bg-white/70 hover:bg-white"
-              }`}
-              aria-label={`View image ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-
-  // Content component - reused for both left and right layouts
-  const ContentSection = () => (
-    <div className="w-full xl:w-1/2 pb-8 px-4">
-      <motion.h2
-        className="text-3xl font-bold mb-6 text-orange-800"
-        initial={{ opacity: 0, x: imageOnRight ? 20 : -20 }}
-        animate={isVisible ? { opacity: 1, x: 0 } : {}}
-        transition={{
-          duration: 0.8,
-          delay: 0.2,
-          type: "spring",
-          stiffness: 100,
-        }}
-      >
-        <AnimatedText text={title} isVisible={isVisible} />
-      </motion.h2>
-      {content}
-    </div>
-  );
-
-  return (
+  return imageOnRight ? (
     <motion.section
       id={id}
       initial={{ opacity: 0, y: 50 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="py-16 bg-white"
+      className=" bg-white"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="">
         <div className="flex flex-wrap">
-          {imageOnRight ? (
-            <>
-              <ContentSection />
-              <ImageSlideshow />
-            </>
-          ) : (
-            <>
-              <ImageSlideshow />
-              <ContentSection />
-            </>
-          )}
+          {/* Left side - Just like original but with slideshow */}
+          <div className="w-full lg:w-1/2 pb-8 px-8">
+            <motion.h2
+              className="text-3xl font-bold mb-6 text-orange-800"
+              initial={{ opacity: 0, x: -20 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                type: "spring",
+                stiffness: 100,
+              }}
+            >
+              <br />
+              <AnimatedText text={title} isVisible={isVisible} />
+            </motion.h2>
+            {content}
+            {/* <Lightbox /> */}
+          </div>
+
+          {/* Right side - Content */}
+          <div className="w-full xl:w-1/2 ">
+            <div className="relative aspect-video w-full overflow-hidden  shadow-lg h-full ">
+              {images.map((src, index) => (
+                <motion.div
+                  key={`${id}-image-${index}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0"
+                >
+                  <img
+                    src={src}
+                    alt={`${title} image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  ) : (
+    <motion.section
+      id={id}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      className="py-0 bg-white"
+    >
+      <div className="">
+        <div className="flex flex-wrap ">
+          {/* Left side - Just like original but with slideshow */}
+          <div className="w-full lg:w-1/2">
+            <div className="relative aspect-video w-full overflow-hidden  shadow-lg h-full">
+              {images.map((src, index) => (
+                <motion.div
+                  key={`${id}-image-${index}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0"
+                >
+                  <img
+                    src={src}
+                    alt={`${title} image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+            {/* <Lightbox /> */}
+          </div>
+
+          {/* Right side - Content */}
+          <div className="w-full xl:w-1/2 pb-8 px-8">
+            <motion.h2
+              className="text-3xl font-bold mb-6 text-orange-800"
+              initial={{ opacity: 0, x: -20 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                type: "spring",
+                stiffness: 100,
+              }}
+            >
+              <br />
+              <AnimatedText text={title} isVisible={isVisible} />
+            </motion.h2>
+            {content}
+          </div>
         </div>
       </div>
     </motion.section>
@@ -213,6 +202,7 @@ const ServiceSection = ({
 };
 
 export default function ProposalsPage() {
+  // Use refs to store the current image index to avoid re-renders
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [visibleSections, setVisibleSections] = useState({
     introduction: false,
@@ -221,19 +211,32 @@ export default function ProposalsPage() {
     celebration: false,
   });
 
-  // Auto-advance the hero slideshow every 5 seconds
+  // Separate timers for hero and section slideshows to avoid conflicts
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % sectionImages.hero.length
-      );
-    }, 5000);
+    // Hero slideshow timer
+    const heroTimer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sectionImages.hero.length);
+    }, 6000); // Slightly longer time for hero slideshow
 
-    return () => clearInterval(timer);
+    return () => clearInterval(heroTimer);
   }, []);
 
+  // Use a more efficient scroll handler with throttling
   useEffect(() => {
-    const handleScroll = () => {
+    // Throttle function to limit how often the scroll handler runs
+    const throttle = (func, limit) => {
+      let inThrottle;
+      return function() {
+        if (!inThrottle) {
+          func();
+          inThrottle = true;
+          setTimeout(() => inThrottle = false, limit);
+        }
+      };
+    };
+
+    // More efficient scroll handler using getBoundingClientRect only when necessary
+    const handleScroll = throttle(() => {
       const sections = {
         introduction: document.getElementById("introduction"),
         customized: document.getElementById("customized"),
@@ -241,31 +244,42 @@ export default function ProposalsPage() {
         celebration: document.getElementById("celebration"),
       };
 
+      const viewportHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+      
       Object.entries(sections).forEach(([key, section]) => {
         if (section) {
-          const rect = section.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight * 0.75;
-          setVisibleSections((prev) => ({ ...prev, [key]: isVisible }));
+          // Simple calculation instead of getBoundingClientRect
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          // Check if section is in viewport
+          const isVisible = 
+            scrollTop + viewportHeight * 0.75 > sectionTop &&
+            scrollTop < sectionTop + sectionHeight;
+            
+          if (isVisible !== visibleSections[key]) {
+            setVisibleSections(prev => ({ ...prev, [key]: isVisible }));
+          }
         }
       });
-    };
+    }, 100); // Only run every 100ms at most
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    handleScroll(); // Check visibility initially
+    
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [visibleSections]);
 
   // Define the formatted content components for each section
   const IntroductionContent = () => (
     <div className="text-gray-700 text-lg">
       <p className="mb-4 text-lg leading-relaxed">
-        Make your proposal an unforgettable moment with entertainment that
-        perfectly complements the magic of your special day. At Shades Live
-        Music, we specialize in creating personalized, romantic, and memorable
-        experiences that will leave your partner in awe. Whether you&apos;re
-        planning an intimate proposal or a grand gesture, we offer entertainment
-        services to set the perfect tone and make the moment truly
-        extraordinary.
+        Make your proposal an unforgettable moment with entertainment that perfectly
+        complements the magic of your special day. At Shades Live Music, we specialize in
+        creating personalized, romantic, and memorable experiences that will leave your partner
+        in awe. Whether you're planning an intimate proposal or a grand gesture, we offer
+        entertainment services to set the perfect tone and make the moment truly extraordinary.
       </p>
     </div>
   );
@@ -279,35 +293,30 @@ export default function ProposalsPage() {
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Live Music or Musicians:</span> Set
-            the mood with live performances from talented musicians. Whether
-            it&apos;s our solo guitarist playing your favourite love songs, our
-            string quartet for a classic feel, or our jazz band for an elegant
-            touch, we curate the perfect soundtrack for your proposal.
+            <span className="font-medium">Live Music or Musicians:</span> Set the mood with live performances from talented
+            musicians. Whether it&apos;s our solo guitarist playing your favourite love songs, our
+            string quartet for a classic feel, or our jazz band for an elegant touch, we curate the
+            perfect soundtrack for your proposal.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Flash Mob Proposals:</span> Create a
-            fun and unforgettable moment with a surprise flash mob performance!
-            Our professional dancers can coordinate a flash mob that leads to
-            the big question, offering an exciting and lively proposal
-            experience.
+            <span className="font-medium">Flash Mob Proposals:</span> Create a fun and unforgettable moment with a surprise
+            flash mob performance! Our professional dancers can coordinate a flash mob that
+            leads to the big question, offering an exciting and lively proposal experience.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Private Serenades:</span> Nothing says
-            romance like a private serenade. Surprise your partner with a live
-            serenade by our vocalists or instrumentalists in a setting
-            that&apos;s meaningful to you both, whether it&apos;s in a park, on
-            a rooftop, or at a private event.
+            <span className="font-medium">Private Serenades:</span> Nothing says romance like a private serenade. Surprise your
+            partner with a live serenade by our vocalists or instrumentalists in a setting that&apos;s
+            meaningful to you both, whether it&apos;s in a park, on a rooftop, or at a private event.
           </p>
         </li>
       </ul>
-
+      
       <div className="mt-6">
         <p className="font-semibold text-lg mb-2 text-orange-800">
           Live Music Options:
@@ -351,31 +360,26 @@ export default function ProposalsPage() {
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Custom Video Messages:</span> Capture
-            the essence of your relationship with a personalized video montage.
-            From the beginning of your journey together to the moment you ask,
-            this heartfelt tribute will add a special touch to your proposal.
+            <span className="font-medium">Custom Video Messages:</span> Capture the essence of your relationship with a
+            personalized video montage. From the beginning of your journey together to the
+            moment you ask, this heartfelt tribute will add a special touch to your proposal.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Themed Experiences:</span> Bring your
-            vision to life with a themed proposal. Whether it&apos;s a
-            vintage-inspired gathering or a destination-themed setup, we can
-            provide entertainment that ties seamlessly into your theme,
-            including props, performers, and music.
+            <span className="font-medium">Themed Experiences:</span> Bring your vision to life with a themed proposal. Whether
+            it&apos;s a vintage-inspired gathering or a destination-themed setup, we can provide
+            entertainment that ties seamlessly into your theme, including props, performers,
+            and music.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">
-              Interactive Games or Challenges:
-            </span>{" "}
-            Add an element of surprise with a scavenger hunt or puzzle that
-            leads your partner to the proposal location. Incorporating fun and
-            interactive activities will make the moment even more memorable and
+            <span className="font-medium">Interactive Games or Challenges:</span> Add an element of surprise with a scavenger
+            hunt or puzzle that leads your partner to the proposal location. Incorporating fun
+            and interactive activities will make the moment even more memorable and
             personal.
           </p>
         </li>
@@ -424,30 +428,27 @@ export default function ProposalsPage() {
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Private Party Entertainment:</span>{" "}
-            After the proposal, celebrate with an intimate gathering. We offer
-            our DJ, live band, and even entertainers like magicians or comedians
-            to keep the fun going as you and your guests revel in the moment.
+            <span className="font-medium">Private Party Entertainment:</span> After the proposal, celebrate with an intimate
+            gathering. We offer our DJ, live band, and even entertainers like magicians or
+            comedians to keep the fun going as you and your guests revel in the moment.
           </p>
         </li>
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Romantic Dance Floor:</span> After you
-            pop the question, share your first dance with a professional dance
-            performance, whether it&apos;s a slow, romantic waltz or a
+            <span className="font-medium">Romantic Dance Floor:</span> After you pop the question, share your first dance with a
+            professional dance performance, whether it&apos;s a slow, romantic waltz or a
             choreographed routine to a special song.
           </p>
         </li>
       </ul>
-
+      
       <p className="mb-4 text-lg leading-relaxed">
-        Our team is dedicated to helping you create a proposal that reflects
-        your love story, and we work closely with you to make your vision a
-        reality. Let us help you plan an unforgettable proposal that will create
-        lifelong memories for you and your partner.
+        Our team is dedicated to helping you create a proposal that reflects your love story, and
+        we work closely with you to make your vision a reality. Let us help you plan an
+        unforgettable proposal that will create lifelong memories for you and your partner.
       </p>
-
+      
       <div className="mt-6">
         <p className="font-semibold text-lg mb-2 text-orange-800">
           Celebration Services:
@@ -487,53 +488,44 @@ export default function ProposalsPage() {
       {/* Hero Section with Slideshow instead of video */}
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-10" />
-
-        {/* Slideshow for hero section */}
+        
+        {/* Slideshow for hero section - optimized with will-change */}
         <div className="relative h-full w-full">
           {sectionImages.hero.map((src, index) => (
-            <motion.div
+            <div
               key={`hero-image-${index}`}
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: index === currentImageIndex ? 1 : 0,
-              }}
-              transition={{ duration: 1.5 }}
-              className="absolute inset-0"
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ willChange: 'opacity', transform: 'translateZ(0)' }}
             >
               <img
                 src={src}
                 alt={`Proposal Moment ${index + 1}`}
                 className="w-full h-full object-cover"
+                loading={index === 0 ? 'eager' : 'lazy'} // Only eagerly load the first image
               />
-            </motion.div>
+            </div>
           ))}
         </div>
-
+        
         {/* Title Overlay */}
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-center px-4"
-          >
+          <div className="text-center px-4">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               Perfect Proposal Moments
             </h1>
             <p className="text-xl text-white max-w-2xl mx-auto mb-8 drop-shadow-md">
-              Create an unforgettable proposal experience with our bespoke
-              entertainment services
+              Create an unforgettable proposal experience with our bespoke entertainment services
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05, backgroundColor: "#f97316" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 text-white py-3 px-8 rounded-lg font-semibold transition duration-300 shadow-lg"
+            <button 
+              className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-lg font-semibold transition duration-300 shadow-lg"
             >
               Plan Your Perfect Proposal
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
         </div>
-
+        
         {/* Navigation dots for hero slideshow */}
         <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center gap-3">
           {sectionImages.hero.map((_, index) => (
@@ -541,8 +533,8 @@ export default function ProposalsPage() {
               key={`hero-dot-${index}`}
               onClick={() => setCurrentImageIndex(index)}
               className={`w-3 h-3 rounded-full transition-all ${
-                index === currentImageIndex
-                  ? "bg-orange-500 scale-125"
+                index === currentImageIndex 
+                  ? "bg-orange-500 scale-125" 
                   : "bg-white/70 hover:bg-white"
               }`}
               aria-label={`View hero image ${index + 1}`}
@@ -597,222 +589,150 @@ export default function ProposalsPage() {
         />
       </div>
 
-      {/* Enhanced Prestigious Clients Section with animations and background */}
+      {/* Prestigious Clients Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gray-900/80"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.h2
-            className="text-4xl font-bold text-center mb-16 text-orange-500"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
+          <h2 className="text-4xl font-bold text-center mb-16 text-orange-500">
             Our Prestigious Clients
-          </motion.h2>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Hospitality */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
-                <div className="flex items-center mb-6">
-                  <motion.div
-                    className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-                    viewport={{ once: true }}
+            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-orange-700"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-orange-700"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                      />
-                    </svg>
-                  </motion.div>
-                  <h3 className="text-2xl font-semibold text-orange-700">
-                    Luxury Hotels & Resorts
-                  </h3>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
                 </div>
-                <ul className="space-y-3 text-gray-800">
-                  {[
-                    "Emirates Palace Abu Dhabi",
-                    "Grand Hyatt Dubai",
-                    "Hilton Abu Dhabi",
-                    "Kempinski Djibouti",
-                    "Hyatt Regency Dubai",
-                    "Belfry Hotel & Resort",
-                    "Moor Hall Hotel & Spa",
-                  ].map((client, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-center"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
-                      viewport={{ once: true }}
-                    >
-                      <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
-                      {client}
-                    </motion.li>
-                  ))}
-                </ul>
+                <h3 className="text-2xl font-semibold text-orange-700">
+                  Luxury Hotels & Resorts
+                </h3>
               </div>
-            </motion.div>
+              <ul className="space-y-3 text-gray-800">
+                {[
+                  "Emirates Palace Abu Dhabi",
+                  "Grand Hyatt Dubai",
+                  "Hilton Abu Dhabi",
+                  "Kempinski Djibouti",
+                  "Hyatt Regency Dubai",
+                  "Belfry Hotel & Resort",
+                  "Moor Hall Hotel & Spa",
+                ].map((client, index) => (
+                  <li key={index} className="flex items-center">
+                    <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
+                    {client}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             {/* Sports */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
-                <div className="flex items-center mb-6">
-                  <motion.div
-                    className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 200, delay: 0.4 }}
-                    viewport={{ once: true }}
+            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-orange-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-orange-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </motion.div>
-                  <h3 className="text-2xl font-semibold text-orange-500">
-                    Sports & Entertainment
-                  </h3>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
                 </div>
-                <ul className="space-y-3 text-gray-800">
-                  {[
-                    "Aston Villa FC",
-                    "Leicester City FC",
-                    "Manchester United FC",
-                    "Formula 1",
-                    "Melbourne Cup",
-                    "BBC TV",
-                    "ITV",
-                  ].map((client, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-center"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.3 + index * 0.05 }}
-                      viewport={{ once: true }}
-                    >
-                      <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
-                      {client}
-                    </motion.li>
-                  ))}
-                </ul>
+                <h3 className="text-2xl font-semibold text-orange-500">
+                  Sports & Entertainment
+                </h3>
               </div>
-            </motion.div>
+              <ul className="space-y-3 text-gray-800">
+                {[
+                  "Aston Villa FC",
+                  "Leicester City FC",
+                  "Manchester United FC",
+                  "Formula 1",
+                  "Melbourne Cup",
+                  "BBC TV",
+                  "ITV",
+                ].map((client, index) => (
+                  <li key={index} className="flex items-center">
+                    <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
+                    {client}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             {/* Corporate */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
-                <div className="flex items-center mb-6">
-                  <motion.div
-                    className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 200, delay: 0.6 }}
-                    viewport={{ once: true }}
+            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-orange-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-orange-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </motion.div>
-                  <h3 className="text-2xl font-semibold text-orange-700">
-                    Corporate & Brands
-                  </h3>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
                 </div>
-                <ul className="space-y-3 text-gray-800">
-                  {[
-                    "Cadbury World",
-                    "Harley Davidson",
-                    "Mercedes-Benz",
-                    "Jaguar Land Rover",
-                    "And many more prestigious",
-                    "organizations worldwide...",
-                  ].map((client, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-center"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.5 + index * 0.05 }}
-                      viewport={{ once: true }}
-                    >
-                      <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
-                      {client}
-                    </motion.li>
-                  ))}
-                </ul>
+                <h3 className="text-2xl font-semibold text-orange-700">
+                  Corporate & Brands
+                </h3>
               </div>
-            </motion.div>
+              <ul className="space-y-3 text-gray-800">
+                {[
+                  "Cadbury World",
+                  "Harley Davidson",
+                  "Mercedes-Benz",
+                  "Jaguar Land Rover",
+                  "And many more prestigious",
+                  "organizations worldwide...",
+                ].map((client, index) => (
+                  <li key={index} className="flex items-center">
+                    <span className="h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
+                    {client}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
             <Lightbox images={clientImages} />
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -829,67 +749,25 @@ export default function ProposalsPage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.h2
-            className="text-4xl font-bold text-center mb-16 text-white"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
             The Shades Difference
-          </motion.h2>
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {valuesArray.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-                viewport={{ once: true, margin: "-50px" }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              >
+              <div key={index} className="flex flex-col h-full">
                 <div className="bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-xl h-full">
-                  <motion.div
-                    className="bg-blue-100 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
-                    initial={{ scale: 0, rotate: -30 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 200,
-                      delay: 0.2 + index * 0.1,
-                    }}
-                    viewport={{ once: true }}
-                    whileHover={{
-                      scale: 1.1,
-                      rotate: 5,
-                      transition: { duration: 0.3 },
-                    }}
-                  >
+                  <div className="bg-blue-100 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
                     {value?.icon}
-                  </motion.div>
-
-                  <motion.h3
-                    className="text-xl font-semibold mb-4 text-center text-orange-800"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-center text-orange-800">
                     {value?.title}
-                  </motion.h3>
-
-                  <motion.p
-                    className="text-gray-600 text-center"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
+                  </h3>
+                  <p className="text-gray-600 text-center">
                     {value?.description}
-                  </motion.p>
+                  </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
