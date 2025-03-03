@@ -130,7 +130,7 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
           </div>
 
           {/* Right side - Content */}
-          <div className="w-full xl:w-1/2">
+          <div className="w-full xl:w-1/2 pb-8">
             <motion.h2
               className="text-3xl font-bold mb-6 text-purple-800"
               initial={{ opacity: 0, x: -20 }}
