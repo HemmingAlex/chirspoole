@@ -3,23 +3,23 @@
 import { motion } from "framer-motion";
 import { Music, Mic, Users, Star } from "lucide-react";
 import Socials from "../../components/SocialBar ";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 // Dynamically import the 3D component to avoid SSR issues
-const AboutUsSphere = dynamic(() => import('../../components/AboutUsSphere'), {
+const AboutUsSphere = dynamic(() => import("../../components/AboutUsSphere"), {
   ssr: false,
 });
 
 // Animation variants
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8
-    }
-  }
+      duration: 0.8,
+    },
+  },
 };
 
 const staggerContainer = {
@@ -27,13 +27,12 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
-    }
-  }
+      staggerChildren: 0.2,
+    },
+  },
 };
 
 export default function AboutPage() {
-
   return (
     <div>
       {/* Hero Section with 3D animation overlay */}
@@ -45,13 +44,13 @@ export default function AboutPage() {
           }}
         />
         <div className="absolute inset-0 bg-black/75 z-10" />
-        
+
         {/* 3D Sphere component */}
         <AboutUsSphere />
-        
+
         {/* Content overlay */}
         <div className="relative h-full flex items-center justify-center text-white z-30">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -83,24 +82,25 @@ export default function AboutPage() {
                   About Us
                 </h2>
                 <p className="text-gray-300 text-lg">
-                  At Shades Live Music, we believe that every event is an opportunity to create
-                  unforgettable memories. Whether it's a wedding, corporate gathering, private party, or
-                  special celebration, our team is dedicated to delivering exceptional entertainment that
-                  brings people together and elevates any occasion.
+                  At Shades Live Music, we believe that every event is an
+                  opportunity to create unforgettable memories. Whether it's a
+                  wedding, corporate gathering, private party, or special
+                  celebration, our team is dedicated to delivering exceptional
+                  entertainment that brings people together and elevates any
+                  occasion.
                 </p>
                 <p className="text-gray-300 text-lg">
-                  Founded with a passion for bringing joy and excitement to every event, we specialize in
-                  providing customized entertainment experiences that are as unique as our clients. From
-                  live music and DJs to interactive performances and full-scale production services, we
-                  work with you to design the perfect entertainment package for your specific needs and
+                  Founded with a passion for bringing joy and excitement to
+                  every event, we specialize in providing customized
+                  entertainment experiences that are as unique as our clients.
+                  From live music and DJs to interactive performances and
+                  full-scale production services, we work with you to design the
+                  perfect entertainment package for your specific needs and
                   vision.
                 </p>
               </motion.div>
 
-              <motion.div
-                variants={fadeIn}
-                className="grid grid-cols-2 gap-4"
-              >
+              <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4">
                 <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
                   <img
                     src="/api/placeholder/800/800"
@@ -144,10 +144,16 @@ export default function AboutPage() {
               variants={staggerContainer}
               className="text-center mb-16"
             >
-              <motion.h2 variants={fadeIn} className="text-3xl font-bold text-orange-500 mb-4">
+              <motion.h2
+                variants={fadeIn}
+                className="text-3xl font-bold text-orange-500 mb-4"
+              >
                 What We Do
               </motion.h2>
-              <motion.p variants={fadeIn} className="text-gray-300 text-lg max-w-3xl mx-auto">
+              <motion.p
+                variants={fadeIn}
+                className="text-gray-300 text-lg max-w-3xl mx-auto"
+              >
                 We offer a wide range of services to suit any event, including:
               </motion.p>
             </motion.div>
@@ -162,24 +168,28 @@ export default function AboutPage() {
               {[
                 {
                   title: "Live Music & DJs",
-                  description: "Our talented musicians and DJs cater to all tastes, from classical ensembles to contemporary beats, ensuring your guests stay engaged and entertained.",
-                  icon: <Music className="h-8 w-8 text-orange-500" />
+                  description:
+                    "Our talented musicians and DJs cater to all tastes, from classical ensembles to contemporary beats, ensuring your guests stay engaged and entertained.",
+                  icon: <Music className="h-8 w-8 text-orange-500" />,
                 },
                 {
                   title: "Interactive Experiences",
-                  description: "We specialize in fun, engaging activities like games, photo booths, and custom performances that allow your guests to interact and make lasting memories.",
-                  icon: <Users className="h-8 w-8 text-orange-500" />
+                  description:
+                    "We specialize in fun, engaging activities like games, photo booths, and custom performances that allow your guests to interact and make lasting memories.",
+                  icon: <Users className="h-8 w-8 text-orange-500" />,
                 },
                 {
                   title: "Themed Events & Custom Shows",
-                  description: "Whether you're planning a corporate gala, wedding, or themed party, we craft personalized entertainment experiences that reflect your vision and exceed expectations.",
-                  icon: <Star className="h-8 w-8 text-orange-500" />
+                  description:
+                    "Whether you're planning a corporate gala, wedding, or themed party, we craft personalized entertainment experiences that reflect your vision and exceed expectations.",
+                  icon: <Star className="h-8 w-8 text-orange-500" />,
                 },
                 {
                   title: "Full Event Production",
-                  description: "From sound and lighting to staging and coordination, we provide full-service production to ensure every detail is taken care of, so you can enjoy your event stress-free.",
-                  icon: <Mic className="h-8 w-8 text-orange-500" />
-                }
+                  description:
+                    "From sound and lighting to staging and coordination, we provide full-service production to ensure every detail is taken care of, so you can enjoy your event stress-free.",
+                  icon: <Mic className="h-8 w-8 text-orange-500" />,
+                },
               ].map((service, index) => (
                 <motion.div
                   key={index}
@@ -218,20 +228,26 @@ export default function AboutPage() {
                   Our Philosophy
                 </h2>
                 <p className="text-gray-300 text-lg">
-                  At Shades Live Music, we understand that entertainment is more than
-                  just filling time—it's about creating moments that resonate. We work closely with you to
-                  ensure that every element of your event is tailored to match your style, preferences, and
-                  goals. Our team of experienced professionals is committed to delivering exceptional
-                  service, offering creativity and expertise to every event we take part in.
+                  At Shades Live Music, we understand that entertainment is more
+                  than just filling time—it's about creating moments that
+                  resonate. We work closely with you to ensure that every
+                  element of your event is tailored to match your style,
+                  preferences, and goals. Our team of experienced professionals
+                  is committed to delivering exceptional service, offering
+                  creativity and expertise to every event we take part in.
                 </p>
                 <p className="text-gray-300 text-lg">
-                  Whether it's an intimate celebration or a large-scale affair, we are dedicated to providing
-                  entertainment that captures the heart of every occasion. Let us help you transform your
-                  next event into something extraordinary.
+                  Whether it's an intimate celebration or a large-scale affair,
+                  we are dedicated to providing entertainment that captures the
+                  heart of every occasion. Let us help you transform your next
+                  event into something extraordinary.
                 </p>
               </motion.div>
 
-              <motion.div variants={fadeIn} className="bg-black p-8 rounded-lg shadow-lg border border-gray-800">
+              <motion.div
+                variants={fadeIn}
+                className="bg-black p-8 rounded-lg shadow-lg border border-gray-800"
+              >
                 <h3 className="text-2xl font-bold mb-6 text-orange-500">
                   Why Choose Us?
                 </h3>
@@ -241,8 +257,9 @@ export default function AboutPage() {
                       Expertise
                     </h4>
                     <p className="text-gray-300">
-                      With 25 years of experience in the entertainment industry, we
-                      understand the intricacies of creating events that are not only fun but meaningful.
+                      With 25 years of experience in the entertainment industry,
+                      we understand the intricacies of creating events that are
+                      not only fun but meaningful.
                     </p>
                   </div>
 
@@ -251,8 +268,8 @@ export default function AboutPage() {
                       Customization
                     </h4>
                     <p className="text-gray-300">
-                      We offer personalized entertainment options to ensure your event
-                      is truly one-of-a-kind.
+                      We offer personalized entertainment options to ensure your
+                      event is truly one-of-a-kind.
                     </p>
                   </div>
 
@@ -261,8 +278,9 @@ export default function AboutPage() {
                       Passion
                     </h4>
                     <p className="text-gray-300">
-                      We love what we do, and it shows in every event we produce. Our passion
-                      for creating memorable experiences drives us to exceed expectations every time.
+                      We love what we do, and it shows in every event we
+                      produce. Our passion for creating memorable experiences
+                      drives us to exceed expectations every time.
                     </p>
                   </div>
                 </div>
@@ -421,15 +439,22 @@ export default function AboutPage() {
               viewport={{ once: true }}
               variants={staggerContainer}
             >
-              <motion.h2 variants={fadeIn} className="text-3xl font-bold mb-4 text-orange-500">
+              <motion.h2
+                variants={fadeIn}
+                className="text-3xl font-bold mb-4 text-orange-500"
+              >
                 Create Your Perfect Event
               </motion.h2>
               <motion.p variants={fadeIn} className="text-xl mb-8">
-                Let's bring your vision to life. Whether you're planning a wedding, corporate event,
-                private party, or special celebration, Shades Live Music is here to make your event an
-                unforgettable experience.
+                Let's bring your vision to life. Whether you're planning a
+                wedding, corporate event, private party, or special celebration,
+                Shades Live Music is here to make your event an unforgettable
+                experience.
               </motion.p>
-              <motion.div variants={fadeIn} className="flex justify-center space-x-4">
+              <motion.div
+                variants={fadeIn}
+                className="flex justify-center space-x-4"
+              >
                 <a
                   href="/contact"
                   className="inline-block bg-white text-orange-500 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition"
@@ -443,7 +468,10 @@ export default function AboutPage() {
                   View Services
                 </a>
               </motion.div>
-              <motion.div variants={fadeIn} className="flex justify-center mt-8">
+              <motion.div
+                variants={fadeIn}
+                className="flex justify-center mt-8"
+              >
                 <Socials />
               </motion.div>
             </motion.div>
