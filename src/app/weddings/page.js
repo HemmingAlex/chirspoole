@@ -498,7 +498,72 @@ export default function WeddingsPage() {
         images={sectionImages.evening}
         isVisible={visibleSections.evening}
       />
-      {/* Values Section */}
+
+      {/* Second Prestige Clients Section with Lightbox (from original code) */}
+
+      <section className="py-20 bg-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-16 text-purple-500">
+              Our Prestigious Clients
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Hospitality */}
+              <div className="">
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-semibold mb-4 text-purple-500">
+                    Luxury Hotels & Resorts
+                  </h3>
+                  <ul className="space-y-2 text-black">
+                    <li>Emirates Palace Abu Dhabi</li>
+                    <li>Grand Hyatt Dubai</li>
+                    <li>Hilton Abu Dhabi</li>
+                    <li>Kempinski Djibouti</li>
+                    <li>Hyatt Regency Dubai</li>
+                    <li>Belfry Hotel & Resort</li>
+                    <li>Moor Hall Hotel & Spa</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Sports */}
+              <div className="">
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-semibold mb-4 text-purple-500">
+                    Sports & Entertainment
+                  </h3>
+                  <ul className="space-y-2 text-gray-600">
+                    <li>Aston Villa FC</li>
+                    <li>Leicester City FC</li>
+                    <li>Manchester United FC</li>
+                    <li>Formula 1</li>
+                    <li>Melbourne Cup</li>
+                    <li>BBC TV</li>
+                    <li>ITV</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Corporate */}
+              <div className="">
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-semibold mb-4 text-purple-500">
+                    Corporate & Brands
+                  </h3>
+                  <ul className="space-y-2 text-gray-600">
+                    <li>Cadbury World</li>
+                    <li>Harley Davidson</li>
+                    <li>And many more prestigious</li>
+                    <li>organizations worldwide...</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 m-16">
+            <Lightbox images={clientImages} />
+          </div>
+        </section>
+              {/* Values Section */}
 
       <section className="py-20 bg-gray-50 text-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -524,17 +589,7 @@ export default function WeddingsPage() {
           </div>
         </div>
       </section>
-      {/* Second Prestige Clients Section with Lightbox (from original code) */}
-      <section className="py-20 bg-gradient-to-r from-purple-800 to-purple-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Our Prestige Clients
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Lightbox images={clientImages} />
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 }
