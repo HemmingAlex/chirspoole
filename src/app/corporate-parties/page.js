@@ -199,7 +199,7 @@ export default function CorporatePartiesPage() {
     <div className="text-gray-700 text-lg">
       <p className="mb-4 text-lg leading-relaxed">
         Elevate your next corporate event or private party with unforgettable entertainment
-        experiences that captivate and engage your guests. Whether you're hosting a corporate
+        experiences that captivate and engage your guests. Whether you&apos;re hosting a corporate
         conference, gala, team-building event, or a celebratory party, we provide tailored
         entertainment solutions designed to fit any occasion. From live music and DJs to
         interactive games and professional performers, our team works with you to create the
@@ -239,7 +239,7 @@ export default function CorporatePartiesPage() {
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
             <span className="font-medium">Themed Parties & Awards Ceremonies:</span> Make your corporate event stand out
-            with a professionally curated theme, whether it's a black-tie gala or an awards
+            with a professionally curated theme, whether it&apos;s a black-tie gala or an awards
             ceremony.
           </p>
         </li>
@@ -296,7 +296,7 @@ export default function CorporatePartiesPage() {
         <li className="flex">
           <span className="h-2 w-2 rounded-full bg-orange-500 mr-3 mt-2.5"></span>
           <p>
-            <span className="font-medium">Customized Party Entertainment:</span> Whether it's a birthday, anniversary, or any
+            <span className="font-medium">Customized Party Entertainment:</span> Whether it&apos;s a birthday, anniversary, or any
             special celebration, we offer bespoke entertainment that fits your theme and
             preferences.
           </p>

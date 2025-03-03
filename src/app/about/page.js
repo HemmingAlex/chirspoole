@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1543047280-397967875ea9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+            backgroundImage: `url(&apos;https://images.unsplash.com/photo-1543047280-397967875ea9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&apos;)`,
           }}
         />
         <div className="absolute inset-0 bg-black/75 z-10" />
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-gray-300 text-lg">
                   At Shades Live Music, we believe that every event is an
-                  opportunity to create unforgettable memories. Whether it's a
+                  opportunity to create unforgettable memories. Whether it&apos;s a
                   wedding, corporate gathering, private party, or special
                   celebration, our team is dedicated to delivering exceptional
                   entertainment that brings people together and elevates any
@@ -229,7 +229,7 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-gray-300 text-lg">
                   At Shades Live Music, we understand that entertainment is more
-                  than just filling time—it's about creating moments that
+                  than just filling time—it&apos;s about creating moments that
                   resonate. We work closely with you to ensure that every
                   element of your event is tailored to match your style,
                   preferences, and goals. Our team of experienced professionals
@@ -237,7 +237,7 @@ export default function AboutPage() {
                   creativity and expertise to every event we take part in.
                 </p>
                 <p className="text-gray-300 text-lg">
-                  Whether it's an intimate celebration or a large-scale affair,
+                  Whether it&apos;s an intimate celebration or a large-scale affair,
                   we are dedicated to providing entertainment that captures the
                   heart of every occasion. Let us help you transform your next
                   event into something extraordinary.
@@ -446,7 +446,7 @@ export default function AboutPage() {
                 Create Your Perfect Event
               </motion.h2>
               <motion.p variants={fadeIn} className="text-xl mb-8">
-                Let's bring your vision to life. Whether you're planning a
+                Let&apos;s bring your vision to life. Whether you&apos;re planning a
                 wedding, corporate event, private party, or special celebration,
                 Shades Live Music is here to make your event an unforgettable
                 experience.
