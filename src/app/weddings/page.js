@@ -38,15 +38,15 @@ const sectionImages = {
 const AnimatedText = ({ text, isVisible }) => {
   return (
     <>
-      {text.split('').map((char, index) => (
+      {text.split("").map((char, index) => (
         <motion.span
           key={`char-${index}`}
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ 
-            duration: 0.3, 
+          transition={{
+            duration: 0.3,
             delay: index * 0.08, // Staggered delay based on character position
-            ease: "easeOut" 
+            ease: "easeOut",
           }}
           className="inline-block"
         >
@@ -56,8 +56,6 @@ const AnimatedText = ({ text, isVisible }) => {
     </>
   );
 };
-
-
 
 const ServiceSection = ({ id, title, content, images, isVisible }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -77,17 +75,17 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="py-16 bg-white"
+      className="py-8 bg-white"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div className="p-0 ">
+        <div className="flex flex-wrap px-8 lg:px-0">
           {/* Left side - Just like original but with slideshow */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="col-span-2 relative aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+          <div className="w-full px-8 lg:w-1/2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-lg h-full">
               {images.map((src, index) => (
                 <motion.div
                   key={`${id}-image-${index}`}
-                  initial={{ opacity: 0,delay:2 }}
+                  initial={{ opacity: 0 }}
                   animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0"
@@ -104,7 +102,7 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
           </div>
 
           {/* Right side - Content */}
-          <div>
+          <div className="w-full xl:w-1/2">
             <motion.h2
               className="text-3xl font-bold mb-6 text-purple-800"
               initial={{ opacity: 0, x: -20 }}
@@ -116,8 +114,8 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
                 stiffness: 100,
               }}
             >
-                          <AnimatedText text={title} isVisible={isVisible} />
-
+              <br />
+              <AnimatedText text={title} isVisible={isVisible} />
             </motion.h2>
             {content}
           </div>
@@ -266,7 +264,7 @@ export default function WeddingsPage() {
           </li>
           <li className="flex items-center">
             <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
-            Performers/Fire/Statues
+            Performers/Fire /Statues
           </li>
           <li className="flex items-center">
             <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
@@ -302,10 +300,10 @@ export default function WeddingsPage() {
       </p>
       <p className="mb-4 text-lg leading-relaxed">
         Choose from a variety of musical styles to suit the tone of your
-        event—whether it&lsquo;s soft jazz, classical string quartets, or tasteful
-        acoustic tunes, our performers will set the right mood for your guests.
-        The music will gently fill the air, allowing for an intimate dining
-        experience while keeping the energy light and enjoyable.
+        event—whether it&lsquo;s soft jazz, classical string quartets, or
+        tasteful acoustic tunes, our performers will set the right mood for your
+        guests. The music will gently fill the air, allowing for an intimate
+        dining experience while keeping the energy light and enjoyable.
       </p>
       <p className="mb-4 text-lg leading-relaxed">
         We offer flexible options that can transition seamlessly throughout the
@@ -365,10 +363,10 @@ export default function WeddingsPage() {
       </p>
       <p className="mb-4 text-lg leading-relaxed">
         Choose from a variety of musical acts, including live bands, DJs, or
-        solo performers, each carefully selected to match your wedding&lsquo;s vibe
-        and your personal preferences. From the first dance to the final song,
-        our entertainers will keep the energy high, ensuring everyone is on
-        their feet and enjoying every moment.
+        solo performers, each carefully selected to match your wedding&lsquo;s
+        vibe and your personal preferences. From the first dance to the final
+        song, our entertainers will keep the energy high, ensuring everyone is
+        on their feet and enjoying every moment.
       </p>
       <p className="mb-4 text-lg leading-relaxed">
         With seamless transitions between dinner and dancing, we ensure that the
