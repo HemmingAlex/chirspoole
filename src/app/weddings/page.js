@@ -533,7 +533,7 @@ export default function WeddingsPage() {
         content={<CeremonyContent />}
         images={sectionImages.ceremony}
         isVisible={visibleSections.ceremony}
-        reversed={true}
+        imageOnRight={true}
       />
 
       <ServiceSection
@@ -542,7 +542,7 @@ export default function WeddingsPage() {
         content={<ReceptionContent />}
         images={sectionImages.reception}
         isVisible={visibleSections.reception}
-        reversed={false}
+        imageOnRight={false}
       />
 
       <ServiceSection
@@ -551,7 +551,7 @@ export default function WeddingsPage() {
         content={<DinnerContent />}
         images={sectionImages.dinner}
         isVisible={visibleSections.dinner}
-        reversed={true}
+        imageOnRight={true}
       />
 
       <ServiceSection
@@ -560,7 +560,7 @@ export default function WeddingsPage() {
         content={<EveningContent />}
         images={sectionImages.evening}
         isVisible={visibleSections.evening}
-        reversed={false}
+        imageOnRight={false}
       />
 
       {/* Enhanced Prestigious Clients Section with animations and background */}
