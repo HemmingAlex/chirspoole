@@ -86,7 +86,14 @@ const AnimatedText = ({ text, isVisible }) => {
   );
 };
 
-const ServiceSection = ({ id, title, content, images, isVisible }) => {
+const ServiceSection = ({
+  id,
+  title,
+  content,
+  images,
+  isVisible,
+  imageOnRight = false ,
+}) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Auto-advance the slideshow every 5 seconds
@@ -98,19 +105,39 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
     return () => clearInterval(timer);
   }, [images.length]);
 
-  return (
+  return imageOnRight ? (
     <motion.section
       id={id}
       initial={{ opacity: 0, y: 50 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="py-0 bg-white"
+      className=" bg-white"
     >
-      <div className="p-0 ">
-        <div className="flex flex-wrap px-0">
-          {/* Left side - Image slideshow */}
-          <div className="w-full py-0 my-0 pr-8 lg:w-1/2">
-            <div className="relative aspect-video w-full overflow-hidden shadow-lg h-full">
+      <div className="">
+        <div className="flex flex-wrap">
+          {/* Left side - Just like original but with slideshow */}
+          <div className="w-full lg:w-1/2 pb-8 px-8">
+            <motion.h2
+              className="text-3xl font-bold mb-6 text-orange-800"
+              initial={{ opacity: 0, x: -20 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                type: "spring",
+                stiffness: 100,
+              }}
+            >
+              <br />
+              <AnimatedText text={title} isVisible={isVisible} />
+            </motion.h2>
+            {content}
+            {/* <Lightbox /> */}
+          </div>
+
+          {/* Right side - Content */}
+          <div className="w-full xl:w-1/2 ">
+            <div className="relative aspect-video w-full overflow-hidden  shadow-lg h-full ">
               {images.map((src, index) => (
                 <motion.div
                   key={`${id}-image-${index}`}
@@ -128,9 +155,43 @@ const ServiceSection = ({ id, title, content, images, isVisible }) => {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+    </motion.section>
+  ) : (
+    <motion.section
+      id={id}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      className="py-0 bg-white"
+    >
+      <div className="">
+        <div className="flex flex-wrap ">
+          {/* Left side - Just like original but with slideshow */}
+          <div className="w-full lg:w-1/2">
+            <div className="relative aspect-video w-full overflow-hidden  shadow-lg h-full">
+              {images.map((src, index) => (
+                <motion.div
+                  key={`${id}-image-${index}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0"
+                >
+                  <img
+                    src={src}
+                    alt={`${title} image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+            {/* <Lightbox /> */}
+          </div>
 
           {/* Right side - Content */}
-          <div className="w-full xl:w-1/2 pb-8">
+          <div className="w-full xl:w-1/2 pb-8 px-8">
             <motion.h2
               className="text-3xl font-bold mb-6 text-orange-800"
               initial={{ opacity: 0, x: -20 }}
@@ -439,6 +500,7 @@ export default function CorporatePartiesPage() {
           content={<IntroductionContent />}
           images={sectionImages.corporate}
           isVisible={visibleSections.introduction}
+          imageOnRight={true}
         />
       </div>
 
@@ -460,6 +522,7 @@ export default function CorporatePartiesPage() {
           content={<PrivateContent />}
           images={sectionImages.private}
           isVisible={visibleSections.private}
+          imageOnRight={true}
         />
       </div>
 

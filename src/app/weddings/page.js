@@ -91,7 +91,7 @@ const ServiceSection = ({
   content,
   images,
   isVisible,
-  reversed,
+  imageOnRight = false ,
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -104,18 +104,18 @@ const ServiceSection = ({
     return () => clearInterval(timer);
   }, [images.length]);
 
-  return reversed ? (
+  return imageOnRight ? (
     <motion.section
       id={id}
       initial={{ opacity: 0, y: 50 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="py-0 bg-white"
+      className=" bg-white"
     >
       <div className="">
-        <div className="flex flex-wrap px-0">
+        <div className="flex flex-wrap">
           {/* Left side - Just like original but with slideshow */}
-          <div className="w-full py-0 my-0 px-8 lg:w-1/2 pb-8">
+          <div className="w-full lg:w-1/2 pb-8 px-8">
             <motion.h2
               className="text-3xl font-bold mb-6 text-orange-800"
               initial={{ opacity: 0, x: -20 }}
@@ -136,7 +136,7 @@ const ServiceSection = ({
 
           {/* Right side - Content */}
           <div className="w-full xl:w-1/2 ">
-            <div className="relative aspect-video w-full overflow-hidden  shadow-lg h-full">
+            <div className="relative aspect-video w-full overflow-hidden  shadow-lg h-full ">
               {images.map((src, index) => (
                 <motion.div
                   key={`${id}-image-${index}`}
@@ -165,10 +165,10 @@ const ServiceSection = ({
       transition={{ duration: 0.6 }}
       className="py-0 bg-white"
     >
-      <div className="p-0 ">
-        <div className="flex flex-wrap px-0">
+      <div className="">
+        <div className="flex flex-wrap ">
           {/* Left side - Just like original but with slideshow */}
-          <div className="w-full py-0 my-0 px-8 lg:w-1/2">
+          <div className="w-full lg:w-1/2">
             <div className="relative aspect-video w-full overflow-hidden  shadow-lg h-full">
               {images.map((src, index) => (
                 <motion.div
@@ -190,7 +190,7 @@ const ServiceSection = ({
           </div>
 
           {/* Right side - Content */}
-          <div className="w-full xl:w-1/2 pb-8">
+          <div className="w-full xl:w-1/2 pb-8 px-8">
             <motion.h2
               className="text-3xl font-bold mb-6 text-orange-800"
               initial={{ opacity: 0, x: -20 }}
