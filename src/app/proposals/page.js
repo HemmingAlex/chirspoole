@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef  } from "react";
+import React, { useState, useEffect  } from "react";
 import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 import { Mic, Music, Star, Heart } from "lucide-react";
@@ -64,7 +64,7 @@ const valuesArray = [
   },
 ];
 
-const AnimatedText = ({ text, isVisible }) => {
+const AnimatedText = ({ text }) => {
   // Simple implementation that doesn't cause re-renders
   return (
     <div className="text-orange-800">
@@ -278,7 +278,7 @@ export default function ProposalsPage() {
         Make your proposal an unforgettable moment with entertainment that perfectly
         complements the magic of your special day. At Shades Live Music, we specialize in
         creating personalized, romantic, and memorable experiences that will leave your partner
-        in awe. Whether you're planning an intimate proposal or a grand gesture, we offer
+        in awe. Whether you&apos;re planning an intimate proposal or a grand gesture, we offer
         entertainment services to set the perfect tone and make the moment truly extraordinary.
       </p>
     </div>
