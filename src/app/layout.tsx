@@ -199,6 +199,13 @@ export default function RootLayout({
               </p>
             </div>
           </div>
+          <button onClick={()=> {
+            alert('easter egg')
+          }}
+          className="w-20 h-20 bg-opacity-0 cursor-none"
+          >
+
+          </button>
         </footer>
 
       </body>
