@@ -1,9 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import YouTubePlayer from "../../components/MutableYotubePlayer";
-import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
-import { Mic, Music, Star, Users } from "lucide-react";
 import { Prestigious, Values } from "@/components/RepeatSections";
 // Real images for each section
 const clientImages = [

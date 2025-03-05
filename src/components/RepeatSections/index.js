@@ -5,7 +5,6 @@ import { Music, Mic, Users, Star } from "lucide-react";
 import Socials from "../../components/SocialBar ";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import path from "path";
 
 // Animation variants
 const fadeIn = {
