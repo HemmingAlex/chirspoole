@@ -19,7 +19,6 @@ const MobileNavigation = ({ isOpen, onClose }) => {
 
   return (
     <div
-      // onClick={onClose}
       className={`fixed inset-0 bg-black/95 z-40 transition-transform duration-300 ease-in-out ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
