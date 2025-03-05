@@ -1,11 +1,9 @@
 "use client"
-import FadeTransition from "../../components/FadeTransition"
 import Link from "next/link"
 // src/app/entertainment/page.js
 export default function EntertainmentPage() {
     return (
       <div>
-        <FadeTransition>   
                {/* Hero Section */}
         <section className="relative h-[100vh] w-full overflow-hidden">
           <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none " />
@@ -156,6 +154,5 @@ export default function EntertainmentPage() {
             </a>
           </div>
         </section>
-        </FadeTransition>
       </div>
     )};

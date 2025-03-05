@@ -1,5 +1,4 @@
 "use client";
-import FadeTransition from "../../components/FadeTransition";
 
 import { useEffect, useState } from "react";
 import { Mail, Phone, X } from "lucide-react";
@@ -99,7 +98,6 @@ export default function ContactPage() {
 
   return (
     <div>
-      <FadeTransition>
         {notification && (
           <Notification
             message={notification.message}
@@ -365,7 +363,6 @@ export default function ContactPage() {
             <Maps />
           </div>
         </section>
-      </FadeTransition>
     </div>
   );
 }

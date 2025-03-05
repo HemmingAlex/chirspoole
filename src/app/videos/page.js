@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import VideoGallery from "../../components/VideoGallery";
-import FadeTransition from "../../components/FadeTransition";
 
 export default function GalleryPage() {
   // You could fetch your videos from an API or CMS here
@@ -93,7 +92,6 @@ export default function GalleryPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      <FadeTransition>
         <div className="py-10 bg-purple-400">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -125,7 +123,6 @@ export default function GalleryPage() {
             </div>
           </div>
         </div>
-      </FadeTransition>
     </div>
   );
 }

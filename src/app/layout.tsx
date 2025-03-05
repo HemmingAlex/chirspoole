@@ -1,14 +1,13 @@
 "use client";
 import "./globals.css";
 import SocialIcons from "../components/SocialIocons";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import Socials from "../components/SocialBar ";
 import { Lato } from "next/font/google";
 // import { Menu } from "lucide-react";
 import MobileNavigation from "../components/MobileNavigation";
 // import { usePathname } from "next/navigation";
-import PageTransition from "../components/PageTransition"
+import TL from "../components/NavigationTransition"
 
 const lato = Lato({
   subsets: ["latin"],
@@ -65,7 +64,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
-                <Link href="/" className="wxl font-bold ">
+                <TL href="/" className="wxl font-bold ">
                   {!isScrolled ? (
                     <><img
                     src="/assets/extract/w/Shades_music_logo_newhat_0225HD_12.svg"
@@ -84,49 +83,49 @@ export default function RootLayout({
                     className="h-24 py-2"
                     />
                   )}
-                </Link>
+                </TL>
               </div>
 
               {/* Desktop Navigation */}
               <div className="hidden 3xl:block">
                 <div className="ml-10 flex items-center space-x-4">
-                  <Link
+                  <TL
                     href="/"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
                     >
                     Home
-                  </Link>
-                  <Link
+                  </TL>
+                  <TL
                     href="/about"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
                     >
                     About Us
-                  </Link>
-                  {/* <Link
+                  </TL>
+                  {/* <TL
                     href="/weddings"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
                     >
                     Weddings
-                    </Link>
-                    <Link
+                    </TL>
+                    <TL
                     href="/corporate"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
                     >
                     Corporate
-                    </Link>
-                    <Link
+                    </TL>
+                    <TL
                     href="/entertainment"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
                     >
                     Entertainment
-                    </Link> */}
+                    </TL> */}
 
-                  <Link
+                  <TL
                     href="/contact"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
                     >
                     Contact
-                  </Link>
+                  </TL>
                 </div>
               </div>
 
@@ -155,9 +154,7 @@ export default function RootLayout({
             />
         </nav>
         <main>
-            <PageTransition>
           {children}
-            </PageTransition>
 
         </main>
         <footer className="bg-gray-900 text-white">
@@ -169,22 +166,22 @@ export default function RootLayout({
                 <p>Phone: 0044-7899-86577</p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+                <h3 className="text-lg font-semibold mb-4">Quick TLs</h3>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="/weddings" className="hover:text-gray-300">
+                    <TL href="/weddings" className="hover:text-gray-300">
                       Weddings
-                    </Link>
+                    </TL>
                   </li>
                   <li>
-                    <Link href="/corporate" className="hover:text-gray-300">
+                    <TL href="/corporate" className="hover:text-gray-300">
                       Corporate Events
-                    </Link>
+                    </TL>
                   </li>
                   <li>
-                    <Link href="/entertainment" className="hover:text-gray-300">
+                    <TL href="/entertainment" className="hover:text-gray-300">
                       Entertainment
-                    </Link>
+                    </TL>
                   </li>
                 </ul>
               </div>

@@ -4,7 +4,6 @@ import Luey from "../components/LUEY";
 // import Image from "next/image";
 // import useCountUp from '../hooks/useCountUp';
 import Link from "next/link";
-import FadeTransition from "../components/FadeTransition";
 import InstagramSection from "../components/InstagramSection ";
 import ClientsSection from "../components/ClientsSection";
 // import StaggeredReveal from "../components/StaggeredReveal";
@@ -30,7 +29,6 @@ export default function Home() {
   return (
     <div>
       {/* Video Hero Section */}
-      <FadeTransition>
         <section className="relative h-[100vh] w-full overflow-hidden">
           <div className="absolute inset-0 bg-black/30 z-10 " />
           <YouTubePlayer
@@ -84,7 +82,6 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </FadeTransition>
     </div>
   );
 }

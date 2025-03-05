@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import FadeTransition from "../../components/FadeTransition";
 import ANimation from "../../components/TextAnimation"
 import StorySection from "../../components/StorySection";
 import Counter from "../../components/Counter";
@@ -23,7 +22,6 @@ export default function CorporatePage() {
 
   return (
     <div>
-      <FadeTransition>
         <section className="relative h-[100vh]">
           <iframe
             src="https://skybox.blockadelabs.com/e/22b07c955734a2fbaad1ef39db3f66f2"
@@ -288,7 +286,6 @@ export default function CorporatePage() {
             </a>
           </div>
         </section>
-      </FadeTransition>
     </div>
   );
 }

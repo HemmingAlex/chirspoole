@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import TL from "../components/NavigationTransition";
 
 const MobileNavigation = ({ isOpen, onClose }) => {
   const pathname = usePathname();
@@ -35,21 +35,24 @@ const MobileNavigation = ({ isOpen, onClose }) => {
 
       <div className="h-screen flex items-center justify-center">
         <div className="flex flex-col items-center relative bottom-10 space-y-2">
-          <div className="text-purple-600 font-semibold px-3 py-2 rounded-md transition-colors text-[7vw] sm:text-[5vw] md:text-[2.5vw] lg:text-[1.8vw] xl:text-[1.8vw] mb-2">
-            <Link href="/">Menu</Link>
+          <div
+            onClick={onClose}
+            className="text-orange-600 font-semibold px-3 py-2 rounded-md transition-colors text-[7vw] sm:text-[5vw] md:text-[2.5vw] lg:text-[1.8vw] xl:text-[1.8vw] mb-2"
+          >
+            <TL href="/">Menu</TL>
           </div>
 
           {menuItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`font-semibold px-3 py-0.5 rounded-md hover:bg-gray-700/50 transition-colors text-[6vw] sm:text-[4vw] md:text-[2.2vw] lg:text-[1.5vw] xl:text-[1.5vw] w-full text-center ${
-                pathname === item.href ? "text-blue-400" : "text-white"
-              }`}
-              onClick={onClose}
-            >
-              {item.label}
-            </Link>
+            <TL key={item.href} href={item.href}>
+              <div
+                onClick={onClose}
+                className={`font-semibold px-3 py-0.5 rounded-md hover:bg-gray-700/50 transition-colors text-[6vw] sm:text-[4vw] md:text-[2.2vw] lg:text-[1.5vw] xl:text-[1.5vw] w-full text-center ${
+                  pathname === item.href ? "text-blue-400" : "text-white"
+                }`}
+              >
+                {item.label}
+              </div>
+            </TL>
           ))}
         </div>
       </div>
