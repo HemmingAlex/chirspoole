@@ -28,13 +28,11 @@ export default function TransitionLink({ href, children, ...props }) {
     // Trigger animation
     setTimeout(() => {
       overlay.style.transform = 'scaleY(1)';
-      router.push(href);
-
     }, 0);
     
     // Navigate after first half of animation
     setTimeout(() => {
-      // router.push(href);
+      router.push(href);
       
       // Change transform origin for second half
       overlay.style.transformOrigin = 'bottom';
