@@ -1,9 +1,10 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // This array should be imported from your main data file
-// or fetched from an API in a real application
 const valuesArray = [
   {
     title: "Cultural Expertise",
@@ -42,13 +43,21 @@ function SlideShow() {
   }, []);
 
   return (
-    <div className="relative w-full h-96 md:h-screen rounded-lg overflow-hidden">
+    <motion.div
+      className="relative w-full h-96 md:h-screen rounded-lg overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+    >
       {images.map((src, index) => (
-        <div
+        <motion.div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
             currentIndex === index ? "opacity-100" : "opacity-0"
           }`}
+          initial={{ scale: currentIndex === index ? 1.1 : 1 }}
+          animate={{ scale: currentIndex === index ? 1 : 1.1 }}
+          transition={{ duration: 1 }}
         >
           <Image
             src={src}
@@ -57,13 +66,13 @@ function SlideShow() {
             style={{ objectFit: "cover" }}
             priority={index === 0}
           />
-        </div>
+        </motion.div>
       ))}
 
       {/* Navigation dots */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
-          <button
+          <motion.button
             key={index}
             className={`w-3 h-3 rounded-full ${
               currentIndex === index
@@ -71,13 +80,33 @@ function SlideShow() {
                 : "bg-gray-300 dark:bg-gray-600"
             }`}
             onClick={() => setCurrentIndex(index)}
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 0.9 }}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
+
+// Animation variants for staggered animations
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+      duration: 0.8,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
+};
 
 export default function Page({ params }) {
   const { slug } = params;
@@ -94,23 +123,62 @@ export default function Page({ params }) {
     "The requested service information could not be found.";
 
   return (
-    <div className=" mx-auto   bg-white dark:bg-gray-900">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="container mx-auto  px-4 bg-white dark:bg-gray-900"
+    >
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {/* Slideshow on the left */}
-        <div className="rounded-lg shadow-md overflow-hidden">
+        <motion.div
+          className="rounded-lg shadow-md overflow-hidden"
+          variants={itemVariants}
+        >
           <SlideShow />
-        </div>
+        </motion.div>
 
         {/* Title and description on the right */}
-        <div className="space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">
+        <motion.div
+          className="space-y-4"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1
+            className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100"
+            variants={itemVariants}
+          >
             {title}
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          </motion.h1>
+          <motion.p
+            className="text-lg text-gray-600 dark:text-gray-300"
+            variants={itemVariants}
+          >
             {description}
-          </p>
-        </div>
-      </div>
-    </div>
+          </motion.p>
+          <motion.div
+            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+          >
+            <motion.button
+              className="mt-4 px-6 py-3 bg-orange-600 text-white rounded-lg shadow-lg hover:bg-orange-700 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Learn More
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }
