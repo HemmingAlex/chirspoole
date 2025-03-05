@@ -3,12 +3,6 @@ import React, { useState, useEffect } from "react";
 import YouTubePlayer from "../../components/MutableYotubePlayer";
 import { motion } from "framer-motion";
 import { Prestigious, Values } from "@/components/RepeatSections";
-// Real images for each section
-const clientImages = [
-  "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&q=80",
-];
 
 // Slideshow images for each section
 const sectionImages = {
