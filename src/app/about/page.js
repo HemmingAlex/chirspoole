@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Music, Mic, Users, Star } from "lucide-react";
 import Socials from "../../components/SocialBar ";
 import dynamic from "next/dynamic";
+import { Prestigious, CTA, Values } from "../../components/RepeatSections";
 
 // Dynamically import the 3D component to avoid SSR issues
 const AboutUsSphere = dynamic(() => import("../../components/AboutUsSphere"), {
@@ -65,7 +66,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
       <div className="bg-black">
         {/* About Section with exact content from word document */}
         <section className="py-20">
@@ -83,11 +83,11 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-gray-300 text-lg">
                   At Shades Live Music, we believe that every event is an
-                  opportunity to create unforgettable memories. Whether it&apos;s a
-                  wedding, corporate gathering, private party, or special
-                  celebration, our team is dedicated to delivering exceptional
-                  entertainment that brings people together and elevates any
-                  occasion.
+                  opportunity to create unforgettable memories. Whether
+                  it&apos;s a wedding, corporate gathering, private party, or
+                  special celebration, our team is dedicated to delivering
+                  exceptional entertainment that brings people together and
+                  elevates any occasion.
                 </p>
                 <p className="text-gray-300 text-lg">
                   Founded with a passion for bringing joy and excitement to
@@ -237,10 +237,10 @@ export default function AboutPage() {
                   creativity and expertise to every event we take part in.
                 </p>
                 <p className="text-gray-300 text-lg">
-                  Whether it&apos;s an intimate celebration or a large-scale affair,
-                  we are dedicated to providing entertainment that captures the
-                  heart of every occasion. Let us help you transform your next
-                  event into something extraordinary.
+                  Whether it&apos;s an intimate celebration or a large-scale
+                  affair, we are dedicated to providing entertainment that
+                  captures the heart of every occasion. Let us help you
+                  transform your next event into something extraordinary.
                 </p>
               </motion.div>
 
@@ -289,7 +289,7 @@ export default function AboutPage() {
           </div>
         </section>
         {/* Clients Section */}
-        <section className="py-20 bg-gray-900">
+        <section className="py-20 dark:bg-gray-900 bg-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
@@ -446,10 +446,10 @@ export default function AboutPage() {
                 Create Your Perfect Event
               </motion.h2>
               <motion.p variants={fadeIn} className="text-xl mb-8">
-                Let&apos;s bring your vision to life. Whether you&apos;re planning a
-                wedding, corporate event, private party, or special celebration,
-                Shades Live Music is here to make your event an unforgettable
-                experience.
+                Let&apos;s bring your vision to life. Whether you&apos;re
+                planning a wedding, corporate event, private party, or special
+                celebration, Shades Live Music is here to make your event an
+                unforgettable experience.
               </motion.p>
               <motion.div
                 variants={fadeIn}
@@ -478,6 +478,7 @@ export default function AboutPage() {
           </div>
         </section>
       </div>
+      <Prestigious /> <CTA /> <Values />
     </div>
   );
 }
