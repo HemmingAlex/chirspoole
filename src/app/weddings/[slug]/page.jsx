@@ -1,6 +1,6 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+"use client";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 // This array should be imported from your main data file
 // or fetched from an API in a real application
@@ -28,49 +28,47 @@ const valuesArray = [
 ];
 
 function SlideShow() {
-  const images = [
-    '/assets/Jack.jpg',
-    '/assets/Chris.jpg',
-    '/assets/Kamil.jpg',
-  ];
-  
+  const images = ["/assets/Jack.jpg", "/assets/Chris.jpg", "/assets/Kamil.jpg"];
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   // Auto-rotate the slideshow every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
-    
+
     return () => clearInterval(interval);
   }, []);
-  
+
   return (
     <div className="relative w-full h-96 md:h-screen rounded-lg overflow-hidden">
       {images.map((src, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            currentIndex === index ? 'opacity-100' : 'opacity-0'
+            currentIndex === index ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Image 
-            src={src} 
-            alt={`Slide ${index + 1}`} 
+          <Image
+            src={src}
+            alt={`Slide ${index + 1}`}
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: "cover" }}
             priority={index === 0}
           />
         </div>
       ))}
-      
+
       {/* Navigation dots */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
           <button
             key={index}
             className={`w-3 h-3 rounded-full ${
-              currentIndex === index ? 'bg-orange-600' : 'bg-gray-300 dark:bg-gray-600'
+              currentIndex === index
+                ? "bg-orange-600"
+                : "bg-gray-300 dark:bg-gray-600"
             }`}
             onClick={() => setCurrentIndex(index)}
             aria-label={`Go to slide ${index + 1}`}
@@ -83,19 +81,18 @@ function SlideShow() {
 
 export default function Page({ params }) {
   const { slug } = params;
-  
-  // Convert the hyphenated slug back to spaces for title matching
-  const normalizedSlug = slug.replace(/-/g, " ");
-  
+
   // Find the matching service based on the slug
   const service = valuesArray.find(
-    item => item.title.toLowerCase() === normalizedSlug.toLowerCase()
+    (item) => item.title.replace(" ", "-").toLowerCase() === slug.toLowerCase()
   );
-  
+
   // Fallback content if the slug doesn't match any service
   const title = service?.title || "Service Not Found";
-  const description = service?.description || "The requested service information could not be found.";
-  
+  const description =
+    service?.description ||
+    "The requested service information could not be found.";
+
   return (
     <div className=" mx-auto   bg-white dark:bg-gray-900">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -103,11 +100,15 @@ export default function Page({ params }) {
         <div className="rounded-lg shadow-md overflow-hidden">
           <SlideShow />
         </div>
-        
+
         {/* Title and description on the right */}
         <div className="space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">{title}</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">{description}</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            {description}
+          </p>
         </div>
       </div>
     </div>
