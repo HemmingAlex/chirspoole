@@ -7,7 +7,7 @@ import { Lato } from "next/font/google";
 // import { Menu } from "lucide-react";
 import MobileNavigation from "../components/MobileNavigation";
 // import { usePathname } from "next/navigation";
-import TL from "../components/NavigationTransition"
+import TL from "../components/NavigationTransition";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -51,26 +51,25 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${lato.className} ${lato.variable}`}>
-
       <body className="min-h-screen">
         <SocialIcons />
         <nav
           className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-            isScrolled
-              ? "bg-white wblack shadow-md"
-              : "bg-transparent wwhite"
+            isScrolled ? "bg-white wblack shadow-md" : "bg-transparent wwhite"
           }`}
-          >
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-20 items-center">
               <div className="flex-shrink-0">
                 <TL href="/" className="wxl font-bold ">
                   {!isScrolled ? (
-                    <><img
-                    src="/assets/extract/w/Shades_music_logo_newhat_0225HD_12.svg"
-                    alt="Band performance"
-                    className="h-24 py-2"
-                    /></>
+                    <>
+                      <img
+                        src="/assets/extract/w/Shades_music_logo_newhat_0225HD_12.svg"
+                        alt="Band performance"
+                        className="h-24 py-2"
+                      />
+                    </>
                   ) : (
                     // <img
                     //   src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal_whitetrans.svg"
@@ -78,9 +77,9 @@ export default function RootLayout({
                     //   className="h-24 py-2"
                     // />
                     <img
-                    src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal4.png"
-                    alt="Band performance"
-                    className="h-24 py-2"
+                      src="/assets/extract/w/Shades_music_logo_newhat_0225HDfinal4.png"
+                      alt="Band performance"
+                      className="h-24 py-2"
                     />
                   )}
                 </TL>
@@ -92,13 +91,13 @@ export default function RootLayout({
                   <TL
                     href="/"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
-                    >
+                  >
                     Home
                   </TL>
                   <TL
                     href="/about"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
-                    >
+                  >
                     About Us
                   </TL>
                   {/* <TL
@@ -123,7 +122,7 @@ export default function RootLayout({
                   <TL
                     href="/contact"
                     className=" hover:text-gray-300 px-3 py-2 rounded-md"
-                    >
+                  >
                     Contact
                   </TL>
                 </div>
@@ -137,7 +136,7 @@ export default function RootLayout({
                     isScrolled ? "text-black" : "text-white"
                   } p-2 rounded-md hover:bg-gray-700/50 transition-colors`}
                   aria-label="Toggle menu"
-                  >
+                >
                   {
                     isMobileMenuOpen ? <div /> : <>Menu</>
                     // #<Menu className="h-6 w-6" />
@@ -151,12 +150,9 @@ export default function RootLayout({
           <MobileNavigation
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
-            />
+          />
         </nav>
-        <main>
-          {children}
-
-        </main>
+        <main>{children}</main>
         <footer className="bg-gray-900 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -199,15 +195,13 @@ export default function RootLayout({
               </p>
             </div>
           </div>
-          <button onClick={()=> {
-            alert('easter egg')
-          }}
-          className="w-20 h-20 bg-opacity-0 cursor-none"
-          >
-
-          </button>
+          <button
+            onClick={() => {
+              alert("easter egg");
+            }}
+            className="w-20 h-20 bg-opacity-0 cursor-none"
+          ></button>
         </footer>
-
       </body>
     </html>
   );
