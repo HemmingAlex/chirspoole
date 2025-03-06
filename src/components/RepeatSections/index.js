@@ -30,7 +30,7 @@ const staggerContainer = {
 
 export function Prestigious() {
   return (
-    <section className="py-20 dark:bg-gray-900 bg-gray-200">
+    <section className="py-20 bg-gray-900 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -50,7 +50,7 @@ export function Prestigious() {
         >
           {/* Hospitality */}
           <motion.div variants={fadeIn}>
-            <div className="dark:bg-black p-6 rounded-lg shadow-lg border bg-white border-gray-300 dark:border-gray-800">
+            <div className="bg-black p-6 rounded-lg shadow-lg border   border-gray-800">
               <h3 className="text-xl font-semibold mb-4 text-orange-500">
                 Luxury Hotels & Resorts
               </h3>
@@ -68,7 +68,7 @@ export function Prestigious() {
 
           {/* Sports */}
           <motion.div variants={fadeIn}>
-            <div className="dark:bg-black p-6 rounded-lg shadow-lg border bg-white border-gray-300 dark:border-gray-800">
+            <div className="bg-black p-6 rounded-lg shadow-lg border  border-gray-800">
               <h3 className="text-xl font-semibold mb-4 text-orange-500">
                 Sports & Entertainment
               </h3>
@@ -86,7 +86,7 @@ export function Prestigious() {
 
           {/* Corporate */}
           <motion.div variants={fadeIn}>
-            <div className="dark:bg-black p-6 rounded-lg shadow-lg border bg-white border-gray-300 dark:border-gray-800">
+            <div className="bg-black p-6 rounded-lg shadow-lg border  border-gray-800">
               <h3 className="text-xl font-semibold mb-4 text-orange-500">
                 Corporate & Brands
               </h3>

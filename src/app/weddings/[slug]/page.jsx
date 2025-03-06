@@ -3,30 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {valuesArray} from "./details"
 
 // This array should be imported from your main data file
-const valuesArray = [
-  {
-    title: "Cultural Expertise",
-    description:
-      "We understand and honor the traditions that make Asian weddings unique and special.",
-  },
-  {
-    title: "Custom Experiences",
-    description:
-      "Each performance is tailored to create the perfect atmosphere for your special event.",
-  },
-  {
-    title: "World-Class Musicians",
-    description:
-      "We bring together the finest performers to deliver exceptional musical experiences.",
-  },
-  {
-    title: "Full-Service Events",
-    description:
-      "From traditional ceremonies to modern celebrations, we provide comprehensive entertainment solutions.",
-  },
-];
 
 function SlideShow() {
   const images = ["/assets/Jack.jpg", "/assets/Chris.jpg", "/assets/Kamil.jpg"];
@@ -128,7 +107,7 @@ export default function Page({ params }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto  px-4 bg-white dark:bg-gray-900"
+      className="mx-auto  bg-white dark:bg-gray-900"
     >
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
@@ -163,20 +142,6 @@ export default function Page({ params }) {
           >
             {description}
           </motion.p>
-          <motion.div
-            variants={itemVariants}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-          >
-            <motion.button
-              className="mt-4 px-6 py-3 bg-orange-600 text-white rounded-lg shadow-lg hover:bg-orange-700 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Learn More
-            </motion.button>
-          </motion.div>
         </motion.div>
       </motion.div>
     </motion.div>
