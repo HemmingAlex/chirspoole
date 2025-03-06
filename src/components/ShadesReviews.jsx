@@ -372,7 +372,7 @@ const ShadesReviews = () => {
                   "{truncateText(reviews[currentIndex].text, 150)}"
                   {reviews[currentIndex].text.length > 150 && (
                     <a 
-                      href="https://www.google.com" 
+                      href="https://maps.app.goo.gl/RJR5ytPGLYV8FxYU7" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-block ml-2 text-indigo-300 hover:text-indigo-200 transition-colors underline"
