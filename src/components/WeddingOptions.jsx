@@ -175,7 +175,7 @@ const WeddingTimeline = () => {
                     activeSection === section.id 
                       ? 'border-white bg-transparent text-white' 
                       : 'border-gray-300 bg-white text-gray-900'
-                  }`}
+                  } hover:bg-gray-300`}
                   onClick={() => handleSectionClick(section.id)}
                 >
                   {section.buttonText}
