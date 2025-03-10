@@ -4,6 +4,7 @@ import YouTubePlayer from "../../components/MutableYotubePlayer";
 // import { motion } from "framer-motion";
 import { Prestigious, Values } from "@/components/RepeatSections";
 import WeddingOptions from "@/components/WeddingOptions";
+import InstagramSection from "@/components/InstagramSection ";
 
 // Slideshow images for each section
 // const sectionImages = {
@@ -190,7 +191,6 @@ export default function WeddingsPage() {
   const videoId = "CZVKTBY3tNk";
 
   // Define the formatted content components for each section
-  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -209,7 +209,7 @@ export default function WeddingsPage() {
         }
       });
     };
-console.log(visibleSections)
+    console.log(visibleSections);
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
@@ -266,7 +266,7 @@ console.log(visibleSections)
       <WeddingOptions />
       {/* Enhanced Prestigious Clients Section with animations and background */}
       <Prestigious />
-
+      <InstagramSection />
       {/* Enhanced Values Section with animations */}
       <Values />
     </div>
