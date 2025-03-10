@@ -101,7 +101,6 @@ const WeddingSnowParticleOverlay = ({
   const [particlesLoaded, setParticlesLoaded] = useState(false);
   const [statsLoaded, setStatsLoaded] = useState(false);
   const countRef = useRef(null);
-
   useEffect(() => {
     // Initialize particles once the scripts are loaded
     if (
@@ -109,6 +108,36 @@ const WeddingSnowParticleOverlay = ({
       typeof window !== "undefined" &&
       window.particlesJS
     ) {
+      // Store the original particlesJS function
+      const originalParticlesJS = window.particlesJS;
+      
+      // Override the particlesJS function to fix position issues
+      window.particlesJS = function(id, config) {
+        // Call the original function
+        originalParticlesJS(id, config);
+        
+        // Fix for the position sync issue by adding custom mouse position handler
+        if (window.pJSDom && window.pJSDom.length > 0) {
+          const pJS = window.pJSDom[0].pJS;
+          
+          // Add position correction for the canvas
+          if (pJS && pJS.canvas && pJS.canvas.el) {
+            const canvas = pJS.canvas.el;
+            const rect = canvas.getBoundingClientRect();
+            
+            // Override the mouse position calculation
+            pJS.interactivity.mouse.getPosition = function(e) {
+              const canvasRect = canvas.getBoundingClientRect();
+              let posX = e.clientX - canvasRect.left;
+              let posY = e.clientY - canvasRect.top;
+              
+              return { x: posX, y: posY };
+            };
+          }
+        }
+      };
+      
+      // Initialize particles with our configuration
       window.particlesJS(id, config);
 
       // Setup stats if enabled and loaded
@@ -139,9 +168,17 @@ const WeddingSnowParticleOverlay = ({
 
         requestAnimationFrame(updateStats);
       }
+      
+      // Clean up function
+      return () => {
+        // Restore original particlesJS function
+        window.particlesJS = originalParticlesJS;
+      };
     }
   }, [particlesLoaded, statsLoaded, id, config, showStats]);
 
+
+  
   const containerStyle = {
     position: "relative",
     width: "100%",
